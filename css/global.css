@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Tektron — global.css
+   Tokens, reset, elementos-base e acessibilidade global.
+   Fontes de verdade: diretrizes-visuais.md + estrutura-navegacao.md.
+   Cores de marca conferidas nos SVGs oficiais (Arquivos/_Recursos/Marca,
+   2026-07-13): vermelho #E10000 e amarelo #FAEE1E são as cores reais do
+   logo; as diretrizes foram atualizadas com esses valores em 2026-07-13.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Fonte — Inter Variable local, subconjunto latino
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Inter";
+  src:
+    url("/fonts/inter-variable-latin.woff2") format("woff2") tech("variations"),
+    url("/fonts/inter-variable-latin.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cores — tokens oficiais (diretrizes-visuais.md §1) */
+  --cor-marca-vermelho: #E10000;     /* ação — cor do logo */
+  --cor-marca-amarelo: #FAEE1E;      /* foco/estado — cor do logo; nunca sobre fundo claro */
+  --cor-grafite: #1E2229;            /* estrutura; texto sobre fundos claros */
+  --cor-fundo: #FFFFFF;              /* fundo padrão de conteúdo */
+  --cor-fundo-tecnico: #F4F5F7;      /* zebra de tabelas, cards, fundos alternados */
+
+  /* Cores — tokens derivados */
+  --cor-branco: #FFFFFF;             /* papel de texto sobre grafite e vermelho */
+  --cor-vermelho-escuro: #B71C1C;    /* hover de ação e erro */
+  --cor-texto-suave-escuro: #C6CBD4; /* texto secundário sobre grafite (contraste ≈ 9,8:1) */
+  --cor-borda: rgb(30 34 41 / 15%);           /* bordas sobre fundos claros */
+  --cor-borda-clara: rgb(255 255 255 / 18%);  /* divisórias sobre grafite */
+  --cor-realce-escuro: rgb(255 255 255 / 8%); /* hover de itens sobre grafite */
+
+  /* Tipografia */
+  --fonte-base: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Espaçamento — escala oficial: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 px */
+  --espaco-4: 0.25rem;
+  --espaco-8: 0.5rem;
+  --espaco-12: 0.75rem;
+  --espaco-16: 1rem;
+  --espaco-24: 1.5rem;
+  --espaco-32: 2rem;
+  --espaco-48: 3rem;
+  --espaco-64: 4rem;
+
+  /* Contêiner e margens laterais (breakpoints: 48rem / 64rem / 80rem;
+     media queries não aceitam var(), por isso os valores ficam literais) */
+  --container-max: 75rem;
+  --margem-lateral: 1rem;
+
+  /* Forma */
+  --raio: 4px; /* raio máximo do sistema */
+
+  /* Camadas */
+  --z-header: 10;
+  --z-megamenu: 20;
+  --z-overlay: 30;
+  --z-dialogo: 40;
+  --z-critico: 50;
+
+  /* Movimento — o token colapsa para 0s em prefers-reduced-motion,
+     desligando todas as transições que o utilizam */
+  --transicao-rapida: 150ms ease;
+}
+
+@media (min-width: 48rem) {
+  :root { --margem-lateral: 1.5rem; }
+}
+
+@media (min-width: 64rem) {
+  :root { --margem-lateral: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --transicao-rapida: 0s; }
+}
+
+/* --------------------------------------------------------------------------
+   3. Reset leve e previsível
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+* { margin: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* proteção contra rolagem horizontal sem criar novo contexto de rolagem */
+  overflow-x: clip;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--fonte-base);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--cor-grafite);
+  background: var(--cor-fundo);
+  overflow-x: clip;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img { height: auto; } /* mantém a proporção dos width/height do HTML e evita CLS */
+
+/* listas com classe são componentes de navegação/estrutura */
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Tipografia base
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+h1 { font-size: 2rem;    font-weight: 700; }
+h2 { font-size: 1.5rem;  font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+h4 { font-size: 1rem;    font-weight: 600; }
+
+p { max-width: 70ch; }
+
+/* links em texto corrido: sublinhado, sem depender só de cor */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* --------------------------------------------------------------------------
+   5. Formulários e botões — base para páginas de conteúdo
+   -------------------------------------------------------------------------- */
+input,
+button,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+
+input:where([type="text"], [type="search"], [type="email"], [type="tel"], [type="number"]),
+select,
+textarea {
+  min-height: 44px; /* alvo mínimo recomendado Tektron */
+  padding: var(--espaco-8) var(--espaco-12);
+  border: 1px solid var(--cor-grafite);
+  border-radius: var(--raio);
+  background: var(--cor-fundo);
+  color: var(--cor-grafite);
+}
+
+::placeholder {
+  color: #5A6270; /* exemplo, nunca substitui o label; ≈ 6,3:1 sobre branco */
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   6. Utilitários de acessibilidade
+   -------------------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: var(--espaco-8);
+  left: var(--espaco-8);
+  z-index: var(--z-critico);
+  padding: var(--espaco-12) var(--espaco-16);
+  background: var(--cor-marca-amarelo);
+  color: var(--cor-grafite);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--raio);
+  /* fora da tela até receber foco — sem display:none, para leitores de tela */
+  transform: translateY(calc(-100% - var(--espaco-16)));
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  /* anel grafite: o anel amarelo global sumiria sobre o próprio fundo amarelo */
+  outline-color: var(--cor-grafite);
+}
+
+/* --------------------------------------------------------------------------
+   7. Foco global
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--cor-marca-amarelo);
+  outline-offset: 2px;
+  /* anel interno grafite preenchendo o offset: garante contraste não textual
+     ≥ 3:1 do indicador também sobre fundos claros (WCAG 1.4.11);
+     sobre grafite ele se funde ao fundo e sobra só o amarelo */
+  box-shadow: 0 0 0 2px var(--cor-grafite);
+}
+
+/* alvo do skip link: <main> não é interativo, não precisa de anel próprio */
+.main-content:focus,
+.main-content:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   8. Contêineres e conteúdo principal
+   -------------------------------------------------------------------------- */
+.content-container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--margem-lateral);
+}
+
+.main-content {
+  flex: 1 0 auto;
+  padding-block: var(--espaco-48);
+}
+
+@media (min-width: 64rem) {
+  .main-content { padding-block: var(--espaco-64); }
+}
+
+.main-content h1 { margin-bottom: var(--espaco-16); }
+.main-content p  { margin-bottom: var(--espaco-16); }
+.main-content p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   9. Modos de contraste forçado
+   -------------------------------------------------------------------------- */
+@media (forced-colors: active) {
+  /* o sistema assume as cores; fica só o outline, que o modo preserva */
+  :focus-visible { box-shadow: none; }
+}
+
+/* --------------------------------------------------------------------------
+   10. Impressão básica
+   -------------------------------------------------------------------------- */
+@media print {
+  .skip-link,
+  .site-header,
+  .menu-mobile-dialog,
+  .footer-nav,
+  .footer-divider { display: none; }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  /* mantém a identificação institucional do rodapé, sem fundo grafite */
+  .site-footer {
+    background: none;
+    color: #000;
+  }
+
+  a { text-decoration: underline; }
+}
+
+/* --------------------------------------------------------------------------
+   11. Controle de visibilidade por atributo
+   !important justificado: hidden controla painéis que recebem display
+   próprio (mega-menu, acordeões) e deve vencer qualquer regra de componente.
+   -------------------------------------------------------------------------- */
+[hidden] { display: none !important; }

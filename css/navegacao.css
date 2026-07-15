@@ -1,0 +1,563 @@
+/* ==========================================================================
+   Tektron — navegacao.css
+   Header, navegação desktop + mega-menu, busca, diálogo mobile,
+   acordeões e rodapé. Mobile-first; a alternância desktop acontece em
+   64rem, sincronizada com o corte de 1024px do JavaScript existente.
+   Depende dos tokens definidos em global.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Header
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: relative; /* âncora de posicionamento do mega-menu */
+  z-index: var(--z-header);
+  background: var(--cor-grafite);
+  color: var(--cor-branco);
+}
+
+/* navegação não usa sublinhado permanente; ele volta em hover/foco */
+.site-header a { text-decoration: none; }
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-8) var(--espaco-16);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--espaco-8) var(--margem-lateral);
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--espaco-4) var(--espaco-8);
+  border-radius: var(--raio);
+  background: transparent;
+}
+
+.logo-img {
+  display: block;
+  width: auto;
+  height: 44px;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. Botão hambúrguer (mobile)
+   -------------------------------------------------------------------------- */
+.menu-hamburger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-8);
+  min-width: 48px;
+  min-height: 48px;
+  padding: var(--espaco-8) var(--espaco-12);
+  border: 1px solid var(--cor-borda-clara);
+  color: var(--cor-branco);
+}
+
+.menu-hamburger:hover { background: var(--cor-realce-escuro); }
+
+.hamburger-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.hamburger-box {
+  position: relative;
+  width: 20px;
+  height: 14px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+}
+
+.hamburger-inner { top: 6px; }
+.hamburger-inner::before { content: ""; top: -6px; }
+.hamburger-inner::after  { content: ""; top: 6px; }
+
+/* --------------------------------------------------------------------------
+   3. Busca no header
+   Campo escuro integrado ao grafite: o foco amarelo tem contraste máximo.
+   -------------------------------------------------------------------------- */
+.header-search { flex: 1 1 100%; min-width: 0; } /* mobile: segunda linha, largura total */
+
+.search-form { width: 100%; }
+
+.search-input-group {
+  display: flex;
+  background: var(--cor-realce-escuro);
+  border: 1px solid var(--cor-borda-clara);
+  border-radius: var(--raio);
+}
+
+#search-input {
+  flex: 1 1 auto;
+  min-width: 0; /* permite encolher sem estourar o contêiner */
+  min-height: 44px;
+  padding: 0 var(--espaco-12);
+  border: 0;
+  border-radius: var(--raio) 0 0 var(--raio);
+  background: transparent;
+  color: var(--cor-branco);
+}
+
+#search-input::placeholder { color: rgb(255 255 255 / 72%); }
+
+.search-submit {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-left: 1px solid var(--cor-borda-clara);
+  border-radius: 0 var(--raio) var(--raio) 0;
+  color: var(--cor-branco);
+}
+
+.search-submit:hover { background: rgb(255 255 255 / 12%); }
+
+/* --------------------------------------------------------------------------
+   4. Navegação desktop (oculta no mobile)
+   -------------------------------------------------------------------------- */
+.nav-desktop { display: none; }
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap; /* salvaguarda: quebra linha em vez de estourar */
+  align-items: center;
+  gap: var(--espaco-4);
+}
+
+.nav-link,
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-8);
+  min-height: 44px;
+  padding: var(--espaco-8) var(--espaco-12);
+  border-radius: var(--raio);
+  color: var(--cor-branco);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.menu-toggle:hover { background: var(--cor-realce-escuro); }
+
+.nav-link:hover { text-decoration: underline; }
+
+/* item/página atual marcado em amarelo (marcador, não texto) */
+.nav-link[aria-current="page"] {
+  box-shadow: inset 0 -3px 0 var(--cor-marca-amarelo);
+}
+
+.menu-toggle[aria-expanded="true"] {
+  background: var(--cor-realce-escuro);
+  box-shadow: inset 0 -3px 0 var(--cor-marca-amarelo);
+}
+
+.chevron-icon { transition: transform var(--transicao-rapida); }
+
+.menu-toggle[aria-expanded="true"] .chevron-icon { transform: rotate(180deg); }
+
+/* --------------------------------------------------------------------------
+   5. Mega-menu desktop
+   Visibilidade controlada exclusivamente pelo atributo hidden (JS).
+   -------------------------------------------------------------------------- */
+.megamenu-panel {
+  position: absolute; /* relativo ao .site-header */
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--z-megamenu);
+  background: var(--cor-grafite);
+  border-top: 1px solid var(--cor-borda-clara);
+  /* única sombra do sistema: separa o painel flutuante do conteúdo */
+  box-shadow: 0 6px 12px rgb(30 34 41 / 30%);
+  /* telas baixas: rola internamente para nenhum link ficar inalcançável */
+  max-height: calc(100vh - 7rem);
+  max-height: calc(100dvh - 7rem);
+  overflow-y: auto;
+}
+
+.megamenu-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--espaco-32) var(--espaco-48);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--espaco-32) var(--margem-lateral) var(--espaco-48);
+}
+
+/* link-mãe de destaque, acima dos H3 de família */
+.megamenu-main-hub {
+  display: inline-block;
+  padding-block: var(--espaco-4);
+  margin-bottom: var(--espaco-12);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cor-branco);
+}
+
+.megamenu-main-hub:hover { text-decoration: underline; }
+
+.product-subgroup + .product-subgroup { margin-top: var(--espaco-24); }
+
+/* H3 de família: menor que o H3 de conteúdo — contexto de menu */
+.column-heading {
+  margin-bottom: var(--espaco-8);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.column-heading a { color: var(--cor-branco); }
+.column-heading a:hover { text-decoration: underline; }
+
+/* H4 de instalação: rótulo secundário, hierarquia por peso e caixa */
+.installation-category {
+  margin: var(--espaco-16) 0 var(--espaco-4);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave-escuro);
+}
+
+.product-links { font-variant-numeric: tabular-nums; }
+
+.product-links a {
+  display: block;
+  padding: var(--espaco-8);
+  border-radius: var(--raio);
+  color: var(--cor-branco);
+  font-size: 0.9375rem;
+}
+
+.product-links a:hover {
+  background: var(--cor-realce-escuro);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   6. Diálogo mobile
+   -------------------------------------------------------------------------- */
+.menu-mobile-dialog {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;   /* fallback */
+  height: 100dvh;  /* viewport dinâmica mobile */
+  max-height: 100vh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--cor-grafite);
+  color: var(--cor-branco);
+  z-index: var(--z-dialogo); /* redundante no top-layer; documenta a camada */
+}
+
+.menu-mobile-dialog::backdrop { background: rgb(30 34 41 / 55%); }
+
+.menu-mobile-dialog a { text-decoration: none; }
+
+@media (min-width: 48rem) {
+  /* tablet: folha lateral à direita; o backdrop mantém o contexto visível */
+  .menu-mobile-dialog {
+    width: 24rem;
+    margin-left: auto;
+  }
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-16);
+  padding: var(--espaco-12) var(--espaco-16);
+  border-bottom: 1px solid var(--cor-borda-clara);
+}
+
+.dialog-title { font-weight: 600; }
+
+.btn-close-dialog {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--cor-borda-clara);
+  color: var(--cor-branco);
+}
+
+.btn-close-dialog:hover { background: var(--cor-realce-escuro); }
+
+.nav-mobile-body {
+  flex: 1 1 auto;
+  overflow-y: auto; /* a rolagem acontece dentro do diálogo */
+  overscroll-behavior: contain;
+  padding: var(--espaco-8) var(--espaco-16) var(--espaco-24);
+  font-variant-numeric: tabular-nums; /* códigos de produto nas listas */
+}
+
+/* --------------------------------------------------------------------------
+   7. Acordeões mobile
+   -------------------------------------------------------------------------- */
+.mobile-main-list > li + li { margin-top: var(--espaco-4); }
+
+.accordion-trigger-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.mobile-link-main {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: var(--espaco-12) var(--espaco-8);
+  border-radius: var(--raio);
+  color: var(--cor-branco);
+  font-weight: 600;
+}
+
+.mobile-link-sub {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--espaco-8);
+  border-radius: var(--raio);
+  color: var(--cor-branco);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.mobile-link-main:hover,
+.mobile-link-sub:hover { text-decoration: underline; }
+
+/* botões de expansão sem texto: chevron desenhado só com bordas */
+.accordion-toggle,
+.accordion-sub-toggle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  min-height: 44px;
+  border-left: 1px solid var(--cor-borda-clara);
+  border-radius: 0;
+  color: var(--cor-branco);
+}
+
+.accordion-sub-toggle { width: 44px; }
+
+.accordion-toggle:hover,
+.accordion-sub-toggle:hover,
+.accordion-toggle[aria-expanded="true"],
+.accordion-sub-toggle[aria-expanded="true"] {
+  background: var(--cor-realce-escuro);
+}
+
+.accordion-toggle::before,
+.accordion-sub-toggle::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  translate: 0 -2px;
+  rotate: 45deg; /* aponta para baixo */
+  transition:
+    rotate var(--transicao-rapida),
+    translate var(--transicao-rapida);
+}
+
+.accordion-toggle[aria-expanded="true"]::before,
+.accordion-sub-toggle[aria-expanded="true"]::before {
+  translate: 0 2px;
+  rotate: 225deg; /* aponta para cima */
+}
+
+/* painéis: recuo + borda distinguem os níveis sem depender de cor */
+.accordion-panel {
+  margin: var(--espaco-4) 0 var(--espaco-8) var(--espaco-8);
+  padding-left: var(--espaco-8);
+  border-left: 2px solid var(--cor-borda-clara);
+}
+
+.accordion-sub-panel {
+  margin: var(--espaco-4) 0 var(--espaco-8) var(--espaco-8);
+  padding-left: var(--espaco-8);
+  border-left: 2px solid rgb(255 255 255 / 10%);
+}
+
+/* links diretos de modelo dentro dos painéis (1º e 2º nível) */
+.accordion-panel > li > a,
+.accordion-sub-panel a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--espaco-8);
+  border-radius: var(--raio);
+  color: var(--cor-branco);
+  font-size: 0.9375rem;
+}
+
+.accordion-panel > li > a:hover,
+.accordion-sub-panel a:hover {
+  background: var(--cor-realce-escuro);
+  text-decoration: underline;
+}
+
+/* links simples (Suporte, Institucional, Contato) */
+.mobile-direct-link a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: var(--espaco-12) var(--espaco-8);
+  border-radius: var(--raio);
+  color: var(--cor-branco);
+  font-weight: 600;
+}
+
+.mobile-direct-link a:hover { text-decoration: underline; }
+
+/* divisória única entre o bloco de produtos e os links simples */
+.mobile-item-accordion + .mobile-direct-link {
+  margin-top: var(--espaco-12);
+  padding-top: var(--espaco-8);
+  border-top: 1px solid var(--cor-borda-clara);
+}
+
+/* --------------------------------------------------------------------------
+   8. Rodapé
+   -------------------------------------------------------------------------- */
+.site-footer {
+  margin-top: var(--espaco-64);
+  background: var(--cor-grafite);
+  color: var(--cor-branco);
+}
+
+.site-footer a { text-decoration: none; }
+
+.footer-container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--espaco-48) var(--margem-lateral) var(--espaco-24);
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-32) var(--espaco-24);
+}
+
+@media (min-width: 48rem) {
+  .footer-nav { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 64rem) {
+  .footer-nav { grid-template-columns: repeat(4, 1fr); }
+}
+
+.footer-heading {
+  margin-bottom: var(--espaco-12);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave-escuro);
+}
+
+.footer-links li + li { margin-top: var(--espaco-4); }
+
+.footer-links a {
+  display: inline-block;
+  padding-block: var(--espaco-4);
+  color: var(--cor-branco);
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible { text-decoration: underline; }
+
+.footer-divider {
+  margin: var(--espaco-32) 0 var(--espaco-24);
+  border: 0;
+  border-top: 1px solid var(--cor-borda-clara);
+}
+
+/* identificação institucional: 14px com contraste ≈ 9,8:1 sobre grafite */
+.footer-bottom p {
+  max-width: none;
+  font-size: 0.875rem;
+  color: var(--cor-texto-suave-escuro);
+}
+
+.company-legal-name {
+  font-weight: 600;
+  color: var(--cor-branco);
+}
+
+.company-fiscal-details {
+  margin-top: var(--espaco-4);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   9. Alternância desktop/mobile — 64rem (= corte de 1024px do JS)
+   -------------------------------------------------------------------------- */
+@media (min-width: 64rem) {
+  .menu-hamburger,
+  .menu-mobile-dialog { display: none; }
+
+  .nav-desktop {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .header-container { row-gap: var(--espaco-4); }
+
+  /* A busca ocupa permanentemente a segunda linha do header, alinhada à
+     direita, em toda largura ≥64rem — não só até 80rem. Medido com o
+     conteúdo real (rótulos + ícone chevron): logo + navegação + busca
+     somam ≈1242px de largura mínima, acima do teto de contêiner de 1200px
+     (75rem). Forçar linha única exigiria encolher a busca para ~200px,
+     o que contraria a regra de "sem compressão" — por isso duas linhas
+     em todo o intervalo desktop, não só na faixa intermediária. */
+  .header-search {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: flex-end;
+  }
+
+  .search-form { max-width: 26rem; }
+}
+
+/* --------------------------------------------------------------------------
+   10. Modos de contraste forçado
+   -------------------------------------------------------------------------- */
+@media (forced-colors: active) {
+  /* as barras do hambúrguer usam background, que o modo remove;
+     a cor de sistema as preserva */
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after { background: ButtonText; }
+}
