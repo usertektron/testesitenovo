@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Tektron — home.css
+   Primeira dobra da home: mensagem principal, CTA, linhas de produto e
+   selos de confiança. Mobile-first. Depende dos tokens de global.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Mensagem principal + CTA
+   -------------------------------------------------------------------------- */
+.hero-intro {
+  max-width: 46rem;
+}
+
+.hero-lead {
+  font-size: 1.125rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--espaco-12) var(--espaco-24);
+  margin-top: var(--espaco-8);
+  background: var(--cor-marca-vermelho);
+  color: var(--cor-branco);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--raio);
+}
+
+.btn-primary:hover { background: var(--cor-vermelho-escuro); }
+
+/* --------------------------------------------------------------------------
+   2. Linhas de produto (cards)
+   -------------------------------------------------------------------------- */
+.hero-products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-16);
+  margin-top: var(--espaco-48);
+}
+
+@media (min-width: 48rem) {
+  .hero-products { grid-template-columns: repeat(3, 1fr); }
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-12);
+  min-height: 44px;
+  padding: var(--espaco-16);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  color: var(--cor-grafite);
+  text-decoration: none;
+  transition: border-color var(--transicao-rapida), background var(--transicao-rapida);
+}
+
+.product-card:hover {
+  border-color: var(--cor-marca-vermelho);
+  background: var(--cor-fundo-tecnico);
+}
+
+.product-card-icon {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  color: var(--cor-marca-vermelho);
+}
+
+.product-card-name {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   3. Selos de confiança
+   -------------------------------------------------------------------------- */
+.hero-trust {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-12);
+  margin-top: var(--espaco-32);
+  padding-top: var(--espaco-32);
+  border-top: 1px solid var(--cor-borda);
+}
+
+@media (min-width: 48rem) {
+  .hero-trust {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: var(--espaco-32);
+  }
+}
+
+.hero-trust li {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-8);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.hero-trust svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--cor-marca-vermelho);
+}
