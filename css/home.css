@@ -74,7 +74,63 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. Selos de confiança
+   3. Escolha por necessidade (cards de ambiente)
+   -------------------------------------------------------------------------- */
+.need-section {
+  margin-top: var(--espaco-48);
+}
+
+.need-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-16);
+  margin-top: var(--espaco-24);
+}
+
+@media (min-width: 48rem) {
+  .need-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 64rem) {
+  .need-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* o card estica até a altura da linha da grade */
+.need-cards li { display: flex; }
+
+/* variante vertical do .product-card: mesma borda, raio, hover e transição */
+.need-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+  min-height: 44px;
+  padding: var(--espaco-16);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  color: var(--cor-grafite);
+  text-decoration: none;
+  transition: border-color var(--transicao-rapida), background var(--transicao-rapida);
+}
+
+.need-card:hover {
+  border-color: var(--cor-marca-vermelho);
+  background: var(--cor-fundo-tecnico);
+}
+
+/* sublinhado no nome do ambiente: marca o alvo clicável sem depender só de cor */
+.need-card-name {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.need-card-desc {
+  font-size: 0.9375rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Selos de confiança
    -------------------------------------------------------------------------- */
 .hero-trust {
   display: flex;
