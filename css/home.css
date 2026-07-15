@@ -1,7 +1,9 @@
 /* ==========================================================================
    Tektron — home.css
    Primeira dobra da home: mensagem principal, CTA, linhas de produto e
-   selos de confiança. Mobile-first. Depende dos tokens de global.css.
+   selos de confiança. A partir da seção 5, os componentes das páginas de
+   aplicação (breadcrumb, cards de especificação, FAQ), que carregam esta
+   mesma folha. Mobile-first. Depende dos tokens de global.css.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -162,4 +164,153 @@
   width: 20px;
   height: 20px;
   color: var(--cor-marca-vermelho);
+}
+
+/* --------------------------------------------------------------------------
+   5. Páginas de aplicação — breadcrumb
+   -------------------------------------------------------------------------- */
+.breadcrumb {
+  margin-bottom: var(--espaco-24);
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-8);
+  font-size: 0.9375rem;
+}
+
+/* o texto continua compacto, mas o alvo do link cumpre a meta de conforto
+   de 44 px da Tektron (estrutura-navegacao §6.3) */
+.breadcrumb-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* separador decorativo: fora do fluxo de leitura do leitor de tela */
+.breadcrumb-list li + li::before {
+  content: "›";
+  margin-right: var(--espaco-8);
+  color: var(--cor-grafite);
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------
+   6. Páginas de aplicação — seções de conteúdo
+   -------------------------------------------------------------------------- */
+.content-section {
+  margin-top: var(--espaco-48);
+}
+
+.content-section h2 + p,
+.content-section p + p {
+  margin-top: var(--espaco-16);
+}
+
+.factor-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-16);
+  margin-top: var(--espaco-24);
+}
+
+@media (min-width: 48rem) {
+  .factor-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+.factor-list li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+  padding: var(--espaco-16);
+  background: var(--cor-fundo-tecnico);
+  border-radius: var(--raio);
+}
+
+.factor-name {
+  font-weight: 700;
+}
+
+.factor-desc {
+  font-size: 0.9375rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Páginas de aplicação — cards de especificação
+   -------------------------------------------------------------------------- */
+.spec-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-16);
+  margin-top: var(--espaco-24);
+}
+
+@media (min-width: 48rem) {
+  .spec-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* mesmo enquadramento do .product-card / .need-card, porém estático:
+   o card agrupa dados e a ação fica no título, um link explícito */
+.spec-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-8);
+  padding: var(--espaco-16);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.spec-card-name {
+  font-size: 1.125rem;
+}
+
+/* alvo de toque confortável para o link do modelo dentro do card */
+.spec-card-name a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--cor-marca-vermelho);
+  font-weight: 700;
+}
+
+.spec-card-desc {
+  font-size: 0.9375rem;
+}
+
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+  font-size: 0.9375rem;
+}
+
+.spec-label {
+  font-weight: 600;
+}
+
+.spec-label::after {
+  content: ":";
+}
+
+/* --------------------------------------------------------------------------
+   8. Páginas de aplicação — dúvidas frequentes
+   -------------------------------------------------------------------------- */
+.faq-list {
+  margin-top: var(--espaco-24);
+}
+
+.faq-list dt {
+  margin-top: var(--espaco-24);
+  font-weight: 700;
+}
+
+.faq-list dt:first-child {
+  margin-top: 0;
+}
+
+.faq-list dd {
+  margin-top: var(--espaco-8);
+  max-width: 70ch;
 }
