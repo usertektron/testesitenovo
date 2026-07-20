@@ -3,29 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iluminação para condomínios e áreas comuns: o que usar | Tektron</title>
-    <meta name="description" content="Controle de iluminação em áreas comuns de condomínio: minuteria coletiva para botão pulsador e sensores de movimento (sensor de presença) para as áreas externas.">
-    <link rel="canonical" href="https://www.tektron.ind.br/aplicacao/condominio.html">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <title>Política de Privacidade | Tektron</title>
+    <meta name="description" content="Política de Privacidade da Tektron: que dados o site coleta, como usamos, e seus direitos sobre dados pessoais conforme a LGPD.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.tektron.ind.br/politica-de-privacidade/">
 
-    <!-- Open Graph (SEO Técnico & Redes Sociais) -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Iluminação para condomínios e áreas comuns: o que usar | Tektron">
-    <meta property="og:description" content="Iluminação de escadas, corredores e áreas externas de condomínio: veja quando usar minuteria coletiva e quando usar sensor de movimento.">
-    <meta property="og:url" content="https://www.tektron.ind.br/aplicacao/condominio.html">
-    <meta property="og:site_name" content="Tektron">
-    <!-- Ajuste Pré-Publicação: mesma imagem pendente da home; o arquivo ainda não existe. -->
-    <meta property="og:image" content="https://www.tektron.ind.br/assets/og-linha-produtos-tektron.jpg">
-    <meta property="og:image:alt" content="Linha de sensores de movimento e relés elétricos Tektron instalados em ambiente corporativo.">
-
-    <!-- Preload da Fonte Inter Variable (Pesos 400, 600, 700 controlados via CSS) — Diretriz §2 -->
     <link rel="preload" href="../fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/navegacao.css">
+    <link rel="stylesheet" href="../css/global.css?v=20260720d">
+    <link rel="stylesheet" href="../css/navegacao.css?v=20260720d">
     <link rel="stylesheet" href="../css/home.css">
 
-    <!-- Fallback sem JavaScript: esconde os controles que ficariam inativos
-         (hambúrguer mobile e botão "Produtos" do mega-menu) e estiliza a
-         navegação simples inserida logo após o header no <body>. -->
     <noscript>
       <style>
         .menu-hamburger,
@@ -56,43 +46,22 @@
         .no-js-navigation li:last-child a { border-bottom: none; }
       </style>
     </noscript>
-
-    <!-- Dados Estruturados (JSON-LD) — Sem Comentários Internos -->
-    <!-- BreadcrumbList traz só os dois itens navegáveis: "Aplicações" aparece no
-         breadcrumb visível como degrau de hierarquia, mas fica fora dos dados
-         estruturados enquanto não for uma página real (Fase 4, canônico §16.2). -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Início",
-          "item": "https://www.tektron.ind.br/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Condomínio e áreas comuns",
-          "item": "https://www.tektron.ind.br/aplicacao/condominio.html"
-        }
-      ]
-    }
-    </script>
 </head>
 <body>
-
     <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
 
     <!-- HEADER PRINCIPAL -->
     <header class="site-header">
         <div class="header-container">
-            
+
             <a href="../index.html" class="logo-link" aria-label="Página inicial da Tektron">
                 <img src="../assets/logo-tektron-simbolo.svg" alt="Tektron" class="logo-img" width="61" height="44">
             </a>
+
+            <div class="header-brand">
+                <span class="header-brand-name">TEKTRON</span>
+                <span class="header-brand-tagline">Feito para durar!</span>
+            </div>
 
             <button type="button" class="menu-hamburger" id="btn-abrir-mobile" aria-expanded="false" aria-controls="menu-dialog-mobile" aria-haspopup="dialog" aria-label="Abrir menu de navegação">
                 <span class="hamburger-box" aria-hidden="true">
@@ -104,34 +73,31 @@
             <!-- NAVEGAÇÃO PRINCIPAL (DESKTOP) -->
             <nav id="nav-principal" class="nav-desktop" aria-label="Navegação principal">
                 <ul class="nav-list">
-                    
+
                     <li class="nav-item has-megamenu">
                         <button type="button" class="menu-toggle" id="btn-produtos-desktop" aria-expanded="false" aria-controls="painel-produtos-desktop">
                             Produtos
                             <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        
+
                         <!-- PAINEL DO MEGA-MENU (DESKTOP) -->
                         <div id="painel-produtos-desktop" class="megamenu-panel" aria-labelledby="btn-produtos-desktop" hidden>
                             <div class="megamenu-container">
                                 <h2 class="visually-hidden">Categorias de Produtos Tektron</h2>
-                                
-                                <!-- Coluna 1: Hierarquia Corrigida (Link de Destaque + H3 Família + H4 Instalação) -->
+
                                 <div class="megamenu-column">
-                                    <!-- "Sensores de Movimento" agora atua estritamente como link-mãe de destaque (Sem Heading) -->
                                     <a href="../sensores-de-movimento" class="megamenu-main-hub">Sensores de Movimento</a>
-                                    
+
                                     <div class="product-subgroup">
-                                        <!-- Família Infravermelho mapeada como H3 real -->
                                         <h3 class="column-heading">
                                             <a href="../produto/sensor-movimento-infravermelho.html">Infravermelho</a>
                                         </h3>
-                                        
-                                        <h4 class="installation-category">Caixa 4×2</h4>
+
+                                        <h4 class="installation-category">Caixa 4x2</h4>
                                         <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-bs-40.html">BS-40 — caixa 4×2</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-mi-400.html">MI-400 — 4×2, tempo até 12 min</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-sr-03.html">SR-03 — 4×2, chave 3 posições</a></li>
+                                            <li><a href="../produto/sensor-de-movimento-infravermelho-bs-40.html">BS-40 — caixa 4x2</a></li>
+                                            <li><a href="../produto/sensor-de-movimento-infravermelho-mi-400.html">MI-400 — 4x2, tempo até 12 min</a></li>
+                                            <li><a href="../produto/sensor-de-movimento-infravermelho-sr-03.html">SR-03 — 4x2, chave 3 posições</a></li>
                                         </ul>
 
                                         <h4 class="installation-category">Forro</h4>
@@ -153,13 +119,12 @@
 
                                         <h4 class="installation-category">Uso externo</h4>
                                         <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-me-60.html">ME-60 — externo, teto ou parede</a></li>
+                                            <li><a href="../produto/sensor-de-movimento-infravermelho-me-60.html">ME-60 — externo, parede, poste ou teto coberto</a></li>
                                             <li><a href="../produto/sensor-de-movimento-infravermelho-me-70.html">ME-70 — externo, parede ou poste</a></li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <!-- Coluna 2: Outras Tecnologias (Hierarquizadas como H3) -->
                                 <div class="megamenu-column">
                                     <div class="product-subgroup">
                                         <h3 class="column-heading"><a href="../sensores-de-movimento/infravermelho-compacto">Infravermelho Compacto</a></h3>
@@ -186,7 +151,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Coluna 3: Categorias Irmãs (Hierarquizadas como H3) -->
                                 <div class="megamenu-column">
                                     <div class="product-subgroup">
                                         <h3 class="column-heading"><a href="../produto/rele-fotoeletrico.html">Fotocélulas</a></h3>
@@ -197,7 +161,7 @@
                                     </div>
 
                                     <div class="product-subgroup">
-                                        <h3 class="column-heading"><a href="../produto/minuteria-mc-1500.html">Minuterias</a></h3>
+                                        <h3 class="column-heading"><a href="../produto/minuteria-coletiva-mc-1500.html">Minuterias</a></h3>
                                         <ul class="product-links">
                                             <li><a href="../produto/minuteria-coletiva-mc-1500.html">MC-1500 — minuteria coletiva</a></li>
                                         </ul>
@@ -214,7 +178,6 @@
                 </ul>
             </nav>
 
-            <!-- BUSCA LOCAL -->
             <div class="header-search">
                 <form action="../busca" method="get" role="search" class="search-form">
                     <label for="search-input" class="visually-hidden">Buscar produtos ou manuais (Ex: BS-50, fotocélula):</label>
@@ -230,14 +193,12 @@
         </div>
     </header>
 
-    <!-- Fallback sem JavaScript: única via de acesso às categorias principais
-         quando o menu hambúrguer e o mega-menu "Produtos" estão inativos. -->
     <noscript>
       <nav class="no-js-navigation" aria-label="Navegação principal sem JavaScript">
         <ul class="no-js-list">
           <li><a href="../sensores-de-movimento">Sensores de Movimento</a></li>
           <li><a href="../produto/rele-fotoeletrico.html">Fotocélulas</a></li>
-          <li><a href="../produto/minuteria-mc-1500.html">Minuterias</a></li>
+          <li><a href="../produto/minuteria-coletiva-mc-1500.html">Minuterias</a></li>
           <li><a href="../suporte">Suporte Técnico & Downloads</a></li>
           <li><a href="../institucional">Institucional</a></li>
           <li><a href="../contato">Contato / Onde Comprar</a></li>
@@ -257,13 +218,13 @@
 
             <nav class="nav-mobile-body" aria-label="Menu móvel">
                 <ul class="mobile-main-list">
-                    
+
                     <li class="mobile-item-accordion">
                         <div class="accordion-trigger-group">
                             <a href="../sensores-de-movimento" class="mobile-link-main">Sensores de Movimento</a>
                             <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="acc-l1-movimento" aria-label="Expandir famílias de movimento"></button>
                         </div>
-                        
+
                         <ul id="acc-l1-movimento" class="accordion-panel" hidden>
                             <li class="mobile-sub-accordion">
                                 <div class="accordion-trigger-group sub-group">
@@ -271,15 +232,15 @@
                                     <button type="button" class="accordion-sub-toggle" aria-expanded="false" aria-controls="acc-l2-infra" aria-label="Expandir modelos infravermelho"></button>
                                 </div>
                                 <ul id="acc-l2-infra" class="accordion-sub-panel" hidden>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-bs-40.html">BS-40 — caixa 4×2</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-mi-400.html">MI-400 — 4×2, tempo até 12 min</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-sr-03.html">SR-03 — 4×2, chave 3 posições</a></li>
+                                    <li><a href="../produto/sensor-de-movimento-infravermelho-bs-40.html">BS-40 — caixa 4x2</a></li>
+                                    <li><a href="../produto/sensor-de-movimento-infravermelho-mi-400.html">MI-400 — 4x2, tempo até 12 min</a></li>
+                                    <li><a href="../produto/sensor-de-movimento-infravermelho-sr-03.html">SR-03 — 4x2, chave 3 posições</a></li>
                                     <li><a href="../produto/sensor-de-movimento-infravermelho-sti-550.html">STI-550 — embutir no forro</a></li>
                                     <li><a href="../produto/sensor-de-movimento-infravermelho-bs-50.html">BS-50 — teto (sobrepor)</a></li>
                                     <li><a href="../produto/sensor-de-movimento-infravermelho-mi-500.html">MI-500 — teto, tempo até 12 min</a></li>
                                     <li><a href="../produto/sensor-de-movimento-infravermelho-bs-70.html">BS-70 — parede, alcance 12 m</a></li>
                                     <li><a href="../produto/sensor-de-movimento-infravermelho-mi-700.html">MI-700 — parede 12 m, tempo até 12 min</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-me-60.html">ME-60 — externo, teto ou parede</a></li>
+                                    <li><a href="../produto/sensor-de-movimento-infravermelho-me-60.html">ME-60 — externo, parede, poste ou teto coberto</a></li>
                                     <li><a href="../produto/sensor-de-movimento-infravermelho-me-70.html">ME-70 — externo, parede ou poste</a></li>
                                 </ul>
                             </li>
@@ -332,7 +293,7 @@
 
                     <li class="mobile-item-accordion">
                         <div class="accordion-trigger-group">
-                            <a href="../produto/minuteria-mc-1500.html" class="mobile-link-main">Minuterias</a>
+                            <a href="../produto/minuteria-coletiva-mc-1500.html" class="mobile-link-main">Minuterias</a>
                             <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="acc-l1-minuterias" aria-label="Expandir modelos de minuterias"></button>
                         </div>
                         <ul id="acc-l1-minuterias" class="accordion-panel" hidden>
@@ -348,111 +309,103 @@
         </div>
     </dialog>
 
+
     <!-- CONTEÚDO PRINCIPAL -->
     <main id="conteudo-principal" class="main-content" tabindex="-1">
         <div class="content-container">
 
-            <nav aria-label="Breadcrumb" class="breadcrumb">
+            <nav class="breadcrumb" aria-label="Trilha de navegação">
                 <ol class="breadcrumb-list">
                     <li><a href="../index.html">Início</a></li>
-                    <!-- "Aplicações" não é link: o hub do pilar ainda não existe (Fase 4, canônico §16.2). -->
-                    <li>Aplicações</li>
-                    <li><span aria-current="page">Condomínio e áreas comuns</span></li>
+                    <li aria-current="page">Política de Privacidade</li>
                 </ol>
             </nav>
 
-            <div class="hero-intro">
-                <h1>Controle de iluminação para condomínios e áreas comuns</h1>
-                <p class="hero-lead">Em área comum, o equipamento certo depende de como a iluminação já é acionada hoje: por botão pulsador ou automaticamente, pelo movimento de quem passa.</p>
+            <div class="hero-layout">
+                <div class="hero-intro">
+                    <h1>Política de Privacidade</h1>
+                    <p class="hero-lead">Última atualização: 20 de julho de 2026. Esta política explica que dados o site da Tektron coleta hoje, o que muda quando novos recursos entrarem no ar, e como você pode exercer seus direitos sobre seus dados pessoais, conforme a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018).</p>
+                </div>
             </div>
 
-            <!-- Destinos pendentes: as páginas de produto por modelo ainda não existem.
-                 A coluna url_produto da matriz é a URL-alvo, não uma página publicada —
-                 aqui os links seguem o mesmo padrão raiz-relativo já usado no mega-menu
-                 do index.html. Bloqueador de publicação: estrutura-navegacao §8.2 e §10.9. -->
-            <section class="content-section">
-                <h2>O problema</h2>
-                <p>Em escadas e corredores coletivos, a iluminação pode permanecer ligada por muito mais tempo que o necessário. Em prédios antigos, também é comum existir um sistema acionado por botões do tipo campainha.</p>
-                <p>Para esses casos, é importante utilizar um equipamento compatível com a instalação existente e adequado ao uso coletivo.</p>
+            <section class="content-section" aria-labelledby="controladora-heading">
+                <h2 id="controladora-heading">Quem somos</h2>
+                <p>Este site é operado pela <strong>Tektron Montagem e Comércio de Aparelhos Eletrônicos Ltda</strong>, CNPJ 57.465.874/0001-31, com sede na Rua Mário Furtado, 550 — Artur Alvim, São Paulo/SP, CEP 03567-110. Para qualquer assunto relacionado a esta política ou aos seus dados pessoais, entre em contato pelo e-mail <a href="mailto:contato@tektron.ind.br">contato@tektron.ind.br</a>.</p>
             </section>
 
-            <section class="content-section">
-                <h2>O que decide a escolha</h2>
-                <p>Primeiro, é necessário identificar como a iluminação é acionada.</p>
+            <section class="content-section" aria-labelledby="dados-hoje-heading">
+                <h2 id="dados-hoje-heading">Que dados coletamos hoje</h2>
+                <p>Hoje, este site <strong>não coleta nem armazena nenhum dado pessoal</strong>. Especificamente:</p>
                 <ul class="factor-list">
                     <li>
-                        <span class="factor-name">Acionamento por botão pulsador</span>
-                        <span class="factor-desc">Quando existem botões pulsadores do tipo campainha, utiliza-se uma minuteria coletiva.</span>
+                        <span class="factor-name">Sem cookies</span>
+                        <span class="factor-desc">O site não usa nenhum cookie — nem de funcionamento, nem de terceiros, nem de análise de tráfego.</span>
                     </li>
                     <li>
-                        <span class="factor-name">Áreas externas</span>
-                        <span class="factor-desc">Para entrada, jardim ou garagem coletiva, podem ser utilizados sensores de movimento próprios para uso externo.</span>
+                        <span class="factor-name">Sem ferramentas de análise</span>
+                        <span class="factor-desc">Não há Google Analytics nem qualquer outra ferramenta de rastreamento instalada no site.</span>
                     </li>
-                </ul>
-                <p>Também deve ser considerado o alcance necessário e o tempo durante o qual a iluminação precisa permanecer ligada.</p>
-            </section>
-
-            <section class="content-section">
-                <h2>Para acionamento por botão pulsador</h2>
-                <p>A MC-1500 é uma minuteria coletiva — ela não é um sensor de movimento. O acionamento é feito por botões pulsadores do tipo campainha, comuns em prédios antigos.</p>
-
-                <ul class="spec-cards">
-                    <li class="spec-card">
-                        <h3 class="spec-card-name"><a href="../produto/minuteria-coletiva-mc-1500.html">MC-1500</a></h3>
-                        <p class="spec-card-desc">Minuteria coletiva acionada por botão pulsador.</p>
-                        <ul class="spec-list">
-                            <li><span class="spec-label">Tipo</span> minuteria coletiva (não é sensor de movimento)</li>
-                            <li><span class="spec-label">Acionamento</span> botões pulsadores do tipo campainha</li>
-                            <li><span class="spec-label">Tempos</span> 30 s · 2 min · 3,5 min · 5 min</li>
-                            <li><span class="spec-label">Proteção</span> fusível e relé zero cross</li>
-                            <li><span class="spec-label">Pulsador</span> sistema anti-travamento com sinalização por LED</li>
-                            <li><span class="spec-label">Ligação</span> compatível com equipamentos de outras marcas</li>
-                        </ul>
+                    <li>
+                        <span class="factor-name">Sem formulário de contato ativo</span>
+                        <span class="factor-desc">A página de Contato ainda está em preparação — nenhum dado enviado por formulário é coletado hoje.</span>
+                    </li>
+                    <li>
+                        <span class="factor-name">Busca é só local</span>
+                        <span class="factor-desc">O campo de busca no cabeçalho ainda não está funcional — nenhum termo pesquisado é armazenado.</span>
                     </li>
                 </ul>
             </section>
 
-            <section class="content-section">
-                <h2>Para as áreas externas</h2>
-                <p>Como complemento, em áreas como garagem coletiva, entrada e jardim, o ME-60 e o ME-70 são sensores de movimento para uso externo. A diferença entre eles é o alcance frontal.</p>
+            <section class="content-section" aria-labelledby="mudancas-futuras-heading">
+                <h2 id="mudancas-futuras-heading">O que muda quando novos recursos entrarem no ar</h2>
+                <p>O site está em construção e alguns recursos ainda vão ser ativados — um formulário de Contato real, um botão de WhatsApp e, possivelmente, uma ferramenta de análise de tráfego (como Google Analytics). <strong>Antes de qualquer um desses recursos entrar no ar, esta política será atualizada</strong> pra descrever exatamente quais dados passam a ser coletados, com que finalidade, e por quanto tempo são mantidos.</p>
+            </section>
 
-                <ul class="spec-cards">
-                    <li class="spec-card">
-                        <h3 class="spec-card-name"><a href="../produto/sensor-de-movimento-infravermelho-me-60.html">ME-60</a></h3>
-                        <p class="spec-card-desc">Complemento para garagem coletiva, entrada e jardim.</p>
-                        <ul class="spec-list">
-                            <li><span class="spec-label">Uso</span> externo</li>
-                            <li><span class="spec-label">Alcance</span> até 8 m frontal</li>
-                        </ul>
+            <section class="content-section" aria-labelledby="cookies-heading">
+                <h2 id="cookies-heading">Cookies</h2>
+                <p>Este site não usa nenhum cookie hoje. Se isso mudar — por exemplo, com a adoção de uma ferramenta de análise de tráfego —, um aviso de cookies será adicionado ao site antes da mudança entrar no ar, com opção de aceitar ou recusar.</p>
+            </section>
+
+            <section class="content-section" aria-labelledby="direitos-heading">
+                <h2 id="direitos-heading">Seus direitos sobre dados pessoais (LGPD)</h2>
+                <p>Mesmo que o site não colete dados hoje, você tem os seguintes direitos garantidos pela LGPD sempre que a Tektron tratar algum dado pessoal seu — por exemplo, se você enviar um e-mail ou usar o WhatsApp de contato:</p>
+                <ul class="factor-list">
+                    <li>
+                        <span class="factor-name">Confirmação e acesso</span>
+                        <span class="factor-desc">Saber se a Tektron trata algum dado seu, e ter acesso a esse dado.</span>
                     </li>
-                    <li class="spec-card">
-                        <h3 class="spec-card-name"><a href="../produto/sensor-de-movimento-infravermelho-me-70.html">ME-70</a></h3>
-                        <p class="spec-card-desc">Para quando a área exige um alcance frontal maior.</p>
-                        <ul class="spec-list">
-                            <li><span class="spec-label">Uso</span> externo</li>
-                            <li><span class="spec-label">Alcance</span> até 12 m frontal</li>
-                            <li><span class="spec-label">Tempo</span> com sistema de recontagem</li>
-                        </ul>
+                    <li>
+                        <span class="factor-name">Correção</span>
+                        <span class="factor-desc">Pedir a correção de dados incompletos, desatualizados ou incorretos.</span>
+                    </li>
+                    <li>
+                        <span class="factor-name">Eliminação</span>
+                        <span class="factor-desc">Pedir a exclusão de dados desnecessários ou tratados fora dos limites da lei.</span>
+                    </li>
+                    <li>
+                        <span class="factor-name">Portabilidade</span>
+                        <span class="factor-desc">Pedir a transferência dos seus dados para outro fornecedor de serviço ou produto.</span>
+                    </li>
+                    <li>
+                        <span class="factor-name">Revogação do consentimento</span>
+                        <span class="factor-desc">Retirar, a qualquer momento, um consentimento dado anteriormente.</span>
+                    </li>
+                    <li>
+                        <span class="factor-name">Informação sobre compartilhamento</span>
+                        <span class="factor-desc">Saber com quem a Tektron compartilha seus dados, se aplicável.</span>
                     </li>
                 </ul>
+                <p>Pra exercer qualquer um desses direitos, entre em contato pelo e-mail <a href="mailto:contato@tektron.ind.br">contato@tektron.ind.br</a>.</p>
+            </section>
+
+            <section class="content-section" aria-labelledby="alteracoes-heading">
+                <h2 id="alteracoes-heading">Alterações nesta política</h2>
+                <p>Esta política pode ser atualizada conforme o site ganha novos recursos. A data no topo desta página sempre indica a versão mais recente. Recomendamos revisar esta página periodicamente.</p>
             </section>
 
             <section class="content-section">
-                <h2>O que a minuteria não faz</h2>
-                <p>A MC-1500 depende do acionamento por botão pulsador. Ela não aciona a iluminação automaticamente por movimento.</p>
-                <p>Na instalação da minuteria, os fios devem ficar voltados para baixo, formando uma pingadeira. Essa posição ajuda a evitar a entrada de água.</p>
-                <p>Para áreas externas, devem ser utilizados os modelos ME-60 ou ME-70.</p>
-            </section>
-
-            <section class="content-section">
-                <h2>Dúvidas frequentes</h2>
-                <dl class="faq-list">
-                    <dt>A MC-1500 substitui um sensor de movimento?</dt>
-                    <dd>Não. A MC-1500 é uma minuteria coletiva acionada por botões pulsadores do tipo campainha.</dd>
-
-                    <dt>Qual é a diferença entre o ME-60 e o ME-70?</dt>
-                    <dd>O ME-60 possui alcance frontal de até 8 metros. O ME-70 alcança até 12 metros e possui recontagem de tempo.</dd>
-                </dl>
+                <p><a href="../suporte">Falar com Suporte Técnico</a></p>
+                <p><a href="../contato">Contato / Onde Comprar</a></p>
             </section>
 
         </div>
@@ -462,13 +415,13 @@
     <footer class="site-footer" aria-label="Rodapé institucional">
         <div class="footer-container">
             <nav class="footer-nav" aria-label="Links do rodapé">
-                
+
                 <div class="footer-column">
                     <h2 class="footer-heading">Produtos</h2>
                     <ul class="footer-links">
                         <li><a href="../sensores-de-movimento">Sensores de Movimento</a></li>
                         <li><a href="../produto/rele-fotoeletrico.html">Fotocélulas</a></li>
-                        <li><a href="../produto/minuteria-mc-1500.html">Minuterias</a></li>
+                        <li><a href="../produto/minuteria-coletiva-mc-1500.html">Minuterias</a></li>
                     </ul>
                 </div>
 
@@ -492,7 +445,6 @@
                 <div class="footer-column">
                     <h2 class="footer-heading">Políticas</h2>
                     <ul class="footer-links">
-                        <!-- Dependência Crítica: Confirmar existência das páginas antes de publicar -->
                         <li><a href="../politica-de-privacidade">Política de Privacidade</a></li>
                         <li><a href="../termos-de-uso">Termos de Uso</a></li>
                     </ul>
@@ -510,10 +462,8 @@
         </div>
     </footer>
 
-    <!-- LOGICA DE COMPORTAMENTO -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // DESKTOP: Mega-Menu Disclosure
             const menuToggleDesktop = document.getElementById('btn-produtos-desktop');
             const megamenuPanelDesktop = document.getElementById('painel-produtos-desktop');
             const produtosNavItem = menuToggleDesktop.closest('.has-megamenu');
@@ -542,15 +492,12 @@
                 }
             });
 
-            // Correção de Focus Out Global (Englobando botão + painel para Shift+Tab)
             produtosNavItem.addEventListener('focusout', (event) => {
                 if (!produtosNavItem.contains(event.relatedTarget)) {
                     toggleDesktopMenu(false);
                 }
             });
 
-
-            // MOBILE: Diálogo Nativo (<dialog>)
             const btnAbrirMobile = document.getElementById('btn-abrir-mobile');
             const btnFecharMobile = document.getElementById('btn-fechar-mobile');
             const dialogMobile = document.getElementById('menu-dialog-mobile');
@@ -571,7 +518,6 @@
                 btnAbrirMobile.setAttribute('aria-expanded', 'false');
                 btnAbrirMobile.focus();
 
-                // Reset completo e recolhimento de TODOS os acordeões internos ao fechar o diálogo
                 document.querySelectorAll('.accordion-toggle, .accordion-sub-toggle').forEach(btn => {
                     btn.setAttribute('aria-expanded', 'false');
                 });
@@ -580,8 +526,6 @@
                 });
             });
 
-
-            // ACORDEÕES MOBILE
             function setupAccordion(toggleClassName) {
                 const toggles = document.querySelectorAll(toggleClassName);
                 toggles.forEach(toggle => {
@@ -609,10 +553,8 @@
             setupAccordion('.accordion-toggle');
             setupAccordion('.accordion-sub-toggle');
 
-
-            // UNIFIED BREAKPOINT RESET
             window.addEventListener('resize', () => {
-                if (window.innerWidth >= 1024) { 
+                if (window.innerWidth >= 1024) {
                     if (dialogMobile.open) {
                         dialogMobile.close();
                     }

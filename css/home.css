@@ -127,6 +127,20 @@
   text-underline-offset: 0.15em;
 }
 
+.need-card-summary {
+  font-size: 0.9375rem;
+  color: var(--cor-grafite);
+  opacity: 0.75;
+}
+
+.need-card-caveat {
+  font-size: 0.9375rem;
+}
+
+.need-card-caveat strong {
+  color: var(--cor-marca-vermelho);
+}
+
 .need-card-desc {
   font-size: 0.9375rem;
 }
@@ -209,6 +223,10 @@
   margin-top: var(--espaco-16);
 }
 
+.content-section h3 {
+  margin-top: var(--espaco-32);
+}
+
 .factor-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -245,6 +263,7 @@
   grid-template-columns: 1fr;
   gap: var(--espaco-16);
   margin-top: var(--espaco-24);
+  margin-bottom: var(--espaco-24);
 }
 
 @media (min-width: 48rem) {
@@ -276,6 +295,13 @@
 }
 
 .spec-card-desc {
+  font-size: 0.9375rem;
+}
+
+/* nota complementar fora de um .spec-card (ex.: linha compacta de uma
+   situação) — mesmo tratamento tipográfico do .spec-card-desc, mas sem
+   implicar que o texto pertence a um card */
+.solution-note {
   font-size: 0.9375rem;
 }
 
@@ -313,4 +339,204 @@
 .faq-list dd {
   margin-top: var(--espaco-8);
   max-width: 70ch;
+}
+
+/* --------------------------------------------------------------------------
+   9. Páginas de aplicação — princípio de marca
+   -------------------------------------------------------------------------- */
+.brand-principle {
+  margin-top: var(--espaco-48);
+  padding: var(--espaco-24);
+  background: var(--cor-grafite);
+  border-radius: var(--raio);
+  border-left: 4px solid var(--cor-marca-vermelho);
+}
+
+.brand-slogan {
+  color: var(--cor-marca-amarelo);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--espaco-8);
+}
+
+.brand-principle-text {
+  color: var(--cor-texto-suave-escuro);
+  font-size: 0.9375rem;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. Páginas de aplicação — CTA secundário e seção de chamada final
+   -------------------------------------------------------------------------- */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-16);
+  align-items: center;
+  margin-top: var(--espaco-16);
+  margin-bottom: 0;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--espaco-12) var(--espaco-24);
+  border: 1px solid var(--cor-grafite);
+  color: var(--cor-grafite);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--raio);
+  transition: background var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+.btn-secondary:hover {
+  background: var(--cor-fundo-tecnico);
+  border-color: var(--cor-marca-vermelho);
+}
+
+/* --------------------------------------------------------------------------
+   11. Páginas de aplicação — mídia de produto (hero, comparação, diagramas)
+   Preparado para a integração dos ativos visuais do manifesto
+   (documentacao/manifesto-ativos-visuais.md). `.hero-layout` já organiza o
+   conteúdo textual em algumas páginas (ex.: aplicacoes/externo.html), mas
+   sem nenhum efeito visual novo, porque nenhum `.hero-media`/`.hero-panels`
+   real foi inserido ao lado. `.hero-media`, `.hero-panels`, `.hero-panel`,
+   `.spec-card-photo` e `.diagram-figure` só produzem mídia visível quando o
+   `<figure>`/`<img>` real for inserido na etapa de integração — até lá, os
+   `<img>` continuam comentados no HTML, e nenhuma dessas classes tem
+   elemento algum para estilizar.
+   -------------------------------------------------------------------------- */
+
+/* layout do hero: texto + imagem lado a lado no desktop, empilhados no
+   mobile (texto sempre primeiro no DOM, por leitura e SEO) */
+.hero-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-32);
+}
+
+@media (min-width: 64rem) {
+  .hero-layout {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--espaco-48);
+  }
+
+  .hero-layout .hero-intro {
+    flex: 1 1 55%;
+    max-width: none;
+  }
+
+  .hero-layout .hero-media {
+    flex: 1 1 45%;
+  }
+
+  .hero-layout .hero-panels {
+    flex: 1 1 45%;
+  }
+}
+
+/* imagem principal do hero (CX01) */
+.hero-media {
+  width: 100%;
+  max-width: 24rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 64rem) {
+  .hero-media { max-width: none; margin-inline: 0; }
+}
+
+.hero-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--raio);
+  background: var(--cor-fundo-tecnico); /* some ao carregar a imagem real; não usar em elemento vazio */
+}
+
+.hero-media figcaption {
+  margin-top: var(--espaco-8);
+  font-size: 0.875rem;
+  color: var(--cor-grafite);
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* hero em dois painéis editoriais (EX01, aplicacoes/externo.html) — usado
+   em vez de .hero-media quando o hero precisa apresentar 2 produtos em
+   painéis claramente separados, sem sugerir comparação de tamanho físico
+   entre eles (ver manifesto-ativos-visuais.md, seção EX01) */
+.hero-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-24);
+  width: 100%;
+  max-width: 24rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 40rem) {
+  .hero-panels {
+    grid-template-columns: 1fr 1fr;
+    max-width: none;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero-panels { margin-inline: 0; }
+}
+
+.hero-panel img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--raio);
+  background: var(--cor-fundo-tecnico); /* some ao carregar a imagem real; não usar em elemento vazio */
+}
+
+.hero-panel figcaption {
+  margin-top: var(--espaco-8);
+  font-size: 0.875rem;
+  color: var(--cor-grafite);
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* foto de produto nos cards de comparação (CX02/CX03/CX04) */
+.spec-card-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: var(--espaco-8);
+}
+
+.spec-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--raio);
+  background: var(--cor-fundo-tecnico);
+}
+
+/* diagramas SVG (CX05/CX06): substituição física e ligação elétrica */
+.diagram-figure {
+  margin-top: var(--espaco-24);
+  max-width: 100%;
+}
+
+.diagram-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.diagram-figure figcaption,
+.diagram-caption {
+  margin-top: var(--espaco-8);
+  font-size: 0.875rem;
+  color: var(--cor-grafite);
+  opacity: 0.75;
 }

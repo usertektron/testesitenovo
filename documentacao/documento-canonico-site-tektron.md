@@ -716,9 +716,13 @@ Estrutura mínima:
 - benefício principal;
 - aplicação;
 - descrição curta;
-- diferenciais;
+- diferenciais (vantagens inequívocas, sem contrapartida — ex.: preço,
+  garantia, compacto);
 - funcionamento;
-- limitações relevantes;
+- características técnicas (specs ambíguas, que podem ser boas ou ruins
+  dependendo do caso de uso — ex.: atravessar parede fina — ditas de forma
+  neutra, sem enquadrar como diferencial nem como limitação);
+- limitações relevantes (desvantagens sem contrapartida);
 - especificações;
 - fotos;
 - diagrama;
@@ -790,9 +794,56 @@ Conteúdos recomendados:
 - Onde instalar um sensor.
 - Erros comuns de instalação.
 - Diferença entre infravermelho e micro-ondas.
+- Infravermelho ou ultrassônico: qual sensor escolher?
 - Como automatizar iluminação de corredor.
 - Como reduzir desperdício de energia.
 - Quando usar minuteria.
+
+---
+
+## 12.4.1 Diferenciação de tecnologia — Infravermelho × Ultrassônico (conforto de detecção)
+
+O sensor infravermelho detecta variação de radiação térmica em movimento.
+Sua resposta depende diretamente da posição de instalação e da direção do
+deslocamento da pessoa em relação ao sensor. Ele **não depende de
+ventilação nem de corrente de ar** — essa não é a base técnica da
+tecnologia e não deve ser usada como justificativa em nenhum conteúdo.
+
+O sensor ultrassônico (linha MU-500 / MU-600) percebe movimentos mais
+sutis do que o infravermelho em determinadas situações. Isso pode
+proporcionar mais conforto ao usuário do ambiente, especialmente onde:
+
+- há idosos que caminham lentamente;
+- há pessoas com mobilidade reduzida;
+- há pessoas de baixa estatura;
+- o usuário permanece no ambiente realizando movimentos pequenos;
+- o deslocamento não atravessa claramente as zonas de detecção do
+  infravermelho.
+
+Nessas situações, a resposta do infravermelho — mais definida, mais
+dependente de um movimento evidente — pode ser percebida como mais
+"dura". O ultrassônico, por perceber movimentos sutis, pode reduzir
+situações em que a iluminação se apaga com a pessoa ainda presente.
+
+**Não apresentar o ultrassônico como superior em todo cenário.** Tratar
+como diferença de característica e aplicação:
+
+- **infravermelho** — campo de detecção mais definido; maior dependência
+  da posição de instalação e da direção do movimento;
+- **ultrassônico** — maior percepção de movimentos sutis; favorece
+  ambientes com usuários de movimentação lenta ou discreta.
+
+Formulação comercial de referência:
+
+> "Em ambientes frequentados por idosos ou pessoas com movimentos mais
+> lentos, a tecnologia ultrassônica pode oferecer maior conforto, pois
+> percebe movimentos sutis e ajuda a manter a iluminação acionada enquanto
+> o ambiente continua ocupado."
+
+Usar esta diferenciação: no §12.4 (Central de Conhecimento), na
+comparação entre tecnologias das páginas de Aplicações, nas páginas que
+recomendarem MU-500/MU-600, e na tradução de características técnicas em
+benefícios práticos.
 
 ---
 
@@ -988,7 +1039,6 @@ Campos recomendados:
 - instalação;
 - tempo;
 - alcance;
-- IP;
 - variações;
 - slug;
 - SEO title;
@@ -1271,6 +1321,72 @@ Cada alteração relevante deve registrar:
 - arquivos afetados.
 
 ### Registro
+
+- **2026-07-17 — ME-60: instalação principal é parede, não teto (rótulo de menu e páginas de Aplicações).**
+  Decisão: o ME-60 tem a parede como ponto de instalação principal em
+  áreas externas abertas (é o ponto mais viável nesse cenário); a
+  instalação no teto não deve aparecer como aplicação principal do
+  modelo — só é indicada quando existe teto protegido em área externa
+  coberta (varanda, garagem, marquise, corredor coberto), sempre
+  respeitando as orientações documentadas de posição, entrada de cabos,
+  proteção contra água e pingadeira. Motivo: correção da Fernanda ao
+  rótulo "ME-60 — externo, teto ou parede", que listava teto antes de
+  parede e sugeria o teto como uso típico. Impacto: rótulo de menu
+  corrigido para "ME-60 — externo, parede ou teto coberto" em todas as
+  páginas que replicam o mega-menu; regra a seguir quando `externo.html`
+  for escrita. Responsável: Fernanda. Arquivos afetados: este documento
+  (§21.2); cópia espelhada em
+  `Gestao/03_Empresa/Marketing/Site/documento-canonico-site-tektron.md`;
+  `estrutura-navegacao.md` (tabela §2.3); `index.html`,
+  `aplicacoes/caixa-4x2.html`, `aplicacoes/teto.html` (rótulo do
+  mega-menu, desktop e mobile).
+
+- **2026-07-18 — ME-60: instalação em poste passa a ser documentada (matriz, `externo.html`, rótulo de menu).**
+  Decisão: a matriz `_matrizespecificacoes.ods` não documentava poste
+  como ponto de instalação do ME-60 (campo `instalacao` = "Teto ou parede
+  (sobrepor)"); correção de Fernanda, ao analisar `externo.html` publicado,
+  confirma que o ME-60 também aceita poste. Impacto: campo `instalacao` e
+  `descricao_curta` do ME-60 atualizados na matriz; `externo.html`
+  corrigido em 8 pontos que contradiziam ou omitiam poste para o ME-60
+  (spec-card, FAQ "Posso instalar em poste?", "Ponto de instalação",
+  cuidados de instalação, etc.); rótulo de menu corrigido para "ME-60 —
+  externo, parede, poste ou teto coberto" nas páginas que replicam o
+  mega-menu. Responsável: Fernanda. Arquivos afetados: `_matrizespecificacoes.ods`;
+  `aplicacoes/externo.html`; este documento (§21.2); cópia espelhada em
+  `Gestao/03_Empresa/Marketing/Site/documento-canonico-site-tektron.md`;
+  `estrutura-navegacao.md` (tabela §2.3, se aplicável); `index.html`,
+  `aplicacoes/caixa-4x2.html`, `aplicacoes/teto.html` (rótulo do
+  mega-menu, desktop e mobile).
+
+- **2026-07-17 — Diferenciação de tecnologia: conforto do sensor ultrassônico (nova Seção 12.4.1).**
+  Decisão: registrar como diretriz de conteúdo canônica que o sensor
+  ultrassônico (MU-500/MU-600) percebe movimentos mais sutis que o
+  infravermelho, recomendando a tecnologia para ambientes com
+  movimentação lenta ou discreta (idosos, mobilidade reduzida, baixa
+  estatura, permanência com pequenos movimentos) — sem tratá-lo como
+  superior em todo cenário. Motivo: correção da Fernanda a uma
+  justificativa técnica incorreta usada nas páginas de Aplicações em
+  construção (MU-500/600 enquadrados como indicados para "ambiente sem
+  ventilação/corrente de ar" — o infravermelho não depende de corrente de
+  ar, ele detecta variação de radiação térmica; a diferenciação real é a
+  sensibilidade do ultrassom a movimentos sutis). Impacto: nova §12.4.1
+  com o texto de referência da comparação; bullet adicionado ao §12.4;
+  páginas `site_novo/aplicacoes/*.html` que recomendarem MU-500/MU-600
+  devem usar esta formulação. Responsável: Fernanda. Arquivos afetados:
+  este documento (§12.4, novo §12.4.1); cópia espelhada em
+  `Gestao/03_Empresa/Marketing/Site/documento-canonico-site-tektron.md`.
+
+- **2026-07-16 — Remoção do campo `IP` da lista de campos recomendados (Seção 15).**
+  Decisão: remover `IP` (grau de proteção contra sólidos/líquidos) da lista
+  de campos recomendados da matriz. Motivo: a Tektron não possui
+  homologação/teste formal de IP para nenhum produto; manter o campo na
+  lista de recomendados sugeriria um dado que não existe e cuja invenção
+  a própria Seção 20 proíbe. Impacto: §15 perde o item `IP`; a lacuna de
+  "grau de proteção" para produtos de uso externo (FC-10, FC-15, ME-60,
+  ME-70) permanece descrita só em texto livre (`observacao_instalacao`),
+  sem normatização formal, até que exista certificação real. Responsável:
+  Fernanda. Arquivos afetados: este documento (§15); cópia espelhada em
+  `Arquivos/Site/site_novo/documentacao/documento-canonico-site-tektron.md`.
 
 - **2026-07-15 — Reforço da governança do documento (Seções 19, 20, 21).**
   Decisão: incorporar, sem duplicidade, os pontos sem equivalente de uma

@@ -20,6 +20,19 @@
   font-display: swap;
 }
 
+/* Purisa Bold — usada só no slogan "Feito para durar!" do header (ver
+   .header-brand-tagline em navegacao.css). Fonte GPL-2+ with Font
+   exception (pacote fonts-tlwg-purisa, Thai Linux Working Group) —
+   convertida de TTF pra WOFF2 pra carregar de verdade no site, em vez de
+   depender da fonte estar instalada no sistema do visitante. */
+@font-face {
+  font-family: "Purisa";
+  src: url("../fonts/purisa-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --------------------------------------------------------------------------
    2. Tokens
    -------------------------------------------------------------------------- */

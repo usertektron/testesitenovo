@@ -168,7 +168,7 @@ taxonomia.
 | Teto | MI-500 | MI-500 — teto, até 12 min |
 | Parede | BS-70 | BS-70 — parede, 12 m |
 | Parede | MI-700 | MI-700 — parede, até 12 min |
-| Uso externo | ME-60 | ME-60 — externo, teto/parede |
+| Uso externo | ME-60 | ME-60 — externo, parede/poste/teto coberto |
 | Uso externo | ME-70 | ME-70 — externo, parede/poste |
 
 #### Infravermelho Compacto — 2 modelos

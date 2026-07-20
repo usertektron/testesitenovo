@@ -23,7 +23,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  /* flex-start (não space-between): com logo + marca + hambúrguer como 3
+     itens na mesma linha, space-between os espalharia de forma irregular.
+     O hambúrguer é empurrado pra direita via margin-left:auto nele mesmo
+     (ver .menu-hamburger), não por space-between no container. */
+  justify-content: flex-start;
   gap: var(--espaco-8) var(--espaco-16);
   max-width: var(--container-max);
   margin-inline: auto;
@@ -46,6 +50,28 @@
   max-width: 100%;
 }
 
+/* texto "TEKTRON" + slogan, ao lado do símbolo — visível em mobile e
+   desktop (só a posição no grid muda em ≥64rem, ver seção 9). */
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.25;
+}
+
+.header-brand-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--cor-branco);
+}
+
+.header-brand-tagline {
+  font-family: "Purisa", "Inter", sans-serif;
+  font-size: 0.8125rem;
+  color: var(--cor-texto-suave-escuro);
+}
+
 /* --------------------------------------------------------------------------
    2. Botão hambúrguer (mobile)
    -------------------------------------------------------------------------- */
@@ -58,6 +84,7 @@
   padding: var(--espaco-8) var(--espaco-12);
   border: 1px solid var(--cor-borda-clara);
   color: var(--cor-branco);
+  margin-left: auto; /* empurra o botão pra ponta direita da linha 1 */
 }
 
 .menu-hamburger:hover { background: var(--cor-realce-escuro); }
@@ -527,24 +554,40 @@
   .menu-hamburger,
   .menu-mobile-dialog { display: none; }
 
+  /* Layout em grid, inspirado no header do jw.org: logo alto à esquerda
+     (ocupa as 2 linhas), linha de cima com marca escrita + busca, linha
+     de baixo com o menu. Substitui o layout flex anterior (ver histórico
+     em site-pendencias.md) — a coluna "brand" central (1fr) absorve o
+     espaço entre logo e busca, então não sobra vazio solto como antes. */
+  .header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "logo brand  search"
+      "logo nav    nav";
+    align-items: center;
+    row-gap: var(--espaco-4);
+    column-gap: var(--espaco-16);
+  }
+
+  .logo-link {
+    grid-area: logo;
+    align-self: stretch;
+  }
+
+  .logo-img { height: 64px; width: auto; }
+
+  .header-brand { grid-area: brand; }
+
   .nav-desktop {
     display: block;
-    flex: 1 1 auto;
+    grid-area: nav;
     min-width: 0;
   }
 
-  .header-container { row-gap: var(--espaco-4); }
-
-  /* A busca ocupa permanentemente a segunda linha do header, alinhada à
-     direita, em toda largura ≥64rem — não só até 80rem. Medido com o
-     conteúdo real (rótulos + ícone chevron): logo + navegação + busca
-     somam ≈1242px de largura mínima, acima do teto de contêiner de 1200px
-     (75rem). Forçar linha única exigiria encolher a busca para ~200px,
-     o que contraria a regra de "sem compressão" — por isso duas linhas
-     em todo o intervalo desktop, não só na faixa intermediária. */
   .header-search {
+    grid-area: search;
     display: flex;
-    flex: 1 1 100%;
     justify-content: flex-end;
   }
 
