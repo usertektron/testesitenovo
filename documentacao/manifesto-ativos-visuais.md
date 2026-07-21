@@ -84,7 +84,7 @@ não capta.
 |---|---|---|---|
 | BS-40 / MI-400 | 43 × 77 × 117 mm, Branca | `caixa-4x2.html` | CX02 = CX03 (mesmo arquivo `bs-40-frontal.webp`) |
 | BS-50 / MI-500 | 65 × 55 × 76 mm, Branca | `teto.html` | TT02 = TT03 (mesmo arquivo `bs-50-frontal.webp`) |
-| BS-70 / MI-700 | 66 × 54 × 75 mm, Branca | ainda sem página no manifesto | aplicar a mesma lógica quando a página for escrita |
+| BS-70 / MI-700 | 66 × 54 × 75 mm, Branca | `grandes-ambientes.html` (2026-07-21: cards já existiam prontos, só faltava a foto — resolvido reaproveitando `bs70.jpg` do site antigo) | mesmo arquivo `bs-70-frontal.webp` |
 
 **Condição que justificaria uma foto própria no futuro:** qualquer
 diferença visível de fora (cor, formato, elemento externo) entre os dois
@@ -1144,12 +1144,12 @@ enquadramento.
 - **Fundo:** cinza técnico `#F4F5F7`.
 - **Enquadramento:** aproximar mais a câmera que nos outros 3 (produto bem menor) — mas sem inflar a escala aparente além do que a distância real permite; a diferença de tamanho real deve continuar honesta.
 - **Iluminação:** difusa.
-- **Devem aparecer:** a célula fotossensível (olho da fotocélula), corpo real.
-- **Não podem aparecer:** fios.
+- **Devem aparecer:** corpo real, reconhecível como o produto (não depende de mostrar a célula fotossensível — revisado em 2026-07-21, a pedido de Fernanda: o público-alvo não identifica esse componente visualmente, então não é critério de aprovação); o fio de ligação (20 cm) — **correção 2026-07-21:** diferente dos sensores desta página, o FC-10 é ligado por fio próprio (confirmado por Fernanda: "fio, é com fio mesmo"), não por encaixe/twist-lock — o fio faz parte do reconhecimento físico do produto, não deve ser escondido.
+- **Não podem aparecer:** conector de encaixe/twist-lock no lugar do fio (regra antiga, invertida nesta revisão).
 - **Alt proposto:** "Relé fotoelétrico FC-10, vista frontal".
 - **Prioridade:** Essencial.
 - **Reutilização em página de produto:** sim.
-- **Dependências:** nenhuma.
+- **Dependências:** foto nova — a única foto do site antigo (`fc10.jpg`) é de uma variante de encaixe/twist-lock, incompatível com o FC-10 atual (com fio). Não reutilizável.
 
 ### EX05 — Foto produto FC-15 (card, situação luminosidade)
 
@@ -1162,12 +1162,12 @@ enquadramento.
 - **Fundo:** cinza técnico `#F4F5F7`.
 - **Enquadramento:** produto centralizado; é cilíndrico e maior que o FC-10 — não igualar a escala aparente artificialmente.
 - **Iluminação:** difusa.
-- **Devem aparecer:** a célula fotossensível, corpo cinza real, corpo cilíndrico.
-- **Não podem aparecer:** fios.
+- **Devem aparecer:** corpo translúcido fosco real (**correção 2026-07-21:** planilha dizia "Cinza", Fernanda confirmou que é translúcido fosco — planilha já atualizada), corpo cilíndrico (não depende de mostrar a célula fotossensível — ver nota no EX04); o fio de ligação (20 cm) — **correção 2026-07-21:** mesmo caso do FC-10, o FC-15 é ligado por fio próprio (confirmado por Fernanda), não por encaixe/twist-lock — o fio faz parte do reconhecimento físico do produto.
+- **Não podem aparecer:** conector de encaixe/twist-lock no lugar do fio (regra antiga, invertida nesta revisão).
 - **Alt proposto:** "Relé fotoelétrico FC-15, vista frontal".
 - **Prioridade:** Essencial.
 - **Reutilização em página de produto:** sim.
-- **Dependências:** nenhuma.
+- **Dependências:** nenhuma — `fc15.jpg` (com fio) do site antigo é a variante correta; `fc15t.jpg` (encaixe) é a variante descontinuada, não usar.
 
 ### EX06 — Foto instalada: ME-60 em teto externo coberto
 

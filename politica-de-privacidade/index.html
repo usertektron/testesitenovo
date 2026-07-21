@@ -8,12 +8,11 @@
     <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
     <title>Política de Privacidade | Tektron</title>
     <meta name="description" content="Política de Privacidade da Tektron: que dados o site coleta, como usamos, e seus direitos sobre dados pessoais conforme a LGPD.">
-    <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://www.tektron.ind.br/politica-de-privacidade/">
 
     <link rel="preload" href="../fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../css/global.css?v=20260720d">
-    <link rel="stylesheet" href="../css/navegacao.css?v=20260720d">
+    <link rel="stylesheet" href="../css/global.css?v=20260721">
+    <link rel="stylesheet" href="../css/navegacao.css?v=20260721">
     <link rel="stylesheet" href="../css/home.css">
 
     <noscript>
@@ -347,18 +346,18 @@
                     </li>
                     <li>
                         <span class="factor-name">Sem formulário de contato ativo</span>
-                        <span class="factor-desc">A página de Contato ainda está em preparação — nenhum dado enviado por formulário é coletado hoje.</span>
+                        <span class="factor-desc">A página de Contato usa WhatsApp, e-mail e endereço — não há formulário de contato coletando dados no site.</span>
                     </li>
                     <li>
                         <span class="factor-name">Busca é só local</span>
-                        <span class="factor-desc">O campo de busca no cabeçalho ainda não está funcional — nenhum termo pesquisado é armazenado.</span>
+                        <span class="factor-desc">A busca é feita localmente, no seu navegador — nenhum termo pesquisado é enviado ou armazenado em servidor.</span>
                     </li>
                 </ul>
             </section>
 
             <section class="content-section" aria-labelledby="mudancas-futuras-heading">
                 <h2 id="mudancas-futuras-heading">O que muda quando novos recursos entrarem no ar</h2>
-                <p>O site está em construção e alguns recursos ainda vão ser ativados — um formulário de Contato real, um botão de WhatsApp e, possivelmente, uma ferramenta de análise de tráfego (como Google Analytics). <strong>Antes de qualquer um desses recursos entrar no ar, esta política será atualizada</strong> pra descrever exatamente quais dados passam a ser coletados, com que finalidade, e por quanto tempo são mantidos.</p>
+                <p>O site pode, no futuro, passar a usar uma ferramenta de análise de tráfego (como Google Analytics). <strong>Antes desse recurso entrar no ar, esta política será atualizada</strong> pra descrever exatamente quais dados passam a ser coletados, com que finalidade, e por quanto tempo são mantidos.</p>
             </section>
 
             <section class="content-section" aria-labelledby="cookies-heading">
@@ -461,6 +460,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botão flutuante de WhatsApp (Comercial — mesmo número da página de Contato) -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-bubble" id="whatsapp-bubble">
+            <button type="button" class="whatsapp-bubble-close" id="whatsapp-bubble-close" aria-label="Fechar aviso">&times;</button>
+            <a href="https://wa.me/5511947572577" class="whatsapp-bubble-link" target="_blank" rel="noopener">Dúvidas? Fale com a gente no WhatsApp!</a>
+        </div>
+        <a href="https://wa.me/5511947572577" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp Comercial">
+            <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.85L2 22l5.36-1.36c1.41.76 3.02 1.19 4.68 1.19h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm0 1.67c2.19 0 4.25.85 5.8 2.4a8.2 8.2 0 0 1 2.4 5.83c0 4.55-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.18.81.85-3.1-.2-.32a8.18 8.18 0 0 1-1.26-4.35c0-4.55 3.71-8.24 8.28-8.24zm-4.53 4.66c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.6 4.11 3.64.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.32-.75-1.8-.2-.47-.4-.4-.54-.41h-.46z"/></svg>
+        </a>
+    </div>
+    <script>
+        (function () {
+            const bubble = document.getElementById('whatsapp-bubble');
+            const closeBtn = document.getElementById('whatsapp-bubble-close');
+            if (!bubble || !closeBtn) return;
+            setTimeout(() => bubble.classList.add('is-visible'), 1500);
+            setTimeout(() => bubble.classList.remove('is-visible'), 9000);
+            closeBtn.addEventListener('click', () => bubble.classList.remove('is-visible'));
+        })();
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {

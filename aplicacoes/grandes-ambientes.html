@@ -22,8 +22,8 @@
          aplicacoes/teto.html e aplicacoes/externo.html. -->
 
     <link rel="preload" href="../fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../css/global.css?v=20260720d">
-    <link rel="stylesheet" href="../css/navegacao.css?v=20260720d">
+    <link rel="stylesheet" href="../css/global.css?v=20260721">
+    <link rel="stylesheet" href="../css/navegacao.css?v=20260721">
     <link rel="stylesheet" href="../css/home.css">
 
     <noscript>
@@ -430,6 +430,11 @@
                 <p>Para ambientes compridos ou amplos com uma direção predominante de passagem — corredor, escada, depósito, garagem ou área comum —, o <strong>BS-70</strong> é a solução principal: sensor infravermelho de parede com alcance estendido de 12 m, articulador ajustável e espaguete de proteção nos fios. Para instalações que precisam de ajuste de sensibilidade e temporização ampliada (até 12 minutos), utilize o <strong>MI-700</strong>.</p>
                 <div class="spec-cards">
                     <div class="spec-card">
+                        <figure class="spec-card-photo">
+                            <img src="../assets/images/aplicacoes/grandes-ambientes/bs-70-frontal.webp"
+                                 alt="Sensor de movimento BS-70, vista frontal"
+                                 width="400" height="400" loading="lazy" decoding="async">
+                        </figure>
                         <h4 class="spec-card-name"><a href="../produto/sensor-de-movimento-infravermelho-bs-70.html">BS-70</a></h4>
                         <p class="spec-card-desc">Solução principal: alcance estendido para parede.</p>
                         <dl class="spec-list">
@@ -440,6 +445,14 @@
                         </dl>
                     </div>
                     <div class="spec-card">
+                        <!-- ativo compartilhado com o card do BS-70 (mesmo invólucro,
+                             66 × 54 × 75 mm — mesma lógica do BS-50/MI-500 e BS-40/MI-400):
+                             reutiliza bs-70-frontal.webp, não gera arquivo próprio. -->
+                        <figure class="spec-card-photo">
+                            <img src="../assets/images/aplicacoes/grandes-ambientes/bs-70-frontal.webp"
+                                 alt="Sensor de movimento MI-700, vista frontal"
+                                 width="400" height="400" loading="lazy" decoding="async">
+                        </figure>
                         <h4 class="spec-card-name"><a href="../produto/sensor-de-movimento-infravermelho-mi-700.html">MI-700</a></h4>
                         <p class="spec-card-desc">Ajuste de sensibilidade e temporização ampliada.</p>
                         <dl class="spec-list">
@@ -481,19 +494,29 @@
                 <p>Em ambientes onde a circulação envolve movimento lento, pequenos gestos ou permanência com pouca movimentação, o sensor infravermelho tradicional — por depender diretamente da direção do deslocamento — pode não perceber esse tipo de movimento com a mesma consistência. Nesses casos, a tecnologia ultrassônica percebe movimentos mais sutis, o que ajuda a manter a iluminação acionada enquanto o ambiente continua ocupado: o <strong>MU-500</strong> é a solução principal, detectando durante o dia e a noite. Para o mesmo cenário com fotocélula integrada, utilize o <strong>MU-600</strong>. Essa tecnologia é recomendada só para ambientes fechados de até 15 m² — não é indicada para áreas muito amplas e abertas.</p>
                 <div class="spec-cards">
                     <div class="spec-card">
+                        <figure class="spec-card-photo">
+                            <img src="../assets/images/aplicacoes/teto/mu-500-frontal.webp"
+                                 alt="Sensor de movimento ultrassônico MU-500, vista frontal"
+                                 width="400" height="400" loading="lazy" decoding="async">
+                        </figure>
                         <h4 class="spec-card-name"><a href="../produto/sensor-de-movimento-ultrassonico-mu-500.html">MU-500</a></h4>
                         <p class="spec-card-desc">Solução principal: detecta durante o dia e a noite.</p>
                         <dl class="spec-list">
                             <div><span class="spec-label">Cobertura</span> Ambientes até 15 m²</div>
-                            <div><span class="spec-label">Detecção apenas noturna</span> Não</div>
+                            <div><span class="spec-label">Detecção noturna ajustável</span> Não</div>
                         </dl>
                     </div>
                     <div class="spec-card">
+                        <figure class="spec-card-photo">
+                            <img src="../assets/images/aplicacoes/teto/mu-600-frontal.webp"
+                                 alt="Sensor de movimento ultrassônico MU-600, com fotocélula integrada, vista frontal"
+                                 width="400" height="400" loading="lazy" decoding="async">
+                        </figure>
                         <h4 class="spec-card-name"><a href="../produto/sensor-de-movimento-ultrassonico-mu-600.html">MU-600</a></h4>
                         <p class="spec-card-desc">Com fotocélula integrada.</p>
                         <dl class="spec-list">
                             <div><span class="spec-label">Cobertura</span> Ambientes até 15 m²</div>
-                            <div><span class="spec-label">Detecção apenas noturna</span> Sim</div>
+                            <div><span class="spec-label">Detecção noturna ajustável</span> Sim</div>
                         </dl>
                     </div>
                 </div>
@@ -667,6 +690,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botão flutuante de WhatsApp (Comercial — mesmo número da página de Contato) -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-bubble" id="whatsapp-bubble">
+            <button type="button" class="whatsapp-bubble-close" id="whatsapp-bubble-close" aria-label="Fechar aviso">&times;</button>
+            <a href="https://wa.me/5511947572577" class="whatsapp-bubble-link" target="_blank" rel="noopener">Dúvidas? Fale com a gente no WhatsApp!</a>
+        </div>
+        <a href="https://wa.me/5511947572577" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp Comercial">
+            <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.85L2 22l5.36-1.36c1.41.76 3.02 1.19 4.68 1.19h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm0 1.67c2.19 0 4.25.85 5.8 2.4a8.2 8.2 0 0 1 2.4 5.83c0 4.55-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.18.81.85-3.1-.2-.32a8.18 8.18 0 0 1-1.26-4.35c0-4.55 3.71-8.24 8.28-8.24zm-4.53 4.66c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.6 4.11 3.64.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.32-.75-1.8-.2-.47-.4-.4-.54-.41h-.46z"/></svg>
+        </a>
+    </div>
+    <script>
+        (function () {
+            const bubble = document.getElementById('whatsapp-bubble');
+            const closeBtn = document.getElementById('whatsapp-bubble-close');
+            if (!bubble || !closeBtn) return;
+            setTimeout(() => bubble.classList.add('is-visible'), 1500);
+            setTimeout(() => bubble.classList.remove('is-visible'), 9000);
+            closeBtn.addEventListener('click', () => bubble.classList.remove('is-visible'));
+        })();
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
