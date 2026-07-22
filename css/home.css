@@ -321,6 +321,55 @@
 }
 
 /* --------------------------------------------------------------------------
+   7.1 Tabela de comparação (ex.: tecnologias de detecção)
+   Wrapper com scroll próprio: a página inteira não pode rolar
+   horizontalmente em 320 CSS px (estrutura-navegacao.md §6.3), mas uma
+   tabela larga pode rolar dentro do próprio contêiner.
+   -------------------------------------------------------------------------- */
+.comparison-table-wrap {
+  margin-top: var(--espaco-24);
+  overflow-x: auto;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.comparison-table caption {
+  text-align: left;
+  padding: var(--espaco-16) var(--espaco-16) 0;
+  font-size: 0.9375rem;
+  color: var(--cor-grafite);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: var(--espaco-12) var(--espaco-16);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.comparison-table thead th {
+  font-weight: 700;
+  background: var(--cor-fundo-tecnico);
+}
+
+.comparison-table tbody th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background: var(--cor-fundo-tecnico);
+}
+
+/* --------------------------------------------------------------------------
    8. Páginas de aplicação — dúvidas frequentes
    -------------------------------------------------------------------------- */
 .faq-list {

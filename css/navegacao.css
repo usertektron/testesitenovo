@@ -242,21 +242,28 @@
 
 .product-subgroup + .product-subgroup { margin-top: var(--espaco-24); }
 
-/* H3 de família: menor que o H3 de conteúdo — contexto de menu */
+/* Rótulo de família dentro do mega-menu: usa <p>, não <h3> — os headings do
+   painel ficavam antes do H1 da página na ordem do DOM quando o menu abria.
+   line-height/overflow-wrap replicados aqui porque deixou de herdar do
+   seletor genérico h1-h4 do global.css. */
 .column-heading {
   margin-bottom: var(--espaco-8);
   font-size: 1rem;
   font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: break-word;
 }
 
 .column-heading a { color: var(--cor-branco); }
 .column-heading a:hover { text-decoration: underline; }
 
-/* H4 de instalação: rótulo secundário, hierarquia por peso e caixa */
+/* Rótulo de categoria de instalação dentro do mega-menu: mesma nota acima */
 .installation-category {
   margin: var(--espaco-16) 0 var(--espaco-4);
   font-size: 0.875rem;
   font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: break-word;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--cor-texto-suave-escuro);
