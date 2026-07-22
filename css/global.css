@@ -24,7 +24,9 @@
    .header-brand-tagline em navegacao.css). Fonte GPL-2+ with Font
    exception (pacote fonts-tlwg-purisa, Thai Linux Working Group) —
    convertida de TTF pra WOFF2 pra carregar de verdade no site, em vez de
-   depender da fonte estar instalada no sistema do visitante. */
+   depender da fonte estar instalada no sistema do visitante.
+   Arquivo é um subconjunto (pyftsubset) só com os glifos dessa frase
+   (66 KB → 1,8 KB) — se o texto do slogan mudar, regenerar o subset. */
 @font-face {
   font-family: "Purisa";
   src: url("../fonts/purisa-bold.woff2") format("woff2");
