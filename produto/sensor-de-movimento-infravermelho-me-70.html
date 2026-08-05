@@ -22,7 +22,7 @@
 
     <link rel="preload" href="../fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/global.css?v=20260721">
-    <link rel="stylesheet" href="../css/navegacao.css?v=20260721">
+    <link rel="stylesheet" href="../css/navegacao.css?v=20260805">
     <link rel="stylesheet" href="../css/home.css?v=20260721">
 
     <noscript>
@@ -111,7 +111,7 @@
     <!-- HEADER PRINCIPAL -->
     <header class="site-header">
         <div class="header-container">
-
+            
             <a href="../index.html" class="logo-link" aria-label="Página inicial da Tektron">
                 <img src="../assets/logo-tektron-simbolo.svg" alt="Tektron" class="logo-img" width="61" height="44">
             </a>
@@ -131,99 +131,60 @@
             <!-- NAVEGAÇÃO PRINCIPAL (DESKTOP) -->
             <nav id="nav-principal" class="nav-desktop" aria-label="Navegação principal">
                 <ul class="nav-list">
-
+                    
                     <li class="nav-item has-megamenu">
                         <button type="button" class="menu-toggle" id="btn-produtos-desktop" aria-expanded="false" aria-controls="painel-produtos-desktop">
                             Produtos
                             <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-
-                        <!-- PAINEL DO MEGA-MENU (DESKTOP) -->
+                        
+                        <!-- PAINEL DO MEGA-MENU (DESKTOP)
+                             Entrada por problema apenas, decidido em 2026-08-04 após teste com
+                             usuários leigos: o cliente típico navega para encontrar, não sabendo o
+                             modelo. A lista de modelos foi retirada do painel — quem já sabe o código
+                             chega pela busca do cabeçalho (índice conferido, estrutura-navegacao §1.1).
+                             Canônico §7.10 (divulgação progressiva), §7.5 (Lei de Hick), §11. -->
                         <div id="painel-produtos-desktop" class="megamenu-panel" aria-labelledby="btn-produtos-desktop" hidden>
                             <div class="megamenu-container">
                                 <p class="visually-hidden">Categorias de Produtos Tektron</p>
 
-                                <div class="megamenu-column">
-                                    <a href="../sensores-de-movimento" class="megamenu-main-hub">Sensores de Movimento</a>
+                                <div class="megamenu-needs">
+                                    <p class="needs-heading">Comece pelo que você precisa</p>
 
-                                    <div class="product-subgroup">
-                                        <p class="column-heading">
-                                            <a href="../produto/sensor-movimento-infravermelho.html">Infravermelho</a>
-                                        </p>
+                                    <ul class="needs-groups">
+                                        <li class="needs-group">
+                                            <p class="needs-group-name">
+                                                <a href="../sensores-de-movimento">Sensor de movimento</a>
+                                            </p>
+                                            <p class="needs-group-desc">Acende quando alguém passa.</p>
+                                            <ul class="needs-links">
+                                                <li><a href="../aplicacoes/caixa-4x2.html">Substituir o interruptor</a></li>
+                                                <li><a href="../aplicacoes/teto.html">No teto</a></li>
+                                                <li><a href="../aplicacoes/grandes-ambientes.html">Corredores e escadas</a></li>
+                                                <li><a href="../aplicacoes/externo.html#situacao-movimento">Área externa</a></li>
+                                            </ul>
+                                        </li>
 
-                                        <p class="installation-category">Caixa 4x2</p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-bs-40.html">BS-40 — caixa 4x2</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-mi-400.html">MI-400 — 4x2, tempo até 12 min</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-sr-03.html">SR-03 — 4x2, chave 3 posições</a></li>
-                                        </ul>
+                                        <li class="needs-group">
+                                            <p class="needs-group-name">
+                                                <a href="../produto/rele-fotoeletrico.html">Fotocélula</a>
+                                            </p>
+                                            <p class="needs-group-desc">Acende ao anoitecer, apaga ao amanhecer.</p>
+                                            <ul class="needs-links">
+                                                <li><a href="../aplicacoes/externo.html#situacao-luminosidade">Iluminação externa e poste</a></li>
+                                            </ul>
+                                        </li>
 
-                                        <p class="installation-category">Forro</p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-sti-550.html">STI-550 — embutir no forro</a></li>
-                                        </ul>
-
-                                        <p class="installation-category">Teto</p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-bs-50.html">BS-50 — teto (sobrepor)</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-mi-500.html">MI-500 — teto, tempo até 12 min</a></li>
-                                        </ul>
-
-                                        <p class="installation-category">Parede</p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-bs-70.html">BS-70 — parede, alcance 12 m</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-mi-700.html">MI-700 — parede 12 m, tempo até 12 min</a></li>
-                                        </ul>
-
-                                        <p class="installation-category">Uso externo</p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-me-60.html">ME-60 — externo, parede, poste ou teto coberto</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-me-70.html">ME-70 — externo, parede ou poste</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="megamenu-column">
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="../sensores-de-movimento/infravermelho-compacto">Infravermelho Compacto</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-cs-5.html">CS-5 — compacto, teto ou parede</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-infravermelho-tc-5.html">TC-5 — compacto, carga baixa</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="../sensores-de-movimento/doppler">Doppler</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-doppler-tkr.html">TKR — 360°, alta sensibilidade</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-doppler-tkt.html">TKT — 360°, carga baixa</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="../produto/sensor-movimento-ultrassonico.html">Ultrassônico</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/sensor-de-movimento-ultrassonico-mu-500.html">MU-500 — ambientes fechados até 15 m²</a></li>
-                                            <li><a href="../produto/sensor-de-movimento-ultrassonico-mu-600.html">MU-600 — até 15 m², com fotocélula</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="megamenu-column">
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="../produto/rele-fotoeletrico.html">Fotocélulas</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/rele-fotoeletrico-fc-10.html">FC-10 — relé fotoelétrico compacto</a></li>
-                                            <li><a href="../produto/rele-fotoeletrico-fc-15.html">FC-15 — relé fotoelétrico 15 A</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="../produto/minuteria-coletiva-mc-1500.html">Minuterias</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="../produto/minuteria-coletiva-mc-1500.html">MC-1500 — minuteria coletiva</a></li>
-                                        </ul>
-                                    </div>
+                                        <li class="needs-group">
+                                            <p class="needs-group-name">
+                                                <a href="../produto/minuteria-coletiva-mc-1500.html">Minuteria coletiva</a>
+                                            </p>
+                                            <p class="needs-group-desc">Acende por botão, apaga sozinha.</p>
+                                            <ul class="needs-links">
+                                                <li><a href="../aplicacoes/minuterias.html">Escadas e áreas comuns</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
 
                             </div>
@@ -236,6 +197,7 @@
                 </ul>
             </nav>
 
+            <!-- BUSCA LOCAL -->
             <div class="header-search">
                 <form action="../busca" method="get" role="search" class="search-form">
                     <label for="search-input" class="visually-hidden">Buscar produtos ou manuais (Ex: BS-50, fotocélula):</label>
@@ -251,6 +213,8 @@
         </div>
     </header>
 
+    <!-- Fallback sem JavaScript: única via de acesso às categorias principais
+         quando o menu hambúrguer e o mega-menu "Produtos" estão inativos. -->
     <noscript>
       <nav class="no-js-navigation" aria-label="Navegação principal sem JavaScript">
         <ul class="no-js-list">
@@ -275,91 +239,51 @@
             </div>
 
             <nav class="nav-mobile-body" aria-label="Menu móvel">
+
+                <!-- Mesma entrada por problema do painel desktop, em coluna única.
+                     Sem acordeão: com os modelos fora do menu não sobrou nada para
+                     expandir, e o acordeão só somaria um toque antes de cada link. -->
+                <div class="megamenu-needs">
+                    <p class="needs-heading">Comece pelo que você precisa</p>
+
+                    <ul class="needs-groups">
+                        <li class="needs-group">
+                            <p class="needs-group-name">
+                                <a href="../sensores-de-movimento">Sensor de movimento</a>
+                            </p>
+                            <p class="needs-group-desc">Acende quando alguém passa.</p>
+                            <ul class="needs-links">
+                                <li><a href="../aplicacoes/caixa-4x2.html">Substituir o interruptor</a></li>
+                                <li><a href="../aplicacoes/teto.html">No teto</a></li>
+                                <li><a href="../aplicacoes/grandes-ambientes.html">Corredores e escadas</a></li>
+                                <li><a href="../aplicacoes/externo.html#situacao-movimento">Área externa</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="needs-group">
+                            <p class="needs-group-name">
+                                <a href="../produto/rele-fotoeletrico.html">Fotocélula</a>
+                            </p>
+                            <p class="needs-group-desc">Acende ao anoitecer, apaga ao amanhecer.</p>
+                            <ul class="needs-links">
+                                <li><a href="../aplicacoes/externo.html#situacao-luminosidade">Iluminação externa e poste</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="needs-group">
+                            <p class="needs-group-name">
+                                <a href="../produto/minuteria-coletiva-mc-1500.html">Minuteria coletiva</a>
+                            </p>
+                            <p class="needs-group-desc">Acende por botão, apaga sozinha.</p>
+                            <ul class="needs-links">
+                                <li><a href="../aplicacoes/minuterias.html">Escadas e áreas comuns</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
                 <ul class="mobile-main-list">
-
-                    <li class="mobile-item-accordion">
-                        <div class="accordion-trigger-group">
-                            <a href="../sensores-de-movimento" class="mobile-link-main">Sensores de Movimento</a>
-                            <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="acc-l1-movimento" aria-label="Expandir famílias de movimento"></button>
-                        </div>
-
-                        <ul id="acc-l1-movimento" class="accordion-panel" hidden>
-                            <li class="mobile-sub-accordion">
-                                <div class="accordion-trigger-group sub-group">
-                                    <a href="../produto/sensor-movimento-infravermelho.html" class="mobile-link-sub">Infravermelho</a>
-                                    <button type="button" class="accordion-sub-toggle" aria-expanded="false" aria-controls="acc-l2-infra" aria-label="Expandir modelos infravermelho"></button>
-                                </div>
-                                <ul id="acc-l2-infra" class="accordion-sub-panel" hidden>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-bs-40.html">BS-40 — caixa 4x2</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-mi-400.html">MI-400 — 4x2, tempo até 12 min</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-sr-03.html">SR-03 — 4x2, chave 3 posições</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-sti-550.html">STI-550 — embutir no forro</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-bs-50.html">BS-50 — teto (sobrepor)</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-mi-500.html">MI-500 — teto, tempo até 12 min</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-bs-70.html">BS-70 — parede, alcance 12 m</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-mi-700.html">MI-700 — parede 12 m, tempo até 12 min</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-me-60.html">ME-60 — externo, parede, poste ou teto coberto</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-me-70.html">ME-70 — externo, parede ou poste</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="mobile-sub-accordion">
-                                <div class="accordion-trigger-group sub-group">
-                                    <a href="../sensores-de-movimento/infravermelho-compacto" class="mobile-link-sub">Infravermelho Compacto</a>
-                                    <button type="button" class="accordion-sub-toggle" aria-expanded="false" aria-controls="acc-l2-compacto" aria-label="Expandir modelos compactos"></button>
-                                </div>
-                                <ul id="acc-l2-compacto" class="accordion-sub-panel" hidden>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-cs-5.html">CS-5 — compacto, teto ou parede</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-infravermelho-tc-5.html">TC-5 — compacto, carga baixa</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="mobile-sub-accordion">
-                                <div class="accordion-trigger-group sub-group">
-                                    <a href="../sensores-de-movimento/doppler" class="mobile-link-sub">Doppler</a>
-                                    <button type="button" class="accordion-sub-toggle" aria-expanded="false" aria-controls="acc-l2-doppler" aria-label="Expandir modelos doppler"></button>
-                                </div>
-                                <ul id="acc-l2-doppler" class="accordion-sub-panel" hidden>
-                                    <li><a href="../produto/sensor-de-movimento-doppler-tkr.html">TKR — 360°, alta sensibilidade</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-doppler-tkt.html">TKT — 360°, carga baixa</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="mobile-sub-accordion">
-                                <div class="accordion-trigger-group sub-group">
-                                    <a href="../produto/sensor-movimento-ultrassonico.html" class="mobile-link-sub">Ultrassônico</a>
-                                    <button type="button" class="accordion-sub-toggle" aria-expanded="false" aria-controls="acc-l2-ultra" aria-label="Expandir modelos ultrassônicos"></button>
-                                </div>
-                                <ul id="acc-l2-ultra" class="accordion-sub-panel" hidden>
-                                    <li><a href="../produto/sensor-de-movimento-ultrassonico-mu-500.html">MU-500 — ambientes fechados até 15 m²</a></li>
-                                    <li><a href="../produto/sensor-de-movimento-ultrassonico-mu-600.html">MU-600 — até 15 m², com fotocélula</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="mobile-item-accordion">
-                        <div class="accordion-trigger-group">
-                            <a href="../produto/rele-fotoeletrico.html" class="mobile-link-main">Fotocélulas</a>
-                            <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="acc-l1-fotocelulas" aria-label="Expandir modelos de fotocélulas"></button>
-                        </div>
-                        <ul id="acc-l1-fotocelulas" class="accordion-panel" hidden>
-                            <li><a href="../produto/rele-fotoeletrico-fc-10.html">FC-10 — relé fotoelétrico compacto</a></li>
-                            <li><a href="../produto/rele-fotoeletrico-fc-15.html">FC-15 — relé fotoelétrico 15 A</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="mobile-item-accordion">
-                        <div class="accordion-trigger-group">
-                            <a href="../produto/minuteria-coletiva-mc-1500.html" class="mobile-link-main">Minuterias</a>
-                            <button type="button" class="accordion-toggle" aria-expanded="false" aria-controls="acc-l1-minuterias" aria-label="Expandir modelos de minuterias"></button>
-                        </div>
-                        <ul id="acc-l1-minuterias" class="accordion-panel" hidden>
-                            <li><a href="../produto/minuteria-coletiva-mc-1500.html">MC-1500 — minuteria coletiva</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="mobile-direct-link"><a href="../suporte">Suporte Técnico & Downloads</a></li>
+                    <li class="mobile-direct-link"><a href="../suporte">Suporte Técnico &amp; Downloads</a></li>
                     <li class="mobile-direct-link"><a href="../institucional">Institucional</a></li>
                     <li class="mobile-direct-link"><a href="../contato">Contato / Onde Comprar</a></li>
                 </ul>
@@ -642,6 +566,6 @@
     </div>
     <script src="../js/whatsapp.js" defer></script>
 
-    <script src="../js/navegacao.js" defer></script>
+    <script src="../js/navegacao.js?v=20260805" defer></script>
 </body>
 </html>

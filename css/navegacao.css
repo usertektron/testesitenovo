@@ -355,68 +355,6 @@
   border-top: 1px solid var(--cor-borda-clara);
 }
 
-/* As regras abaixo (.megamenu-main-hub, .column-heading, .installation-category,
-   .product-links) ainda servem o mega-menu antigo das outras 37 páginas, que
-   segue com a lista de modelos. Remover só depois de replicar a faixa nelas. */
-
-/* link-mãe de destaque, acima dos H3 de família */
-.megamenu-main-hub {
-  display: inline-block;
-  padding-block: var(--espaco-4);
-  margin-bottom: var(--espaco-12);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--cor-branco);
-}
-
-.megamenu-main-hub:hover { text-decoration: underline; }
-
-.product-subgroup + .product-subgroup { margin-top: var(--espaco-24); }
-
-/* Rótulo de família dentro do mega-menu: usa <p>, não <h3> — os headings do
-   painel ficavam antes do H1 da página na ordem do DOM quando o menu abria.
-   line-height/overflow-wrap replicados aqui porque deixou de herdar do
-   seletor genérico h1-h4 do global.css. */
-.column-heading {
-  margin-bottom: var(--espaco-8);
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.25;
-  overflow-wrap: break-word;
-}
-
-.column-heading a { color: var(--cor-branco); }
-.column-heading a:hover { text-decoration: underline; }
-
-/* Rótulo de categoria de instalação dentro do mega-menu: mesma nota acima */
-.installation-category {
-  margin: var(--espaco-16) 0 var(--espaco-4);
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.25;
-  overflow-wrap: break-word;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--cor-texto-suave-escuro);
-  /* rótulo, não link: o cursor de seta evita a tentativa de clique */
-  cursor: default;
-}
-
-.product-links { font-variant-numeric: tabular-nums; }
-
-.product-links a {
-  display: block;
-  padding: var(--espaco-8);
-  border-radius: var(--raio);
-  color: var(--cor-branco);
-  font-size: 0.9375rem;
-}
-
-.product-links a:hover {
-  background: var(--cor-realce-escuro);
-  text-decoration: underline;
-}
-
 /* --------------------------------------------------------------------------
    6. Diálogo mobile
    -------------------------------------------------------------------------- */
@@ -485,113 +423,9 @@
 }
 
 /* --------------------------------------------------------------------------
-   7. Acordeões mobile
+   7. Lista do diálogo mobile
    -------------------------------------------------------------------------- */
 .mobile-main-list > li + li { margin-top: var(--espaco-4); }
-
-.accordion-trigger-group {
-  display: flex;
-  align-items: stretch;
-}
-
-.mobile-link-main {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  min-height: 48px;
-  padding: var(--espaco-12) var(--espaco-8);
-  border-radius: var(--raio);
-  color: var(--cor-branco);
-  font-weight: 600;
-}
-
-.mobile-link-sub {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  min-height: 44px;
-  padding: var(--espaco-8);
-  border-radius: var(--raio);
-  color: var(--cor-branco);
-  font-size: 0.9375rem;
-  font-weight: 600;
-}
-
-.mobile-link-main:hover,
-.mobile-link-sub:hover { text-decoration: underline; }
-
-/* botões de expansão sem texto: chevron desenhado só com bordas */
-.accordion-toggle,
-.accordion-sub-toggle {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 48px;
-  min-height: 44px;
-  border-left: 1px solid var(--cor-borda-clara);
-  border-radius: 0;
-  color: var(--cor-branco);
-}
-
-.accordion-sub-toggle { width: 44px; }
-
-.accordion-toggle:hover,
-.accordion-sub-toggle:hover,
-.accordion-toggle[aria-expanded="true"],
-.accordion-sub-toggle[aria-expanded="true"] {
-  background: var(--cor-realce-escuro);
-}
-
-.accordion-toggle::before,
-.accordion-sub-toggle::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  translate: 0 -2px;
-  rotate: 45deg; /* aponta para baixo */
-  transition:
-    rotate var(--transicao-rapida),
-    translate var(--transicao-rapida);
-}
-
-.accordion-toggle[aria-expanded="true"]::before,
-.accordion-sub-toggle[aria-expanded="true"]::before {
-  translate: 0 2px;
-  rotate: 225deg; /* aponta para cima */
-}
-
-/* painéis: recuo + borda distinguem os níveis sem depender de cor */
-.accordion-panel {
-  margin: var(--espaco-4) 0 var(--espaco-8) var(--espaco-8);
-  padding-left: var(--espaco-8);
-  border-left: 2px solid var(--cor-borda-clara);
-}
-
-.accordion-sub-panel {
-  margin: var(--espaco-4) 0 var(--espaco-8) var(--espaco-8);
-  padding-left: var(--espaco-8);
-  border-left: 2px solid rgb(255 255 255 / 10%);
-}
-
-/* links diretos de modelo dentro dos painéis (1º e 2º nível) */
-.accordion-panel > li > a,
-.accordion-sub-panel a {
-  display: flex;
-  align-items: center;
-  min-height: 44px;
-  padding: var(--espaco-8);
-  border-radius: var(--raio);
-  color: var(--cor-branco);
-  font-size: 0.9375rem;
-}
-
-.accordion-panel > li > a:hover,
-.accordion-sub-panel a:hover {
-  background: var(--cor-realce-escuro);
-  text-decoration: underline;
-}
 
 /* links simples (Suporte, Institucional, Contato) */
 .mobile-direct-link a {
@@ -605,13 +439,6 @@
 }
 
 .mobile-direct-link a:hover { text-decoration: underline; }
-
-/* divisória única entre o bloco de produtos e os links simples */
-.mobile-item-accordion + .mobile-direct-link {
-  margin-top: var(--espaco-12);
-  padding-top: var(--espaco-8);
-  border-top: 1px solid var(--cor-borda-clara);
-}
 
 /* --------------------------------------------------------------------------
    8. Rodapé

@@ -62,44 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         body.style.overflow = '';
         btnAbrirMobile.setAttribute('aria-expanded', 'false');
         btnAbrirMobile.focus();
-
-        // Reset completo e recolhimento de TODOS os acordeões internos ao fechar o diálogo
-        document.querySelectorAll('.accordion-toggle, .accordion-sub-toggle').forEach(btn => {
-            btn.setAttribute('aria-expanded', 'false');
-        });
-        document.querySelectorAll('.accordion-panel, .accordion-sub-panel').forEach(panel => {
-            panel.hidden = true;
-        });
+        // Não há estado interno a resetar: o diálogo não tem nível de expansão
+        // desde a revisão de 2026-08-04 (estrutura-navegacao §7).
     });
-
-
-    // ACORDEÕES MOBILE
-    function setupAccordion(toggleClassName) {
-        const toggles = document.querySelectorAll(toggleClassName);
-        toggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const panelId = toggle.getAttribute('aria-controls');
-                const panel = document.getElementById(panelId);
-                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-
-                const parent = toggle.closest('ul');
-                const siblingToggles = parent.querySelectorAll(toggleClassName);
-                siblingToggles.forEach(sib => {
-                    if (sib !== toggle) {
-                        sib.setAttribute('aria-expanded', 'false');
-                        const sibPanel = document.getElementById(sib.getAttribute('aria-controls'));
-                        if(sibPanel) sibPanel.hidden = true;
-                    }
-                });
-
-                toggle.setAttribute('aria-expanded', !isExpanded);
-                panel.hidden = isExpanded;
-            });
-        });
-    }
-
-    setupAccordion('.accordion-toggle');
-    setupAccordion('.accordion-sub-toggle');
 
 
     // UNIFIED BREAKPOINT RESET
