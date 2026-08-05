@@ -338,6 +338,23 @@
   text-underline-offset: 4px;
 }
 
+/* A mesma faixa serve o diálogo mobile, em coluna única e com os botões de
+   situação em largura cheia — alvo maior no toque (diretrizes §4.1, ≥44 px;
+   o diálogo usa 48 px nos links diretos). */
+.menu-mobile-dialog .needs-groups { grid-template-columns: 1fr; }
+
+.menu-mobile-dialog .needs-links { flex-direction: column; }
+
+.menu-mobile-dialog .needs-links a { min-height: 48px; }
+
+/* divisória entre o bloco de produtos e os links simples do diálogo,
+   equivalente à que existia depois do último acordeão */
+.menu-mobile-dialog .megamenu-needs + .mobile-main-list {
+  margin-top: var(--espaco-12);
+  padding-top: var(--espaco-8);
+  border-top: 1px solid var(--cor-borda-clara);
+}
+
 /* As regras abaixo (.megamenu-main-hub, .column-heading, .installation-category,
    .product-links) ainda servem o mega-menu antigo das outras 37 páginas, que
    segue com a lista de modelos. Remover só depois de replicar a faixa nelas. */
