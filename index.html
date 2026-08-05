@@ -28,7 +28,7 @@
     <!-- Preload da Fonte Inter Variable (Pesos 400, 600, 700 controlados via CSS) — Diretriz §2 -->
     <link rel="preload" href="fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/global.css?v=20260721">
-    <link rel="stylesheet" href="css/navegacao.css?v=20260721">
+    <link rel="stylesheet" href="css/navegacao.css?v=20260804e">
     <link rel="stylesheet" href="css/home.css?v=20260721">
 
     <!-- Fallback sem JavaScript: esconde os controles que ficariam inativos
@@ -130,97 +130,53 @@
                             <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
                         
-                        <!-- PAINEL DO MEGA-MENU (DESKTOP) -->
+                        <!-- PAINEL DO MEGA-MENU (DESKTOP)
+                             Entrada por problema apenas, decidido em 2026-08-04 após teste com
+                             usuários leigos: o cliente típico navega para encontrar, não sabendo o
+                             modelo. A lista de modelos foi retirada do painel — quem já sabe o código
+                             chega pela busca do cabeçalho (índice conferido, estrutura-navegacao §1.1).
+                             Canônico §7.10 (divulgação progressiva), §7.5 (Lei de Hick), §11. -->
                         <div id="painel-produtos-desktop" class="megamenu-panel" aria-labelledby="btn-produtos-desktop" hidden>
                             <div class="megamenu-container">
                                 <p class="visually-hidden">Categorias de Produtos Tektron</p>
-                                
-                                <!-- Coluna 1: Hierarquia Corrigida (Link de Destaque + H3 Família + H4 Instalação) -->
-                                <div class="megamenu-column">
-                                    <!-- "Sensores de Movimento" agora atua estritamente como link-mãe de destaque (Sem Heading) -->
-                                    <a href="sensores-de-movimento" class="megamenu-main-hub">Sensores de Movimento</a>
-                                    
-                                    <div class="product-subgroup">
-                                        <!-- Família Infravermelho mapeada como H3 real -->
-                                        <p class="column-heading">
-                                            <a href="produto/sensor-movimento-infravermelho.html">Infravermelho</a>
-                                        </p>
-                                        
-                                        <p class="installation-category">Caixa 4x2</p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-bs-40.html">BS-40 — caixa 4x2</a></li>
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-mi-400.html">MI-400 — 4x2, tempo até 12 min</a></li>
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-sr-03.html">SR-03 — 4x2, chave 3 posições</a></li>
-                                        </ul>
 
-                                        <p class="installation-category">Forro</p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-sti-550.html">STI-550 — embutir no forro</a></li>
-                                        </ul>
+                                <div class="megamenu-needs">
+                                    <p class="needs-heading">Comece pelo que você precisa</p>
 
-                                        <p class="installation-category">Teto</p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-bs-50.html">BS-50 — teto (sobrepor)</a></li>
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-mi-500.html">MI-500 — teto, tempo até 12 min</a></li>
-                                        </ul>
+                                    <ul class="needs-groups">
+                                        <li class="needs-group">
+                                            <p class="needs-group-name">
+                                                <a href="sensores-de-movimento">Sensor de movimento</a>
+                                            </p>
+                                            <p class="needs-group-desc">Acende quando alguém passa.</p>
+                                            <ul class="needs-links">
+                                                <li><a href="aplicacoes/caixa-4x2.html">Substituir o interruptor</a></li>
+                                                <li><a href="aplicacoes/teto.html">No teto</a></li>
+                                                <li><a href="aplicacoes/grandes-ambientes.html">Corredores e escadas</a></li>
+                                                <li><a href="aplicacoes/externo.html#situacao-movimento">Área externa</a></li>
+                                            </ul>
+                                        </li>
 
-                                        <p class="installation-category">Parede</p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-bs-70.html">BS-70 — parede, alcance 12 m</a></li>
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-mi-700.html">MI-700 — parede 12 m, tempo até 12 min</a></li>
-                                        </ul>
+                                        <li class="needs-group">
+                                            <p class="needs-group-name">
+                                                <a href="produto/rele-fotoeletrico.html">Fotocélula</a>
+                                            </p>
+                                            <p class="needs-group-desc">Acende ao anoitecer, apaga ao amanhecer.</p>
+                                            <ul class="needs-links">
+                                                <li><a href="aplicacoes/externo.html#situacao-luminosidade">Iluminação externa e poste</a></li>
+                                            </ul>
+                                        </li>
 
-                                        <p class="installation-category">Uso externo</p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-me-60.html">ME-60 — externo, parede, poste ou teto coberto</a></li>
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-me-70.html">ME-70 — externo, parede ou poste</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Coluna 2: Outras Tecnologias (Hierarquizadas como H3) -->
-                                <div class="megamenu-column">
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="sensores-de-movimento/infravermelho-compacto">Infravermelho Compacto</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-cs-5.html">CS-5 — compacto, teto ou parede</a></li>
-                                            <li><a href="produto/sensor-de-movimento-infravermelho-tc-5.html">TC-5 — compacto, carga baixa</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="sensores-de-movimento/doppler">Doppler</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/sensor-de-movimento-doppler-tkr.html">TKR — 360°, alta sensibilidade</a></li>
-                                            <li><a href="produto/sensor-de-movimento-doppler-tkt.html">TKT — 360°, carga baixa</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="produto/sensor-movimento-ultrassonico.html">Ultrassônico</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/sensor-de-movimento-ultrassonico-mu-500.html">MU-500 — ambientes fechados até 15 m²</a></li>
-                                            <li><a href="produto/sensor-de-movimento-ultrassonico-mu-600.html">MU-600 — até 15 m², com fotocélula</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Coluna 3: Categorias Irmãs (Hierarquizadas como H3) -->
-                                <div class="megamenu-column">
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="produto/rele-fotoeletrico.html">Fotocélulas</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/rele-fotoeletrico-fc-10.html">FC-10 — relé fotoelétrico compacto</a></li>
-                                            <li><a href="produto/rele-fotoeletrico-fc-15.html">FC-15 — relé fotoelétrico 15 A</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="product-subgroup">
-                                        <p class="column-heading"><a href="produto/minuteria-coletiva-mc-1500.html">Minuterias</a></p>
-                                        <ul class="product-links">
-                                            <li><a href="produto/minuteria-coletiva-mc-1500.html">MC-1500 — minuteria coletiva</a></li>
-                                        </ul>
-                                    </div>
+                                        <li class="needs-group">
+                                            <p class="needs-group-name">
+                                                <a href="produto/minuteria-coletiva-mc-1500.html">Minuteria coletiva</a>
+                                            </p>
+                                            <p class="needs-group-desc">Acende por botão, apaga sozinha.</p>
+                                            <ul class="needs-links">
+                                                <li><a href="aplicacoes/minuterias.html">Escadas e áreas comuns</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
 
                             </div>
@@ -561,6 +517,6 @@
 
     <!-- LOGICA DE COMPORTAMENTO -->
     <script src="js/whatsapp.js" defer></script>
-    <script src="js/navegacao.js" defer></script>
+    <script src="js/navegacao.js?v=20260804" defer></script>
 </body>
 </html>

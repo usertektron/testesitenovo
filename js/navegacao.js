@@ -29,8 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Correção de Focus Out Global (Englobando botão + painel para Shift+Tab)
+    // relatedTarget nulo significa que o foco não foi para outro elemento focável:
+    // é o caso de clicar num rótulo não-clicável dentro do painel ("Caixa 4x2",
+    // "Teto", as frases de apoio da faixa). Fechar aí faz o menu sumir debaixo do
+    // cursor de quem está lendo. O fechamento por clique fora já é tratado pelo
+    // handler de click acima; a navegação por Tab sempre entrega um relatedTarget
+    // real, então a regra da §2.5 ("foco sai do conjunto → fecha") continua valendo.
     produtosNavItem.addEventListener('focusout', (event) => {
-        if (!produtosNavItem.contains(event.relatedTarget)) {
+        if (event.relatedTarget && !produtosNavItem.contains(event.relatedTarget)) {
             toggleDesktopMenu(false);
         }
     });

@@ -228,6 +228,120 @@
   padding: var(--espaco-32) var(--margem-lateral) var(--espaco-48);
 }
 
+/* --------------------------------------------------------------------------
+   5.1 Faixa "Comece pelo que você precisa" — único conteúdo do painel
+   A lista de modelos saiu do mega-menu em 2026-08-04: o cliente típico navega
+   para encontrar, não sabendo o código, e quem já sabe usa a busca do
+   cabeçalho. Canônico §7.10 (divulgação progressiva), §7.5 (Lei de Hick).
+   -------------------------------------------------------------------------- */
+.megamenu-needs { grid-column: 1 / -1; }
+
+.needs-heading {
+  margin-bottom: var(--espaco-16);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave-escuro);
+  cursor: default;
+}
+
+.needs-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--espaco-16);
+}
+
+/* o card estica até a altura da linha, como em .need-cards da home */
+.needs-groups > li { display: flex; }
+
+/* Caixa delimitada, não botão clicável: "Sensor de movimento" tem cinco ações
+   internas, e diretrizes §4.3 veta card inteiro clicável nesse caso. A borda
+   agrupa (§4: borda é o elemento estrutural principal); quem clica é o título
+   ou um dos botões de situação. */
+.needs-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--espaco-16);
+  background: var(--cor-realce-escuro);
+  border: 1px solid var(--cor-borda-clara);
+  border-radius: var(--raio);
+}
+
+.needs-group-name {
+  margin-bottom: var(--espaco-4);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+.needs-group-name a { color: var(--cor-branco); }
+
+/* Amarelo da marca como cor de estado sobre grafite (diretrizes §1: "marcador
+   ativo e realce sobre grafite"). Só o sublinhado recebe a cor — o texto segue
+   branco (15,96:1) e o amarelo nunca vira o único sinal. Deliberadamente um
+   sublinhado, não um contorno: o anel de foco também é amarelo, e os dois
+   estados precisam continuar distinguíveis. */
+.needs-group-name a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--cor-marca-amarelo);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+/* a frase do que o produto faz é apoio, não alvo clicável */
+.needs-group-desc {
+  max-width: 42ch;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--cor-texto-suave-escuro);
+  cursor: default;
+}
+
+/* empurra os botões para a base do card, alinhando-os entre as três colunas */
+.needs-links {
+  margin-top: auto;
+  padding-top: var(--espaco-16);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-8);
+}
+
+/* alvo de 44 px de altura: o leigo entra por aqui, é o caminho principal */
+.needs-links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--espaco-8) var(--espaco-12);
+  border: 1px solid var(--cor-borda-clara);
+  border-radius: var(--raio);
+  color: var(--cor-branco);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: background var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+/* três sinais somados no hover: fundo, borda e sublinhado amarelo — a cor
+   reforça, mas nada depende só dela (diretrizes §1).
+   12% (e não --cor-realce-escuro, 8%) porque o card já usa os 8%: o hover
+   precisa clarear acima da superfície onde o botão está, não igualá-la.
+   Mesmo valor já usado em .search-submit:hover. */
+.needs-links a:hover {
+  background: rgb(255 255 255 / 12%);
+  border-color: var(--cor-branco);
+  text-decoration: underline;
+  text-decoration-color: var(--cor-marca-amarelo);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+/* As regras abaixo (.megamenu-main-hub, .column-heading, .installation-category,
+   .product-links) ainda servem o mega-menu antigo das outras 37 páginas, que
+   segue com a lista de modelos. Remover só depois de replicar a faixa nelas. */
+
 /* link-mãe de destaque, acima dos H3 de família */
 .megamenu-main-hub {
   display: inline-block;
@@ -267,6 +381,8 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--cor-texto-suave-escuro);
+  /* rótulo, não link: o cursor de seta evita a tentativa de clique */
+  cursor: default;
 }
 
 .product-links { font-variant-numeric: tabular-nums; }
