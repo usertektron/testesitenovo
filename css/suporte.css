@@ -1,0 +1,131 @@
+/* ==========================================================================
+   suporte.css — Suporte Técnico & Downloads (suporte/)
+   --------------------------------------------------------------------------
+   A página trocou prosa por pontos de entrada: cards do que existe hoje e
+   FAQ recolhida. Só tokens de global.css; nenhuma cor literal.
+
+   Carregado apenas por suporte/index.html — global.css e navegacao.css não
+   foram tocados, portanto os `?v=` das demais páginas seguem inalterados.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Cards de entrada
+   -------------------------------------------------------------------------- */
+.cards-suporte {
+  gap: var(--espaco-16);
+}
+
+.cards-suporte .spec-card {
+  gap: var(--espaco-12);
+}
+
+/* o título do card não é link: o card pode conter vários destinos
+   (ex.: as três famílias em "Especificações") ou um formulário */
+.cards-suporte .spec-card-name {
+  font-weight: 700;
+}
+
+.cards-suporte .spec-card-desc {
+  flex: 1; /* alinha as ações na base, com cards de alturas diferentes */
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-8) var(--espaco-16);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.card-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--cor-marca-vermelho);
+}
+
+/* busca por código dentro do card — mesmo destino da busca do cabeçalho */
+.busca-suporte .search-input-group {
+  display: flex;
+  gap: var(--espaco-8);
+}
+
+.busca-suporte input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: var(--espaco-8) var(--espaco-12);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font: inherit;
+  font-size: 1rem; /* < 16px faz o iOS dar zoom ao focar o campo */
+}
+
+.busca-suporte button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--espaco-12);
+  background: var(--cor-grafite);
+  color: var(--cor-branco);
+  border: none;
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+
+.busca-suporte button:hover {
+  background: var(--cor-marca-vermelho);
+}
+
+/* --------------------------------------------------------------------------
+   2. FAQ recolhida
+   -------------------------------------------------------------------------- */
+.faq-recolhida {
+  margin-top: var(--espaco-24);
+  border-top: 1px solid var(--cor-borda);
+}
+
+.faq-recolhida details {
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.faq-recolhida summary {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-12);
+  min-height: 44px;
+  padding: var(--espaco-12) 0;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none; /* remove o marcador padrão; o chevron abaixo o substitui */
+}
+
+.faq-recolhida summary::-webkit-details-marker { display: none; }
+
+.faq-recolhida summary::before {
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--cor-marca-vermelho);
+  border-bottom: 2px solid var(--cor-marca-vermelho);
+  transform: rotate(-45deg);
+  transition: transform var(--transicao-rapida);
+}
+
+.faq-recolhida details[open] summary::before {
+  transform: rotate(45deg);
+}
+
+.faq-recolhida summary:focus-visible {
+  outline: 3px solid var(--cor-marca-vermelho);
+  outline-offset: 2px;
+}
+
+.faq-recolhida .faq-resposta {
+  padding: 0 0 var(--espaco-16) var(--espaco-24);
+  max-width: 70ch;
+  font-size: 0.9375rem;
+}

@@ -1,0 +1,248 @@
+/* ==========================================================================
+   comunicados.css — Comunicados técnicos (suporte/comunicados/)
+   --------------------------------------------------------------------------
+   Usa apenas os tokens de global.css. Nenhuma cor literal: o comunicado
+   impresso (A4) usa azul #003B73, que não faz parte da paleta do site
+   (diretrizes-visuais.md §1) — na web o mesmo conteúdo é apresentado em
+   grafite + vermelho de marca.
+
+   Carregado só pelas páginas de comunicado; global.css e navegacao.css não
+   foram tocados, portanto os `?v=` deles seguem inalterados.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Cabeçalho do comunicado
+   -------------------------------------------------------------------------- */
+.comunicado-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-8) var(--espaco-16);
+  margin-bottom: var(--espaco-12);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-marca-vermelho);
+}
+
+.comunicado-meta .meta-data {
+  color: var(--cor-grafite);
+  opacity: 0.75;
+  letter-spacing: 0.04em;
+}
+
+/* resumo do que mudou e do que permaneceu igual */
+.comunicado-resumo {
+  margin-top: var(--espaco-24);
+  padding: var(--espaco-16) var(--espaco-24);
+  background: var(--cor-fundo-tecnico);
+  border-left: 4px solid var(--cor-marca-vermelho);
+  border-radius: 0 var(--raio) var(--raio) 0;
+}
+
+.comunicado-resumo p + p {
+  margin-top: var(--espaco-12);
+}
+
+/* --------------------------------------------------------------------------
+   2. Comparativo antes / agora
+   -------------------------------------------------------------------------- */
+.antes-depois {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-24);
+  margin-top: var(--espaco-24);
+}
+
+@media (min-width: 48rem) {
+  .antes-depois { grid-template-columns: repeat(2, 1fr); }
+}
+
+.antes-depois figure {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+.ad-faixa {
+  padding: var(--espaco-8) var(--espaco-16);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-branco);
+  background: var(--cor-grafite);
+}
+
+.ad-faixa.e-atual {
+  background: var(--cor-marca-vermelho);
+}
+
+.antes-depois img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.antes-depois figcaption {
+  padding: var(--espaco-16);
+  font-size: 0.9375rem;
+}
+
+/* pilha de vistas do mesmo produto (perspectiva, frente, traseira) —
+   cada arquivo já vem na proporção em que é exibido, sem corte */
+.vistas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-8);
+  padding: var(--espaco-16) var(--espaco-16) 0;
+}
+
+.vistas img {
+  width: 100%;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  aspect-ratio: auto;
+  object-fit: fill;
+}
+
+.antes-depois .vistas + figcaption .spec-list {
+  margin-top: var(--espaco-8);
+}
+
+/* --------------------------------------------------------------------------
+   3. Passos de instalação
+   -------------------------------------------------------------------------- */
+.passos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-16);
+  margin-top: var(--espaco-24);
+  counter-reset: passo;
+}
+
+@media (min-width: 48rem) {
+  .passos { grid-template-columns: repeat(3, 1fr); }
+}
+
+.passos li {
+  display: flex;
+  gap: var(--espaco-16);
+  align-items: flex-start;
+  padding: var(--espaco-16);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 0.9375rem;
+}
+
+.passos li::before {
+  counter-increment: passo;
+  content: counter(passo);
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--cor-grafite);
+  color: var(--cor-branco);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   4. Blocos de destaque
+   -------------------------------------------------------------------------- */
+.destaque-tecnico {
+  margin-top: var(--espaco-24);
+  padding: var(--espaco-16) var(--espaco-24);
+  background: var(--cor-fundo-tecnico);
+  border-radius: var(--raio);
+}
+
+.bloco-importante {
+  margin-top: var(--espaco-32);
+  padding: var(--espaco-24);
+  background: var(--cor-grafite);
+  color: var(--cor-branco);
+  border-radius: var(--raio);
+}
+
+.bloco-importante h3 {
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.bloco-importante ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-12);
+  margin-top: var(--espaco-16);
+}
+
+.bloco-importante li {
+  display: flex;
+  gap: var(--espaco-12);
+  align-items: flex-start;
+  font-size: 0.9375rem;
+}
+
+/* o amarelo de marca só aparece sobre o grafite — nunca sobre fundo claro
+   (global.css §1, token --cor-marca-amarelo) */
+.bloco-importante svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  color: var(--cor-marca-amarelo);
+}
+
+/* --------------------------------------------------------------------------
+   5. Índice de comunicados
+   -------------------------------------------------------------------------- */
+.comunicado-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-16);
+  margin-top: var(--espaco-24);
+}
+
+.comunicado-lista li {
+  padding: var(--espaco-16);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.comunicado-item-titulo {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.comunicado-item-titulo a {
+  color: var(--cor-marca-vermelho);
+}
+
+.comunicado-item-modelos {
+  margin-top: var(--espaco-8);
+  font-size: 0.9375rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Ações (download do PDF, links de produto)
+   -------------------------------------------------------------------------- */
+.comunicado-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-16);
+  margin-top: var(--espaco-24);
+}
+
+.arquivo-detalhe {
+  margin-top: var(--espaco-8);
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
