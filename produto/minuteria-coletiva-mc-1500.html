@@ -313,10 +313,15 @@
                     </p>
                 </div>
 
-                <!-- Foto real do site antigo (mc1500.jpg), fundo retocado para o cinza técnico do projeto. -->
+                <!-- Foto do hardware atual, extraída de Arquivos/MC1500teste.drawio (PNG 1200×503,
+                     origem preservada em Arquivos/Midia/MC-1500/). Substituiu em 2026-08-10 a foto
+                     do site antigo, que mostrava a geração anterior — botão seletor com 7 LEDs, sem
+                     chave dip, contradizendo o texto desta página. O "3 M" da etiqueta era erro de
+                     edição da foto e foi corrigido para "2 M", copiando o "2" do cabeçalho da própria
+                     etiqueta; a versão sem correção está preservada ao lado da origem. -->
                 <figure class="hero-media">
                     <img src="../assets/images/aplicacoes/minuterias/mc-1500-frontal.webp"
-                         alt="Minuteria coletiva MC-1500, vista frontal"
+                         alt="Minuteria coletiva MC-1500, vista frontal, com a chave dip de 3 pinos e a etiqueta de tempos ao lado"
                          width="1000" height="1000"
                          fetchpriority="high" decoding="async">
                 </figure>
@@ -329,7 +334,7 @@
                             <div><span class="spec-label">Local de instalação</span> Quadro elétrico (tipo disjuntor)</div>
                             <div><span class="spec-label">Acionamento</span> Botão pulsador tipo campainha</div>
                             <div><span class="spec-label">Tensão</span> Bivolt (127 V / 220 V)</div>
-                            <div><span class="spec-label">Temporização</span> 30 s · 2 min · 3,5 min · 5 min (chave dip)</div>
+                            <div><span class="spec-label">Temporização</span> 30 s · 2 min · 3,5 min · 5 min · Permanente (chave dip de 3 pinos)</div>
                             <div><span class="spec-label">Diferencial</span> Anti-travamento do pulsador, com LED</div>
                             <div><span class="spec-label">Cor</span> Cinza</div>
                     </dl>
@@ -354,7 +359,7 @@
                     <div class="spec-card">
                         <h3 class="spec-card-name">Temporização</h3>
                         <dl class="spec-list">
-                            <div><span class="spec-label">Tempos selecionáveis</span> 30 s · 2 min · 3,5 min · 5 min (chave dip)</div>
+                            <div><span class="spec-label">Tempos selecionáveis</span> 30 s · 2 min · 3,5 min · 5 min · Permanente (chave dip de 3 pinos)</div>
                         </dl>
                     </div>
 
@@ -422,7 +427,55 @@
 
             <section class="content-section" aria-labelledby="ajustes-heading">
                 <h2 id="ajustes-heading">Ajustes e funcionamento</h2>
-                <p>A MC-1500 tem 4 tempos de desligamento configuráveis, por chave dip: 30 segundos, 2 minutos, 3,5 minutos e 5 minutos. Um tempo curto demais pode apagar a luz antes que a pessoa termine o trajeto — por exemplo, antes de subir todos os lances de uma escada; um tempo mais longo mantém a iluminação por mais tempo do que o necessário depois que a circulação já terminou. A ligação é compatível com minuterias de outras marcas, mas isso pressupõe uma instalação com a mesma lógica de 4 fios — não presuma compatibilidade com uma quantidade diferente de condutores sem confirmar antes. O sistema anti-travamento do pulsador, com sinalização por LED, evita que a luz fique travada acesa por defeito ou uso indevido de um dos pulsadores do circuito.</p>
+                <p>A MC-1500 tem cinco configurações, escolhidas por uma chave dip de 3 pinos: quatro tempos de desligamento e um modo permanente. As chaves 2 e 3 definem o tempo; a chave 1 liga o modo permanente, em que a luz fica acesa e não desliga sozinha. A chave 1 tem prioridade — com ela ligada, a posição das outras duas não altera o resultado.</p>
+
+                <div class="comparison-table-wrap">
+                    <table class="comparison-table">
+                        <caption>Posições da chave dip e o que cada combinação faz</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Chave 1</th>
+                                <th scope="col">Chave 2</th>
+                                <th scope="col">Chave 3</th>
+                                <th scope="col">Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">ON</th>
+                                <td>indiferente</td>
+                                <td>indiferente</td>
+                                <td>Permanente — a luz não desliga sozinha</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">OFF</th>
+                                <td>ON</td>
+                                <td>ON</td>
+                                <td>30 segundos</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">OFF</th>
+                                <td>ON</td>
+                                <td>OFF</td>
+                                <td>2 minutos</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">OFF</th>
+                                <td>OFF</td>
+                                <td>ON</td>
+                                <td>3,5 minutos</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">OFF</th>
+                                <td>OFF</td>
+                                <td>OFF</td>
+                                <td>5 minutos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Um tempo curto demais pode apagar a luz antes que a pessoa termine o trajeto — por exemplo, antes de subir todos os lances de uma escada; um tempo mais longo mantém a iluminação por mais tempo do que o necessário depois que a circulação já terminou. A ligação é compatível com minuterias de outras marcas, mas isso pressupõe uma instalação com a mesma lógica de 4 fios — não presuma compatibilidade com uma quantidade diferente de condutores sem confirmar antes. O sistema anti-travamento do pulsador, com sinalização por LED, evita que a luz fique travada acesa por defeito ou uso indevido de um dos pulsadores do circuito.</p>
             </section>
 
             <section class="content-section" aria-labelledby="downloads-heading">
