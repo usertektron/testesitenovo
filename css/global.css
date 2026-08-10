@@ -119,6 +119,15 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: var(--fonte-base);
+  /* O Inter troca "x" por "×" quando ele fica entre números (contextual
+     alternates), então "caixa 4x2" chegava na tela como "caixa 4×2" em todo o
+     site — contra a regra de nomes de formato, e sem nada de errado no HTML:
+     são 211 "4x2" com x minúsculo no código, e as 70 dimensões usam o × de
+     verdade. Desligar calt faz a tela mostrar o que o arquivo diz; o × literal
+     das dimensões não depende deste recurso e continua ×.
+     Diagnosticado em 2026-08-10, a partir de um print de celular — o grep não
+     acha, porque a substituição acontece na renderização. */
+  font-feature-settings: "calt" 0;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
@@ -350,9 +359,11 @@ textarea {
   transition: transform var(--transicao-rapida);
 }
 
-.whatsapp-float:hover,
-.whatsapp-float:focus-visible {
-  transform: scale(1.06);
+@media (hover: hover) {
+  .whatsapp-float:hover,
+  .whatsapp-float:focus-visible {
+    transform: scale(1.06);
+  }
 }
 
 .whatsapp-float svg {
@@ -399,7 +410,9 @@ textarea {
   text-decoration: none;
 }
 
-.whatsapp-bubble-link:hover { text-decoration: underline; }
+@media (hover: hover) {
+  .whatsapp-bubble-link:hover { text-decoration: underline; }
+}
 
 .whatsapp-bubble-close {
   position: absolute;

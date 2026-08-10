@@ -75,8 +75,10 @@
   cursor: pointer;
 }
 
-.busca-suporte button:hover {
-  background: var(--cor-marca-vermelho);
+@media (hover: hover) {
+  .busca-suporte button:hover {
+    background: var(--cor-marca-vermelho);
+  }
 }
 
 /* --------------------------------------------------------------------------

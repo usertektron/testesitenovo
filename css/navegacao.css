@@ -87,7 +87,9 @@
   margin-left: auto; /* empurra o botão pra ponta direita da linha 1 */
 }
 
-.menu-hamburger:hover { background: var(--cor-realce-escuro); }
+@media (hover: hover) {
+  .menu-hamburger:hover { background: var(--cor-realce-escuro); }
+}
 
 .hamburger-text {
   font-size: 0.875rem;
@@ -152,7 +154,9 @@
   color: var(--cor-branco);
 }
 
-.search-submit:hover { background: rgb(255 255 255 / 12%); }
+@media (hover: hover) {
+  .search-submit:hover { background: rgb(255 255 255 / 12%); }
+}
 
 /* --------------------------------------------------------------------------
    4. Navegação desktop (oculta no mobile)
@@ -180,10 +184,14 @@
   white-space: nowrap;
 }
 
-.nav-link:hover,
-.menu-toggle:hover { background: var(--cor-realce-escuro); }
+@media (hover: hover) {
+  .nav-link:hover,
+  .menu-toggle:hover { background: var(--cor-realce-escuro); }
+}
 
-.nav-link:hover { text-decoration: underline; }
+@media (hover: hover) {
+  .nav-link:hover { text-decoration: underline; }
+}
 
 /* item/página atual marcado em amarelo (marcador, não texto) */
 .nav-link[aria-current="page"] {
@@ -277,13 +285,15 @@
   font-weight: 600;
 }
 
-.megamenu-todos a:hover {
-  background: rgb(255 255 255 / 12%);
-  border-color: var(--cor-branco);
-  text-decoration: underline;
-  text-decoration-color: var(--cor-marca-amarelo);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 4px;
+@media (hover: hover) {
+  .megamenu-todos a:hover {
+    background: rgb(255 255 255 / 12%);
+    border-color: var(--cor-branco);
+    text-decoration: underline;
+    text-decoration-color: var(--cor-marca-amarelo);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
 }
 
 /* Caixa delimitada, não botão clicável: "Sensor de movimento" tem cinco ações
@@ -310,16 +320,18 @@
 
 .needs-group-name a { color: var(--cor-branco); }
 
-/* Amarelo da marca como cor de estado sobre grafite (diretrizes §1: "marcador
-   ativo e realce sobre grafite"). Só o sublinhado recebe a cor — o texto segue
-   branco (15,96:1) e o amarelo nunca vira o único sinal. Deliberadamente um
-   sublinhado, não um contorno: o anel de foco também é amarelo, e os dois
-   estados precisam continuar distinguíveis. */
-.needs-group-name a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--cor-marca-amarelo);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 4px;
+@media (hover: hover) {
+  /* Amarelo da marca como cor de estado sobre grafite (diretrizes §1: "marcador
+     ativo e realce sobre grafite"). Só o sublinhado recebe a cor — o texto segue
+     branco (15,96:1) e o amarelo nunca vira o único sinal. Deliberadamente um
+     sublinhado, não um contorno: o anel de foco também é amarelo, e os dois
+     estados precisam continuar distinguíveis. */
+  .needs-group-name a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--cor-marca-amarelo);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
 }
 
 /* a frase do que o produto faz é apoio, não alvo clicável */
@@ -354,18 +366,20 @@
   transition: background var(--transicao-rapida), border-color var(--transicao-rapida);
 }
 
-/* três sinais somados no hover: fundo, borda e sublinhado amarelo — a cor
-   reforça, mas nada depende só dela (diretrizes §1).
-   12% (e não --cor-realce-escuro, 8%) porque o card já usa os 8%: o hover
-   precisa clarear acima da superfície onde o botão está, não igualá-la.
-   Mesmo valor já usado em .search-submit:hover. */
-.needs-links a:hover {
-  background: rgb(255 255 255 / 12%);
-  border-color: var(--cor-branco);
-  text-decoration: underline;
-  text-decoration-color: var(--cor-marca-amarelo);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 4px;
+@media (hover: hover) {
+  /* três sinais somados no hover: fundo, borda e sublinhado amarelo — a cor
+     reforça, mas nada depende só dela (diretrizes §1).
+     12% (e não --cor-realce-escuro, 8%) porque o card já usa os 8%: o hover
+     precisa clarear acima da superfície onde o botão está, não igualá-la.
+     Mesmo valor já usado em .search-submit:hover. */
+  .needs-links a:hover {
+    background: rgb(255 255 255 / 12%);
+    border-color: var(--cor-branco);
+    text-decoration: underline;
+    text-decoration-color: var(--cor-marca-amarelo);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
 }
 
 /* A mesma faixa serve o diálogo mobile, em coluna única e com os botões de
@@ -442,7 +456,9 @@
   color: var(--cor-branco);
 }
 
-.btn-close-dialog:hover { background: var(--cor-realce-escuro); }
+@media (hover: hover) {
+  .btn-close-dialog:hover { background: var(--cor-realce-escuro); }
+}
 
 .nav-mobile-body {
   flex: 1 1 auto;
@@ -468,7 +484,9 @@
   font-weight: 600;
 }
 
-.mobile-direct-link a:hover { text-decoration: underline; }
+@media (hover: hover) {
+  .mobile-direct-link a:hover { text-decoration: underline; }
+}
 
 /* --------------------------------------------------------------------------
    8. Rodapé
@@ -518,8 +536,10 @@
   color: var(--cor-branco);
 }
 
-.footer-links a:hover,
-.footer-links a:focus-visible { text-decoration: underline; }
+@media (hover: hover) {
+  .footer-links a:hover,
+  .footer-links a:focus-visible { text-decoration: underline; }
+}
 
 .footer-divider {
   margin: var(--espaco-32) 0 var(--espaco-24);

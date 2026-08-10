@@ -30,7 +30,9 @@
   border-radius: var(--raio);
 }
 
-.btn-primary:hover { background: var(--cor-vermelho-escuro); }
+@media (hover: hover) {
+  .btn-primary:hover { background: var(--cor-vermelho-escuro); }
+}
 
 /* --------------------------------------------------------------------------
    2. Hero — linhas de apoio
@@ -92,9 +94,11 @@
   transition: border-color var(--transicao-rapida), background var(--transicao-rapida);
 }
 
-.need-card:hover {
-  border-color: var(--cor-marca-vermelho);
-  background: var(--cor-fundo-tecnico);
+@media (hover: hover) {
+  .need-card:hover {
+    border-color: var(--cor-marca-vermelho);
+    background: var(--cor-fundo-tecnico);
+  }
 }
 
 /* sublinhado no nome do ambiente: marca o alvo clicável sem depender só de cor */
@@ -475,9 +479,11 @@
   transition: background var(--transicao-rapida), border-color var(--transicao-rapida);
 }
 
-.btn-secondary:hover {
-  background: var(--cor-fundo-tecnico);
-  border-color: var(--cor-marca-vermelho);
+@media (hover: hover) {
+  .btn-secondary:hover {
+    background: var(--cor-fundo-tecnico);
+    border-color: var(--cor-marca-vermelho);
+  }
 }
 
 /* --------------------------------------------------------------------------
