@@ -23,7 +23,7 @@
     <link rel="preload" href="../fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/global.css?v=20260721">
     <link rel="stylesheet" href="../css/navegacao.css?v=20260805">
-    <link rel="stylesheet" href="../css/home.css?v=20260721">
+    <link rel="stylesheet" href="../css/home.css?v=20260810">
 
     <noscript>
       <style>
@@ -375,7 +375,7 @@
                         <h3 class="spec-card-name">Construção</h3>
                         <dl class="spec-list">
                             <div><span class="spec-label">Cor</span> Cinza</div>
-                            <div><span class="spec-label">LED indicador</span> Sim (Pulsador Acionado)</div>
+                            <div><span class="spec-label">LED indicador</span> Sim (Fase no fio do pulsador)</div>
                         </dl>
                     </div>
 
@@ -410,16 +410,17 @@
                     <div><span class="spec-label">Fase</span> vermelho</div>
                     <div><span class="spec-label">Neutro (127 V) ou 2ª fase (220 V)</span> preto</div>
                     <div><span class="spec-label">Retorno para a lâmpada</span> verde</div>
-                    <div><span class="spec-label">Pulsador</span> branco</div>
+                    <div><span class="spec-label">Pulsador</span> branco — alimentado com fase; o retorno da lâmpada também é aceito</div>
                 </dl>
+                <p>A forma padrão de ligar o fio branco, do pulsador, é pela fase — é o que mostra o diagrama de ligação, e é por ele que a instalação deve ser feita. Existe uma exceção: o pulsador alimentado pelo retorno da lâmpada também funciona. Isso vale para a substituição de uma minuteria de outra marca — encontrando o pulsador já ligado dessa forma, não é preciso refazer a fiação para levá-lo à fase.</p>
+
                 <p>Cuidados essenciais:</p>
                 <ul>
                     <li>Desenergize o circuito antes de instalar — nunca instale com o circuito energizado.</li>
                     <li>Confira a tensão (127 V ou 220 V) e a potência da carga: até 200 W em 127 V ou 350 W em 220 V.</li>
-                    <li>A MC-1500 tem fusível de proteção de 10 A.</li>
+                    <li>A MC-1500 tem fusível de proteção de 10 A, de vidro, com 20 mm de corpo — o mesmo formato usado em filtros de linha. Para repor, confira o formato além da corrente: 10 A existe em mais de um tipo de corpo.</li>
                     <li>Antes de substituir uma minuteria antiga, identifique quantos condutores chegam ao ponto e qual a função de cada um — a MC-1500 pressupõe uma instalação com a mesma lógica de 4 fios.</li>
                     <li>Em caso de dúvida sobre a fiação existente, confirme o circuito com um eletricista ou com o suporte técnico antes de prosseguir com a substituição.</li>
-                    <li>Instale com os fios para baixo formando uma pingadeira, evitando a entrada de água.</li>
                     <li>Respeite o diagrama de ligação oficial do modelo.</li>
                 </ul>
             </section>
@@ -475,7 +476,7 @@
                     </table>
                 </div>
 
-                <p>Um tempo curto demais pode apagar a luz antes que a pessoa termine o trajeto — por exemplo, antes de subir todos os lances de uma escada; um tempo mais longo mantém a iluminação por mais tempo do que o necessário depois que a circulação já terminou. A ligação é compatível com minuterias de outras marcas, mas isso pressupõe uma instalação com a mesma lógica de 4 fios — não presuma compatibilidade com uma quantidade diferente de condutores sem confirmar antes. O sistema anti-travamento do pulsador, com sinalização por LED, evita que a luz fique travada acesa por defeito ou uso indevido de um dos pulsadores do circuito.</p>
+                <p>O ajuste é feito por chave física, e não por programação eletrônica: a posição das chaves não se perde na falta de energia. Depois de uma queda de luz, a minuteria volta com o mesmo tempo que estava configurado, sem precisar reprogramar nada. Um tempo curto demais pode apagar a luz antes que a pessoa termine o trajeto — por exemplo, antes de subir todos os lances de uma escada; um tempo mais longo mantém a iluminação por mais tempo do que o necessário depois que a circulação já terminou. A ligação é compatível com minuterias de outras marcas, mas isso pressupõe uma instalação com a mesma lógica de 4 fios — não presuma compatibilidade com uma quantidade diferente de condutores sem confirmar antes. O sistema anti-travamento do pulsador, com sinalização por LED, evita que a luz fique travada acesa por defeito ou uso indevido de um dos pulsadores do circuito. O LED acende sempre que chega fase no fio do pulsador — ou seja, ele mostra que o comando saiu do botão e chegou até a minuteria. Isso ajuda no diagnóstico: se a luz não acende, apertar o pulsador e observar o LED separa as duas causas possíveis — LED apagado indica que o sinal não está chegando (problema no pulsador ou na fiação até ele); LED aceso indica que o comando chegou e o problema está adiante, na minuteria ou no circuito da lâmpada.</p>
             </section>
 
             <section class="content-section" aria-labelledby="downloads-heading">
@@ -484,7 +485,7 @@
                 <p class="comunicado-acoes">
                     <a href="../assets/downloads/ficha-tecnica-mc-1500.pdf" class="btn-primary" download>Baixar ficha técnica (PDF)</a>
                 </p>
-                <p class="arquivo-detalhe">PDF · 1 página · 277 KB</p>
+                <p class="arquivo-detalhe">PDF · 1 página · 278 KB</p>
                 <p>O manual de instalação e o desenho dimensional do MC-1500 estão sendo preparados e serão disponibilizados nesta seção.</p>
             </section>
 
@@ -512,6 +513,15 @@
 
                     <dt>A MC-1500 é compatível com a fiação de uma minuteria antiga?</dt>
                     <dd>A ligação é compatível com minuterias de outras marcas, mas isso pressupõe uma instalação com a mesma lógica de 4 fios (fase, neutro/2ª fase, retorno para a lâmpada e pulsador). Antes de substituir, identifique quantos condutores chegam ao ponto — em caso de dúvida, confirme o circuito com um eletricista ou com o suporte técnico.</dd>
+                    <dt>A MC-1500 perde o ajuste de tempo quando falta energia?</dt>
+                    <dd>Não. O tempo é definido pela posição de uma chave dip, uma chave física dentro do produto — não é uma programação eletrônica que precise ser guardada. Faltando energia, a chave continua na mesma posição, e a minuteria volta funcionando com o mesmo tempo de antes, sem precisar reconfigurar.</dd>
+
+                    <dt>O fio do pulsador precisa ser ligado na fase?</dt>
+                    <dd>Na instalação padrão, sim: o fio branco é alimentado pela fase, como mostra o diagrama de ligação. Mas existe uma exceção — o pulsador alimentado pelo retorno da lâmpada também funciona. Isso resolve o caso da substituição de uma minuteria de outra marca: se o pulsador já estiver ligado dessa forma, não é preciso refazer a fiação para levá-lo à fase.</dd>
+
+                    <dt>O que o LED da MC-1500 indica?</dt>
+                    <dd>O LED acende sempre que chega fase no fio do pulsador, indicando que o comando saiu do botão e chegou até a minuteria. Ele serve para diagnosticar: com a luz não acendendo, aperte o pulsador e observe o LED. Se ele não acender, o sinal não está chegando — o problema está no pulsador ou na fiação até ele. Se acender, o comando chegou e o problema está adiante, na própria minuteria ou no circuito da lâmpada.</dd>
+
                     <dt>Procuro a MC-2000. Ela ainda existe?</dt>
                     <dd>Não. A MC-2000 saiu de linha há anos: ela e a MC-1500 eram modelos paralelos, com funções muito parecidas, e a linha foi enxugada. A MC-1500 é o modelo equivalente hoje. Se você precisa trocar uma MC-2000 já instalada, fale com o Suporte Técnico antes de comprar.</dd>
                 </dl>
