@@ -129,10 +129,13 @@
 /* --------------------------------------------------------------------------
    3.1 Cards de acionamento (o que dispara a luz) — variante do .need-card
    O ícone codifica o gatilho: ondas (movimento), sol (luz do dia), relógio
-   (tempo). Não é ornamento — é o que permite reconhecer o próprio caso antes
-   de ler o texto, e é o único traço que separa os três cards num relance.
-   Vermelho porque o card inteiro é clicável, mesma regra do resto do sistema:
-   a cor de ação só aparece em algo que responde ao clique.
+   (tempo). Não é ornamento — é o que separa os três cards num relance, antes
+   de ler o texto. Vermelho porque o card inteiro é clicável, mesma regra do
+   resto do sistema: a cor de ação só aparece em algo que responde ao clique.
+   Havia um rótulo do gatilho em caixa-alta acima do nome do produto
+   ("ALGUÉM PASSA"); saiu em 2026-08-10, por decisão da Fernanda. O gatilho
+   continua dito na pergunta que titula a seção e na primeira frase de cada
+   descrição — o gap maior existe para o ícone respirar sem ele.
    -------------------------------------------------------------------------- */
 .trigger-card {
   gap: var(--espaco-8);
@@ -142,20 +145,6 @@
   width: 28px;
   height: 28px;
   color: var(--cor-marca-vermelho);
-}
-
-/* Rótulo do gatilho, acima do nome do produto: nessa altura da leitura
-   "alguém passa" é a situação do visitante e "sensor de movimento" ainda é
-   jargão. O caixa-alta cria um degrau tipográfico entre rótulo e nome sem
-   precisar de mais uma cor; o peso e o tamanho menores mantêm o nome do
-   produto como o alvo visual do card. */
-.trigger-when {
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--cor-grafite);
-  opacity: 0.75;
 }
 
 /* --------------------------------------------------------------------------
