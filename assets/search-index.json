@@ -22,12 +22,12 @@
   {
     "title": "BS-50 — Infravermelho, teto de sobrepor",
     "url": "produto/sensor-de-movimento-infravermelho-bs-50.html",
-    "keywords": "BS-50 BS50 infravermelho teto sobrepor articulador sensor de presença sensor de movimento"
+    "keywords": "BS-50 BS50 infravermelho teto sobrepor articulador sensor de presença sensor de movimento BS-60 BS60 fora de linha descontinuado modelo antigo"
   },
   {
     "title": "MI-500 — Infravermelho, teto, tempo até 12 min",
     "url": "produto/sensor-de-movimento-infravermelho-mi-500.html",
-    "keywords": "MI-500 MI500 infravermelho teto ajuste sensibilidade zero-cross sensor de presença sensor de movimento"
+    "keywords": "MI-500 MI500 infravermelho teto ajuste sensibilidade zero-cross sensor de presença sensor de movimento MI-600 MI600 fora de linha descontinuado modelo antigo"
   },
   {
     "title": "BS-70 — Infravermelho, parede, alcance 12 m",
@@ -72,7 +72,7 @@
   {
     "title": "MU-500 — Ultrassônico, ambientes fechados até 15 m²",
     "url": "produto/sensor-de-movimento-ultrassonico-mu-500.html",
-    "keywords": "MU-500 MU500 ultrassônico ultrassom idosos mobilidade reduzida sensor de presença sensor de movimento"
+    "keywords": "MU-500 MU500 ultrassônico ultrassom idosos mobilidade reduzida sensor de presença sensor de movimento MU-450 MU450 fora de linha descontinuado modelo antigo"
   },
   {
     "title": "MU-600 — Ultrassônico, até 15 m², com fotocélula",
@@ -92,7 +92,7 @@
   {
     "title": "MC-1500 — Minuteria coletiva",
     "url": "produto/minuteria-coletiva-mc-1500.html",
-    "keywords": "MC-1500 MC1500 minuteria coletiva pulsador condomínio escada área comum"
+    "keywords": "MC-1500 MC1500 minuteria coletiva pulsador condomínio escada área comum MC-2000 MC2000 fora de linha descontinuado modelo antigo"
   },
   {
     "title": "Sensores de Movimento Infravermelho",
@@ -153,6 +153,11 @@
     "title": "Contato / Onde Comprar",
     "url": "contato",
     "keywords": "contato onde comprar orçamento telefone whatsapp e-mail"
+  },
+  {
+    "title": "Todos os produtos — os 19 modelos Tektron",
+    "url": "catalogo/",
+    "keywords": "catálogo catalogo todos os produtos lista de modelos linha completa modelos sensor de movimento sensor de presença fotocélula minuteria ficha técnica ficha tecnica pdf especificações download"
   },
   {
     "title": "Suporte Técnico & Downloads",

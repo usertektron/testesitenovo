@@ -320,6 +320,23 @@
   content: ":";
 }
 
+/* link da ficha técnica no rodapé do card (página Todos os produtos).
+   margin-top:auto encosta o link na base mesmo com cards de alturas
+   diferentes na mesma linha do grid; min-height dá o alvo de toque de
+   44px sem virar botão — 19 botões vermelhos numa página só competiriam
+   com o link do modelo, que é o alvo principal do card. */
+.spec-card-ficha {
+  margin-top: auto;
+  padding-top: var(--espaco-8);
+  font-size: 0.875rem;
+}
+
+.spec-card-ficha a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 /* --------------------------------------------------------------------------
    7.1 Tabela de comparação (ex.: tecnologias de detecção)
    Wrapper com scroll próprio: a página inteira não pode rolar
@@ -367,6 +384,35 @@
 
 .comparison-table tbody tr:nth-child(even) {
   background: var(--cor-fundo-tecnico);
+}
+
+/* Tabela de fichas técnicas (Suporte): botão secundário, não primário — são
+   19 linhas, e 19 botões vermelhos disputariam com o CTA do WhatsApp, que é
+   a única ação urgente da página. Compacto na horizontal para o rótulo não
+   quebrar em duas linhas dentro da célula. */
+.tabela-fichas td .btn-secondary {
+  padding: var(--espaco-8) var(--espaco-16);
+  white-space: nowrap;
+}
+
+.tabela-fichas tbody th a { font-weight: 700; }
+
+/* Sem o min-width de 32rem da tabela de comparação: aqui a coluna que
+   interessa é a última, o botão. Com rolagem lateral ele nasce fora da
+   tela em 360 px — o alvo da tabela exigindo um gesto para aparecer.
+   Cabendo na largura, as três colunas ficam visíveis de uma vez. */
+.tabela-fichas { min-width: 0; }
+
+@media (max-width: 30rem) {
+  .tabela-fichas th,
+  .tabela-fichas td {
+    padding: var(--espaco-8);
+  }
+
+  .tabela-fichas td .btn-secondary {
+    padding: var(--espaco-8) var(--espaco-12);
+    font-size: 0.875rem;
+  }
 }
 
 /* --------------------------------------------------------------------------

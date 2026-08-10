@@ -256,6 +256,36 @@
 /* o card estica até a altura da linha, como em .need-cards da home */
 .needs-groups > li { display: flex; }
 
+/* Saída para o catálogo completo, depois dos três grupos e fora deles: quem
+   já sabe o código não precisa passar pela entrada por problema, que segue
+   sendo o caminho principal do painel (decidido em 2026-08-04). Como quarto
+   grupo, quebraria a grade de 3 colunas e disputaria a mesma atenção. */
+.megamenu-todos { margin-top: var(--espaco-16); }
+
+/* Mesma caixa com borda dos links de situação: dentro do painel nada fica
+   sublinhado em repouso, então é a borda que sinaliza "isto é clicável".
+   Sem ela, o texto sozinho é lido como rótulo — testado no render. */
+.megamenu-todos a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--espaco-8) var(--espaco-12);
+  border: 1px solid var(--cor-borda-clara);
+  border-radius: var(--raio);
+  color: var(--cor-branco);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.megamenu-todos a:hover {
+  background: rgb(255 255 255 / 12%);
+  border-color: var(--cor-branco);
+  text-decoration: underline;
+  text-decoration-color: var(--cor-marca-amarelo);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
 /* Caixa delimitada, não botão clicável: "Sensor de movimento" tem cinco ações
    internas, e diretrizes §4.3 veta card inteiro clicável nesse caso. A borda
    agrupa (§4: borda é o elemento estrutural principal); quem clica é o título
