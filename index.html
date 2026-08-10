@@ -29,7 +29,7 @@
     <link rel="preload" href="fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/global.css?v=20260721">
     <link rel="stylesheet" href="css/navegacao.css?v=20260805">
-    <link rel="stylesheet" href="css/home.css?v=20260721">
+    <link rel="stylesheet" href="css/home.css?v=20260810">
 
     <!-- Fallback sem JavaScript: esconde os controles que ficariam inativos
          (hambúrguer mobile e botão "Produtos" do mega-menu) e estiliza a
@@ -91,6 +91,45 @@
           "url": "https://www.tektron.ind.br/",
           "name": "Tektron",
           "publisher": {"@id": "https://www.tektron.ind.br/#organization"}
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.tektron.ind.br/#faq",
+          "isPartOf": {"@id": "https://www.tektron.ind.br/#website"},
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Sensor de movimento é o mesmo que sensor de presença?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "É o termo mais buscado pra essa categoria, também usado aqui — mas vale uma distinção técnica: os sensores Tektron detectam a transição para um estado de movimento, não uma pessoa parada e imóvel no ambiente. Por isso preferimos \"sensor de movimento\" como nome do produto."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual a diferença entre sensor de movimento, fotocélula e minuteria?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O gatilho de cada um. O sensor de movimento acende quando alguém passa e apaga depois do tempo ajustado. A fotocélula acende ao anoitecer e apaga ao amanhecer, pela luz do ambiente. A minuteria coletiva acende quando alguém aperta um botão pulsador e apaga sozinha depois do tempo — ela não detecta ninguém."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Onde compro os produtos Tektron?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pelo WhatsApp comercial, para solicitar orçamento ou descobrir o revendedor mais próximo. Os canais estão na página de Contato / Onde Comprar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Onde baixo o manual ou a ficha técnica de um modelo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Em Suporte Técnico & Downloads, que reúne a ficha técnica em PDF dos 19 modelos — cada uma com as especificações e o diagrama de ligação. O mesmo arquivo também está na página de cada produto."
+              }
+            }
+          ]
         }
       ]
     }
@@ -293,8 +332,10 @@
             <div class="hero-layout">
                 <div class="hero-intro">
                     <h1>Automatize a iluminação e reduza desperdícios de energia</h1>
-                    <p class="hero-lead">O sensor acende quando necessário — essa é a parte visível. A economia acontece porque ele apaga automaticamente, e a escolha certa do ponto de instalação e da tecnologia é o que garante que a iluminação realmente acenda quando e onde as pessoas circulam. A Tektron fabrica esses sensores de movimento, fotocélulas e minuterias no Brasil desde 1990, com suporte técnico especializado para essa escolha.</p>
-                    <a href="#escolha-por-necessidade" class="btn-primary">Encontrar a solução certa</a>
+                    <p class="hero-lead">Acender a luz na hora certa é a parte fácil. O que devolve dinheiro é ela <strong>apagar sozinha</strong> — e isso depende de duas escolhas: o que vai acionar a luz, e onde o aparelho vai ser instalado.</p>
+                    <p class="hero-support">A Tektron fabrica no Brasil, desde 1990, os sensores de movimento, fotocélulas e minuterias que fazem esse desligamento — e dá suporte técnico para essa escolha.</p>
+                    <a href="catalogo" class="btn-primary">Ver os 19 modelos</a>
+                    <p class="hero-shortcut">Procurando documentação? <a href="suporte">Ficha técnica e diagrama de ligação de cada modelo</a>.</p>
                 </div>
 
                 <figure class="hero-media">
@@ -305,44 +346,90 @@
                 </figure>
             </div>
 
-            <ul class="hero-products" aria-label="Linhas de produto Tektron">
-                <li>
-                    <a href="sensores-de-movimento" class="product-card">
-                        <svg class="product-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="19" r="1.5" fill="currentColor" stroke="none"/>
-                            <path d="M8 15a5 5 0 0 1 8 0"/>
-                            <path d="M5 11a9 9 0 0 1 14 0"/>
-                        </svg>
-                        <span class="product-card-name">Sensores de Movimento</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="produto/rele-fotoeletrico.html" class="product-card">
-                        <svg class="product-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="12" r="4"/>
-                            <path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
-                        </svg>
-                        <span class="product-card-name">Fotocélulas</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="produto/minuteria-coletiva-mc-1500.html" class="product-card">
-                        <svg class="product-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="13" r="8"/>
-                            <path d="M12 9v4l3 2"/>
-                            <path d="M9 2h6"/>
-                        </svg>
-                        <span class="product-card-name">Minuterias</span>
-                    </a>
-                </li>
-            </ul>
+            <section class="content-section" aria-labelledby="problema-heading">
+                <h2 id="problema-heading">O que custa dinheiro não é acender — é continuar aceso</h2>
+                <ul class="factor-list">
+                    <li>
+                        <span class="factor-name">A luz de dentro fica acesa depois que todo mundo saiu</span>
+                        <span class="factor-desc">Corredor, escada, banheiro, garagem, depósito: em ambiente de passagem, apagar depende da memória de quem sai por último — e é justamente onde ninguém repara que ficou aceso.</span>
+                    </li>
+                    <li>
+                        <span class="factor-name">A luz de fora depende de alguém lembrar do horário</span>
+                        <span class="factor-desc">Poste, fachada, jardim: o horário do anoitecer muda ao longo do ano. Ligar e desligar na mão erra sempre para o mesmo lado — mais tempo aceso do que o necessário.</span>
+                    </li>
+                    <li>
+                        <span class="factor-name">Na área comum, o interruptor não é de ninguém</span>
+                        <span class="factor-desc">Escada e hall de condomínio: quando a conta é dividida entre todos, apagar deixa de ser responsabilidade de alguém em particular.</span>
+                    </li>
+                </ul>
+            </section>
 
-            <!-- Cards de "Escolha por necessidade": um por página de aplicacoes/
+            <!-- Pausa visual entre "problema" e "solução": é o único bloco escuro
+                 da página, e existe para marcar essa virada na leitura. O slogan
+                 aparecia só dentro da imagem do hero até 2026-08-10 — invisível
+                 para busca e para leitor de tela. -->
+            <aside class="brand-principle" aria-label="Princípio de economia Tektron">
+                <p class="brand-slogan">Um minuto de atenção para anos de economia.</p>
+                <p class="brand-principle-text">O aparelho acende a luz na hora certa — essa é a parte visível. A economia de verdade vem do desligamento automático, que não depende de ninguém lembrar de apagar.</p>
+            </aside>
+
+            <!-- Primeira das duas perguntas anunciadas no hero. Responde "qual dos
+                 três produtos é o meu?" e passa o "como cada tecnologia detecta"
+                 para o hub /sensores-de-movimento/, que é a página-alvo desse
+                 termo de busca (auditoria-seo-geo §2.1/§2.2). -->
+            <section class="content-section" aria-labelledby="acionamento-heading">
+                <h2 id="acionamento-heading">Primeira pergunta: o que vai acionar a luz?</h2>
+                <p>A resposta já separa a linha Tektron em três. Não é uma questão de um produto ser melhor que o outro — são gatilhos diferentes, para situações diferentes.</p>
+
+                <ul class="need-cards" aria-label="Produtos por tipo de acionamento">
+                    <li>
+                        <a href="sensores-de-movimento" class="need-card trigger-card">
+                            <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="19" r="1.5" fill="currentColor" stroke="none"/>
+                                <path d="M8 15a5 5 0 0 1 8 0"/>
+                                <path d="M5 11a9 9 0 0 1 14 0"/>
+                            </svg>
+                            <span class="trigger-when">Alguém passa</span>
+                            <span class="need-card-name">Sensor de movimento</span>
+                            <span class="need-card-desc">Acende ao detectar movimento e apaga sozinho depois do tempo ajustado. Corredor, escada, banheiro, garagem, área comum.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="produto/rele-fotoeletrico.html" class="need-card trigger-card">
+                            <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="4"/>
+                                <path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
+                            </svg>
+                            <span class="trigger-when">Anoiteceu</span>
+                            <span class="need-card-name">Fotocélula</span>
+                            <span class="need-card-desc">Liga a iluminação externa ao anoitecer e desliga ao amanhecer, sem temporizador e sem intervenção manual. Poste, fachada, jardim.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="produto/minuteria-coletiva-mc-1500.html" class="need-card trigger-card">
+                            <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="13" r="8"/>
+                                <path d="M12 9v4l3 2"/>
+                                <path d="M9 2h6"/>
+                            </svg>
+                            <span class="trigger-when">Alguém aperta o botão</span>
+                            <span class="need-card-name">Minuteria coletiva</span>
+                            <span class="need-card-desc">Acende por botão pulsador e apaga sozinha depois do tempo. Instalada no quadro elétrico, como um disjuntor, para áreas comuns.</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <p class="solution-note">Dentro dos sensores de movimento ainda existem três tecnologias de detecção — infravermelho, Doppler e ultrassônico —, com alcances e comportamentos diferentes: <a href="sensores-de-movimento">veja como cada uma detecta</a>.</p>
+            </section>
+
+            <!-- Segunda pergunta do hero. Um card por página de aplicacoes/
                  (5 páginas publicadas). O hub do pilar Aplicações em si ainda não
                  existe: por isso "Aplicações" segue sem link no breadcrumb dessas
-                 páginas. -->
-            <section id="escolha-por-necessidade" class="need-section">
-                <h2>Escolha por necessidade</h2>
+                 páginas. O id antigo é preservado — era alvo do botão do hero até
+                 2026-08-10 e pode estar linkado de fora. -->
+            <section id="escolha-por-necessidade" class="content-section" aria-labelledby="instalacao-heading">
+                <h2 id="instalacao-heading">Segunda pergunta: onde ele vai ser instalado?</h2>
+                <p>É essa resposta que decide o modelo. O mesmo corredor pede um produto diferente se o ponto elétrico disponível é a caixa 4x2 da parede ou o teto.</p>
 
                 <ul class="need-cards" aria-label="Páginas de aplicações">
                     <li>
@@ -378,35 +465,58 @@
                 </ul>
             </section>
 
+            <!-- Substituiu, em 2026-08-10, a lista de 5 selos com visto vermelho.
+                 Cada item aqui aponta para o lugar do site onde a afirmação pode
+                 ser conferida — a autoridade fica no que dá para abrir, não no
+                 adjetivo. O visto vermelho também gastava a cor de ação num
+                 elemento não clicável. -->
             <section class="content-section" aria-labelledby="confianca-heading">
-                <h2 id="confianca-heading">Por que escolher a Tektron?</h2>
-                <ul class="hero-trust" aria-label="Diferenciais Tektron">
+                <h2 id="confianca-heading">O que dá para conferir antes de comprar</h2>
+                <ul class="factor-list">
                     <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>Indústria brasileira</span>
+                        <span class="factor-name"><a href="suporte">Ficha técnica dos 19 modelos, em PDF</a></span>
+                        <span class="factor-desc">Uma página por modelo, com as especificações completas e o diagrama de ligação. Download direto, sem cadastro.</span>
                     </li>
                     <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>Desde 1990</span>
+                        <span class="factor-name"><a href="catalogo">Especificação publicada de cada modelo</a></span>
+                        <span class="factor-desc">Tensão, potência máxima, alcance, temporização e ajustes dos 19 modelos, abertos no site — antes da compra, não depois.</span>
                     </li>
                     <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>Documentação técnica e materiais de apoio</span>
+                        <span class="factor-name"><a href="institucional">Fabricação própria no Brasil desde 1990</a></span>
+                        <span class="factor-desc">Mais de 35 anos de mercado, com produção 100% nacional.</span>
                     </li>
                     <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>Suporte técnico especializado</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>Automação e economia de energia</span>
+                        <span class="factor-name"><a href="suporte">Dúvida de instalação respondida por quem fabrica</a></span>
+                        <span class="factor-desc">Instalação, compatibilidade ou substituição de um modelo antigo — atendimento por WhatsApp.</span>
                     </li>
                 </ul>
             </section>
 
+            <!-- FAQ da home. A 1ª pergunta é a de compliance de terminologia
+                 (canônico §10.5): a home recebe "sensor de presença tektron" e era
+                 a única página com conteúdo sem essa distinção. A 4ª responde a
+                 maior demanda não-marca do Search Console ("manual sensor de
+                 presença" e variantes, todas em 1ª posição). -->
+            <section class="content-section" aria-labelledby="faq-heading">
+                <h2 id="faq-heading">Perguntas frequentes</h2>
+                <dl class="faq-list">
+                    <dt>Sensor de movimento é o mesmo que sensor de presença?</dt>
+                    <dd>É o termo mais buscado pra essa categoria, também usado aqui — mas vale uma distinção técnica: os sensores Tektron detectam a <strong>transição</strong> para um estado de movimento, não uma pessoa parada e imóvel no ambiente. Por isso preferimos "sensor de movimento" como nome do produto.</dd>
+
+                    <dt>Qual a diferença entre sensor de movimento, fotocélula e minuteria?</dt>
+                    <dd>O gatilho de cada um. O sensor de movimento acende quando alguém passa e apaga depois do tempo ajustado. A fotocélula acende ao anoitecer e apaga ao amanhecer, pela luz do ambiente. A minuteria coletiva acende quando alguém aperta um botão pulsador e apaga sozinha depois do tempo — ela não detecta ninguém.</dd>
+
+                    <dt>Onde compro os produtos Tektron?</dt>
+                    <dd>Pelo WhatsApp comercial, para solicitar orçamento ou descobrir o revendedor mais próximo. Os canais estão na página de <a href="contato">Contato / Onde Comprar</a>.</dd>
+
+                    <dt>Onde baixo o manual ou a ficha técnica de um modelo?</dt>
+                    <dd>Em <a href="suporte">Suporte Técnico &amp; Downloads</a>, que reúne a ficha técnica em PDF dos 19 modelos — cada uma com as especificações e o diagrama de ligação. O mesmo arquivo também está na página de cada produto.</dd>
+                </dl>
+            </section>
+
             <section class="content-section cta-section" aria-labelledby="cta-heading">
                 <h2 id="cta-heading" class="visually-hidden">Próximo passo</h2>
-                <p>Encontre o produto certo para o seu projeto:</p>
+                <p>Já sabe o que precisa, ou quer conferir com alguém antes de decidir?</p>
                 <p class="cta-buttons">
                     <a href="contato" class="btn-primary">Onde Comprar / Solicitar Orçamento</a>
                     <a href="suporte" class="btn-secondary">Falar com Suporte Técnico</a>

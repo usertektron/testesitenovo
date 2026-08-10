@@ -1,9 +1,9 @@
 /* ==========================================================================
    Tektron — home.css
-   Primeira dobra da home: mensagem principal, CTA, linhas de produto e
-   selos de confiança. A partir da seção 5, os componentes das páginas de
-   aplicação (breadcrumb, cards de especificação, FAQ), que carregam esta
-   mesma folha. Mobile-first. Depende dos tokens de global.css.
+   Primeira dobra da home: mensagem principal, CTA e cards de acionamento e
+   de ambiente. A partir da seção 4, os componentes das páginas de aplicação
+   (breadcrumb, seções de conteúdo, cards de especificação, FAQ), que
+   carregam esta mesma folha. Mobile-first. Depende dos tokens de global.css.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -33,55 +33,30 @@
 .btn-primary:hover { background: var(--cor-vermelho-escuro); }
 
 /* --------------------------------------------------------------------------
-   2. Linhas de produto (cards)
+   2. Hero — linhas de apoio
+   A credencial ("fabricamos desde 1990") e o atalho para a documentação não
+   competem com o H1 nem com o botão: ficam menores e mais suaves de
+   propósito. Quem está descobrindo continua lendo a página; quem já sabe o
+   que quer acha o caminho curto sem precisar procurar no menu.
+   O bloco de 3 cards de linha de produto que ficava aqui saiu em 2026-08-10
+   (duplicava menu e rodapé, e entregava catálogo antes de qualquer contexto);
+   os três produtos voltam adiante, como resposta à pergunta do acionamento.
    -------------------------------------------------------------------------- */
-.hero-products {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--espaco-16);
-  margin-top: var(--espaco-48);
-}
-
-@media (min-width: 48rem) {
-  .hero-products { grid-template-columns: repeat(3, 1fr); }
-}
-
-.product-card {
-  display: flex;
-  align-items: center;
-  gap: var(--espaco-12);
-  min-height: 44px;
-  padding: var(--espaco-16);
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--raio);
+.hero-support {
+  margin-top: var(--espaco-16);
+  font-size: 0.9375rem;
   color: var(--cor-grafite);
-  text-decoration: none;
-  transition: border-color var(--transicao-rapida), background var(--transicao-rapida);
+  opacity: 0.75;
 }
 
-.product-card:hover {
-  border-color: var(--cor-marca-vermelho);
-  background: var(--cor-fundo-tecnico);
-}
-
-.product-card-icon {
-  flex: none;
-  width: 28px;
-  height: 28px;
-  color: var(--cor-marca-vermelho);
-}
-
-.product-card-name {
-  font-weight: 600;
+.hero-shortcut {
+  margin-top: var(--espaco-16);
+  font-size: 0.9375rem;
 }
 
 /* --------------------------------------------------------------------------
-   3. Escolha por necessidade (cards de ambiente)
+   3. Cards de ambiente e de acionamento
    -------------------------------------------------------------------------- */
-.need-section {
-  margin-top: var(--espaco-48);
-}
-
 .need-cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -100,7 +75,9 @@
 /* o card estica até a altura da linha da grade */
 .need-cards li { display: flex; }
 
-/* variante vertical do .product-card: mesma borda, raio, hover e transição */
+/* card vertical clicável: borda discreta em repouso, borda vermelha e fundo
+   técnico no hover — o realce só aparece no elemento apontado, para não
+   competir com o botão vermelho do hero */
 .need-card {
   flex: 1;
   display: flex;
@@ -146,42 +123,39 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. Selos de confiança
+   3.1 Cards de acionamento (o que dispara a luz) — variante do .need-card
+   O ícone codifica o gatilho: ondas (movimento), sol (luz do dia), relógio
+   (tempo). Não é ornamento — é o que permite reconhecer o próprio caso antes
+   de ler o texto, e é o único traço que separa os três cards num relance.
+   Vermelho porque o card inteiro é clicável, mesma regra do resto do sistema:
+   a cor de ação só aparece em algo que responde ao clique.
    -------------------------------------------------------------------------- */
-.hero-trust {
-  display: flex;
-  flex-direction: column;
-  gap: var(--espaco-12);
-  margin-top: var(--espaco-32);
-  padding-top: var(--espaco-32);
-  border-top: 1px solid var(--cor-borda);
-}
-
-@media (min-width: 48rem) {
-  .hero-trust {
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: var(--espaco-32);
-  }
-}
-
-.hero-trust li {
-  display: flex;
-  align-items: center;
+.trigger-card {
   gap: var(--espaco-8);
-  font-size: 0.9375rem;
-  font-weight: 600;
 }
 
-.hero-trust svg {
-  flex: none;
-  width: 20px;
-  height: 20px;
+.trigger-icon {
+  width: 28px;
+  height: 28px;
   color: var(--cor-marca-vermelho);
 }
 
+/* Rótulo do gatilho, acima do nome do produto: nessa altura da leitura
+   "alguém passa" é a situação do visitante e "sensor de movimento" ainda é
+   jargão. O caixa-alta cria um degrau tipográfico entre rótulo e nome sem
+   precisar de mais uma cor; o peso e o tamanho menores mantêm o nome do
+   produto como o alvo visual do card. */
+.trigger-when {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cor-grafite);
+  opacity: 0.75;
+}
+
 /* --------------------------------------------------------------------------
-   5. Páginas de aplicação — breadcrumb
+   4. Páginas de aplicação — breadcrumb
    -------------------------------------------------------------------------- */
 .breadcrumb {
   margin-bottom: var(--espaco-24);
@@ -212,7 +186,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   6. Páginas de aplicação — seções de conteúdo
+   5. Páginas de aplicação — seções de conteúdo
    -------------------------------------------------------------------------- */
 .content-section {
   margin-top: var(--espaco-48);
@@ -251,12 +225,22 @@
   font-weight: 700;
 }
 
+/* quando o nome do fator é um link (home §"O que dá para conferir", hub
+   §"Escolha por situação de instalação"), ele vira o alvo de toque do card e
+   cumpre a meta de 44 px da Tektron — mesma solução já usada em
+   .breadcrumb-list a e .spec-card-name a */
+.factor-name a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 .factor-desc {
   font-size: 0.9375rem;
 }
 
 /* --------------------------------------------------------------------------
-   7. Páginas de aplicação — cards de especificação
+   6. Páginas de aplicação — cards de especificação
    -------------------------------------------------------------------------- */
 .spec-cards {
   display: grid;
@@ -270,8 +254,8 @@
   .spec-cards { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* mesmo enquadramento do .product-card / .need-card, porém estático:
-   o card agrupa dados e a ação fica no título, um link explícito */
+/* mesmo enquadramento do .need-card, porém estático: o card agrupa dados e
+   a ação fica no título, um link explícito */
 .spec-card {
   display: flex;
   flex-direction: column;
@@ -303,6 +287,12 @@
    implicar que o texto pertence a um card */
 .solution-note {
   font-size: 0.9375rem;
+}
+
+/* nota que fecha uma grade de cards precisa de respiro próprio: sem isto ela
+   encosta na borda do último card e é lida como parte dele */
+.need-cards + .solution-note {
+  margin-top: var(--espaco-16);
 }
 
 .spec-list {
@@ -338,7 +328,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   7.1 Tabela de comparação (ex.: tecnologias de detecção)
+   6.1 Tabela de comparação (ex.: tecnologias de detecção)
    Wrapper com scroll próprio: a página inteira não pode rolar
    horizontalmente em 320 CSS px (estrutura-navegacao.md §6.3), mas uma
    tabela larga pode rolar dentro do próprio contêiner.
@@ -416,7 +406,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   8. Páginas de aplicação — dúvidas frequentes
+   7. Páginas de aplicação — dúvidas frequentes
    -------------------------------------------------------------------------- */
 .faq-list {
   margin-top: var(--espaco-24);
@@ -437,7 +427,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   9. Páginas de aplicação — princípio de marca
+   8. Páginas de aplicação — princípio de marca
    -------------------------------------------------------------------------- */
 .brand-principle {
   margin-top: var(--espaco-48);
@@ -461,7 +451,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   10. Páginas de aplicação — CTA secundário e seção de chamada final
+   9. Páginas de aplicação — CTA secundário e seção de chamada final
    -------------------------------------------------------------------------- */
 .cta-buttons {
   display: flex;
@@ -491,7 +481,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   11. Páginas de aplicação — mídia de produto (hero, comparação, diagramas)
+   10. Páginas de aplicação — mídia de produto (hero, comparação, diagramas)
    Preparado para a integração dos ativos visuais do manifesto
    (documentacao/manifesto-ativos-visuais.md). `.hero-layout` já organiza o
    conteúdo textual em algumas páginas (ex.: aplicacoes/externo.html), mas
