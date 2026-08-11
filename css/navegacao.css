@@ -51,12 +51,23 @@
 }
 
 /* texto "TEKTRON" + slogan, ao lado do símbolo — visível em mobile e
-   desktop (só a posição no grid muda em ≥64rem, ver seção 9). */
+   desktop (só a posição no grid muda em ≥64rem, ver seção 9).
+   É um link para a home, igual ao símbolo: parte dos usuários volta pro
+   início clicando no nome escrito, não no logo. O padding existe só pra
+   dar área de clique confortável; a margem negativa devolve o bloco à
+   posição visual que ele tinha antes de virar link. */
 .header-brand {
   display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 1.25;
+  padding: var(--espaco-4) var(--espaco-8);
+  margin-inline: calc(-1 * var(--espaco-8));
+  border-radius: var(--raio);
+}
+
+@media (hover: hover) {
+  .header-brand:hover .header-brand-name { text-decoration: underline; }
 }
 
 .header-brand-name {
