@@ -399,7 +399,9 @@
    excesso via zoom, sem tocar no arquivo original (usado inteiro em
    outras páginas). */
 .thumb-recorte {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 72px;
   height: 72px;
   overflow: hidden;
@@ -409,7 +411,6 @@
 
 .comparison-table thead th img {
   object-fit: contain;
-  transform: scale(1.15);
 }
 
 .comparison-table tbody th {
@@ -738,4 +739,28 @@
   font-size: 0.875rem;
   color: var(--cor-grafite);
   opacity: 0.75;
+}
+
+/* foto de ambiente dentro de uma seção (não o hero da página) */
+.situation-photo {
+  margin-top: var(--espaco-24);
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.situation-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--raio);
+  display: block;
+}
+
+.situation-photo figcaption {
+  margin-top: var(--espaco-8);
+  font-size: 0.875rem;
+  color: var(--cor-grafite);
+  opacity: 0.75;
+  text-align: center;
 }
