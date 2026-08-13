@@ -2,6 +2,29 @@
 # Sem efeito no GitHub Pages (ambiente de teste atual), que ignora .htaccess.
 
 # --------------------------------------------------------------------------
+# Página de erro 404
+# --------------------------------------------------------------------------
+# Caminho absoluto assume o site na raiz do domínio (tektron.ind.br/404.html).
+# Se a Hostnet servir de dentro de uma subpasta, ajustar este caminho junto.
+ErrorDocument 404 /404.html
+
+# --------------------------------------------------------------------------
+# Redirects 301 — URLs antigas com tráfego indexado no Search Console
+# (site antigo, conferido em 2026-08-13). Só as 9 URLs com clique/impressão
+# real; o restante do site antigo (outros modelos, PDFs) tem volume
+# baixo/zero e fica para revisão posterior, sem bloquear a virada.
+# --------------------------------------------------------------------------
+Redirect 301 /downloads.html https://www.tektron.ind.br/suporte/
+Redirect 301 /quem-somos.html https://www.tektron.ind.br/institucional/
+Redirect 301 /faq.html https://www.tektron.ind.br/suporte/#faq
+Redirect 301 /contato.html https://www.tektron.ind.br/contato/
+Redirect 301 /modelo2_teto.html https://www.tektron.ind.br/aplicacoes/teto-sobrepor.html
+Redirect 301 /modelo6_ultrassom.html https://www.tektron.ind.br/aplicacoes/teto-sobrepor.html#situacao-ultrassonico
+Redirect 301 /modelo7_fotocelula.html https://www.tektron.ind.br/produto/rele-fotoeletrico.html
+Redirect 301 /modelo8_automacao.html https://www.tektron.ind.br/aplicacoes/minuterias.html
+Redirect 301 /modelo9_compacta.html https://www.tektron.ind.br/aplicacoes/teto-sobrepor.html
+
+# --------------------------------------------------------------------------
 # Compressão (gzip / brotli)
 # --------------------------------------------------------------------------
 <IfModule mod_brotli.c>
