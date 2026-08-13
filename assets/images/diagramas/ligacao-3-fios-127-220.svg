@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Diagrama de instalacao PADRAO.
+  Serve os 18 modelos com ligacao de 3 fios (todos, exceto MC-1500).
+  Chave de resolucao: ausencia da palavra "Pulsador" em tipo_ligacao (matriz .ods).
+  Cores dos fios = cor real do fio fisico (convencao eletrica), nao paleta de marca.
+  Rotulos curtos de proposito: o desenho carrega a topologia, a legenda ao lado
+  na ficha tecnica carrega o texto completo de cada fio.
+-->
+
+<svg
+   viewBox="0 0 620 300"
+   width="620"
+   height="300"
+   role="img"
+   aria-label="Diagrama de ligacao de 3 fios: fase vermelho e neutro preto no produto Tektron, retorno verde para a lampada"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="diagrama-instalacao-padrao.svg"
+   inkscape:version="1.4.4 (1:1.4.4+202605061436+dcaf3e7d9e)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.4370968"
+     inkscape:cx="489.52861"
+     inkscape:cy="63.670033"
+     inkscape:window-width="1920"
+     inkscape:window-height="1048"
+     inkscape:window-x="0"
+     inkscape:window-y="125"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7" />
+  <style
+     id="style1">
+    .fio    { fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+    .marca  { font-family: Montserrat, 'Liberation Sans', Arial, sans-serif; font-size: 22px; font-weight: 700; letter-spacing: .5px; }
+    .peca   { font-family: Montserrat, 'Liberation Sans', Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #1f2326; }
+    .peca-s { font-family: Montserrat, 'Liberation Sans', Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #8a9097; letter-spacing: 1.4px; }
+    .rede   { font-family: Montserrat, 'Liberation Sans', Arial, sans-serif; font-size: 16px; font-weight: 600; fill: #8a9097; letter-spacing: 1.2px; }
+  </style>
+  <!-- rede -->
+  <path
+     d="M 34,57.21661 V 250"
+     stroke="#8a9097"
+     stroke-width="2.5"
+     stroke-dasharray="7, 6"
+     fill="none"
+     id="path1"
+     sodipodi:nodetypes="cc" />
+  <text
+     class="rede"
+     x="48"
+     y="220"
+     id="text1">REDE</text>
+  <text
+     class="rede"
+     x="48"
+     y="241"
+     id="text2">127 V / 220 V</text>
+  <!-- fio de fase (vermelho) -->
+  <path
+     class="fio"
+     stroke="#e10000"
+     d="M 48,150 H 210 V 100"
+     id="path2" />
+  <path
+     class="fio"
+     stroke="#159b45"
+     d="M 469.17172,149.01684 H 301.7789 v -50"
+     id="path2-8"
+     style="fill:none;fill-opacity:1;stroke:#159b45;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+     sodipodi:nodetypes="ccc" />
+  <text
+     class="marca"
+     fill="#e10000"
+     x="48"
+     y="136"
+     id="text3">FASE</text>
+  <!-- fio de neutro / 2a fase (preto) -->
+  <path
+     class="fio"
+     stroke="#141414"
+     d="M 48 250 H 570 V 146 H 542"
+     id="path3" />
+  <path
+     class="fio"
+     stroke="#141414"
+     d="M 255,250 V 130.5073"
+     id="path4"
+     sodipodi:nodetypes="cc" />
+  <circle
+     cx="255"
+     cy="250"
+     r="8"
+     fill="#141414"
+     id="circle4" />
+  <text
+     class="marca"
+     fill="#141414"
+     x="48"
+     y="284"
+     id="text4">NEUTRO / 2ª FASE</text>
+  <!-- fio de retorno (verde) -->
+  <text
+     class="marca"
+     fill="#159b45"
+     x="405"
+     y="142"
+     text-anchor="middle"
+     id="text5">RETORNO</text>
+  <!-- produto Tektron (sensor de movimento ou rele fotoeletrico: a ligacao e a mesma;
+       o rotulo nao diz "SENSOR" porque o mesmo desenho serve as fichas da FC-10 e FC-15) -->
+  <rect
+     x="170"
+     y="62"
+     width="170"
+     height="72"
+     rx="7"
+     fill="#ffffff"
+     stroke="#1f2326"
+     stroke-width="3.5"
+     id="rect5"
+     ry="7" />
+  <text
+     class="peca"
+     x="255"
+     y="106"
+     text-anchor="middle"
+     id="text6">TEKTRON</text>
+  <!-- lampada -->
+  <circle
+     cx="506"
+     cy="146"
+     r="36"
+     fill="#ffffff"
+     stroke="#1f2326"
+     stroke-width="3.5"
+     id="circle6" />
+  <path
+     d="M 486 126 L 526 166 M 526 126 L 486 166"
+     stroke="#1f2326"
+     stroke-width="3.5"
+     stroke-linecap="round"
+     fill="none"
+     id="path6" />
+  <text
+     class="peca-s"
+     x="506"
+     y="214"
+     text-anchor="middle"
+     id="text7">LÂMPADA</text>
+</svg>

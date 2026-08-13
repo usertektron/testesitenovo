@@ -333,6 +333,15 @@
   border-radius: var(--raio);
 }
 
+/* tabela de poucas colunas e texto curto (ex.: comparação de 3 modelos) —
+   sem isso ela estica até a largura total da seção e sobra vazio em cada
+   célula, destoando da largura de leitura (70ch) do resto do texto. As
+   tabelas largas (fichas técnicas, comparação de tecnologias) não usam
+   esse modificador e continuam de largura total. */
+.comparison-table-wrap--compacta {
+  max-width: 46rem;
+}
+
 .comparison-table {
   width: 100%;
   min-width: 32rem;
@@ -358,6 +367,23 @@
 .comparison-table thead th {
   font-weight: 700;
   background: var(--cor-fundo-tecnico);
+}
+
+/* cabeçalho com foto de produto (ex.: comparação BS-40/MI-400/SR-03) —
+   link do th empilha a miniatura acima do nome do modelo */
+.comparison-table thead th a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-4);
+  color: var(--cor-marca-vermelho);
+  text-align: center;
+}
+
+.comparison-table thead th img {
+  border-radius: var(--raio);
+  background: var(--cor-fundo);
+  object-fit: contain;
 }
 
 .comparison-table tbody th {
@@ -637,14 +663,18 @@
   border-radius: 0;
 }
 
-.pagina-vitrine .spec-card-name,
-.pagina-vitrine .spec-card-desc,
-.pagina-vitrine .spec-list,
-.pagina-vitrine .spec-card-ficha {
+/* escopado dentro de .spec-card — sem isso, essas regras vazam pra
+   qualquer .spec-list solto na página (ex.: fase/neutro/retorno em
+   "Instalação e ligação elétrica"), encolhendo texto que não tem nada a
+   ver com o card de produto. */
+.pagina-vitrine .spec-card .spec-card-name,
+.pagina-vitrine .spec-card .spec-card-desc,
+.pagina-vitrine .spec-card .spec-list,
+.pagina-vitrine .spec-card .spec-card-ficha {
   padding-inline: var(--espaco-16);
 }
 
-.pagina-vitrine .spec-card-name {
+.pagina-vitrine .spec-card .spec-card-name {
   /* .content-section h3 (linha ~193) soma 32px de margin-top pensado pra
      subtítulo de texto corrido; aqui o h3/h4 é o título do card, então zera. */
   margin-top: 0;
@@ -652,15 +682,15 @@
   font-size: 0.9375rem;
 }
 
-.pagina-vitrine .spec-card-desc {
+.pagina-vitrine .spec-card .spec-card-desc {
   font-size: 0.75rem;
 }
 
-.pagina-vitrine .spec-list {
+.pagina-vitrine .spec-card .spec-list {
   font-size: 0.6875rem;
 }
 
-.pagina-vitrine .spec-card-ficha {
+.pagina-vitrine .spec-card .spec-card-ficha {
   font-size: 0.75rem;
 }
 
