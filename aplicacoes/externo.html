@@ -18,7 +18,7 @@
     <meta property="og:image" content="https://www.tektron.ind.br/assets/images/aplicacoes/externo/externo-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Sensor de movimento e fotocélula Tektron para área externa">
+    <meta property="og:image:alt" content="Sensor de movimento ME-70 Tektron instalado em área externa">
 
     <link rel="preload" href="../fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/global.css?v=20260810">
@@ -132,7 +132,8 @@
                                             <p class="needs-group-desc">Acende quando alguém passa.</p>
                                             <ul class="needs-links">
                                                 <li><a href="../aplicacoes/caixa-4x2.html">Substituir o interruptor</a></li>
-                                                <li><a href="../aplicacoes/teto.html">No teto</a></li>
+                                                <li><a href="../aplicacoes/teto-sobrepor.html">No teto, sobrepor</a></li>
+                                                <li><a href="../aplicacoes/teto-embutir.html">No teto, embutido no forro</a></li>
                                                 <li><a href="../aplicacoes/grandes-ambientes.html">Corredores e escadas</a></li>
                                                 <li><a href="../aplicacoes/externo.html#situacao-movimento">Área externa</a></li>
                                             </ul>
@@ -229,7 +230,8 @@
                             <p class="needs-group-desc">Acende quando alguém passa.</p>
                             <ul class="needs-links">
                                 <li><a href="../aplicacoes/caixa-4x2.html">Substituir o interruptor</a></li>
-                                <li><a href="../aplicacoes/teto.html">No teto</a></li>
+                                <li><a href="../aplicacoes/teto-sobrepor.html">No teto, sobrepor</a></li>
+                                                <li><a href="../aplicacoes/teto-embutir.html">No teto, embutido no forro</a></li>
                                 <li><a href="../aplicacoes/grandes-ambientes.html">Corredores e escadas</a></li>
                                 <li><a href="../aplicacoes/externo.html#situacao-movimento">Área externa</a></li>
                             </ul>
@@ -285,31 +287,18 @@
                     <p class="hero-lead">Em área externa, a escolha certa depende de uma decisão anterior à do modelo: a iluminação deve ser acionada por movimento (alguém passando) ou por luminosidade (anoitecer e amanhecer)? São duas tecnologias diferentes, para dois problemas diferentes. A Tektron fabrica sensores de movimento (ME-60, ME-70) e fotocélulas (FC-10, FC-15) para uso externo, todos com cuidados específicos de instalação contra chuva e umidade.</p>
                 </div>
 
-                <!-- EX01 — hero-panels, dois painéis editoriais (manifesto-ativos-visuais.md):
-                     aguardando aprovação de externo-hero-me-60.webp e externo-hero-fc-10.webp.
-                     Composição em 2 painéis claramente separados (não still life numa mesma
-                     cena) — ME-60 representa acionamento por movimento, FC-10 representa
-                     acionamento por luminosidade. As dimensões relativas entre os dois
-                     produtos NÃO devem ser inferidas desta composição; as dimensões reais
-                     continuam só no conteúdo técnico das páginas de produto. Ao integrar,
-                     inserir:
-                <div class="hero-panels">
-                    <figure class="hero-panel">
-                        <img src="../assets/images/aplicacoes/externo/externo-hero-me-60.webp"
-                             alt="Sensor de movimento ME-60, representando o acionamento por movimento"
-                             width="1600" height="1600"
-                             fetchpriority="high" decoding="async">
-                        <figcaption>Movimento — ME-60</figcaption>
-                    </figure>
-                    <figure class="hero-panel">
-                        <img src="../assets/images/aplicacoes/externo/externo-hero-fc-10.webp"
-                             alt="Fotocélula FC-10, representando o acionamento por luminosidade"
-                             width="1600" height="1600"
-                             fetchpriority="high" decoding="async">
-                        <figcaption>Luminosidade — FC-10</figcaption>
-                    </figure>
-                </div>
-                -->
+                <!-- EX01 — hero-media: foto real do ME-70 (Fernanda, 13/08/2026),
+                     ambiente gerado por IA (diretrizes-visuais.md §11.1, mesma categoria
+                     registrada para os heros da CS-5 e da STI-550) — peça é fotografia
+                     real, só o ambiente é IA. Substitui o plano anterior de hero-panels
+                     em 2 painéis (ME-60 + FC-10), que nunca chegou a ser integrado. -->
+                <figure class="hero-media">
+                    <img src="../assets/images/aplicacoes/externo/externo-hero-me-70.webp"
+                         alt="Sensor de movimento ME-70 instalado na parede externa de uma casa"
+                         width="1024" height="1024"
+                         fetchpriority="high" decoding="async">
+                    <figcaption>ME-70 instalado em área externa</figcaption>
+                </figure>
             </div>
 
             <nav class="content-section" aria-labelledby="escolha-rapida-heading">
@@ -459,7 +448,7 @@
                     <div><span class="spec-label">Acionamento zero-cross</span> ME-70 e FC-15 têm; ME-60 e FC-10 não têm</div>
                     <div><span class="spec-label">Tecnologia</span> ME-60/ME-70 detectam movimento; FC-10/FC-15 respondem à luminosidade ambiente, não detectam movimento</div>
                 </dl>
-                <p>Para ambientes internos com necessidades semelhantes de alcance ou cobertura, veja <a href="teto.html">instalação no teto</a> ou <a href="grandes-ambientes.html">sensores para corredores, escadas e grandes ambientes</a>.</p>
+                <p>Para ambientes internos com necessidades semelhantes de alcance ou cobertura, veja <a href="teto-sobrepor.html">instalação no teto de sobrepor</a>, <a href="teto-embutir.html">no teto embutido</a> ou <a href="grandes-ambientes.html">sensores para corredores, escadas e grandes ambientes</a>.</p>
             </section>
 
             <section class="content-section" aria-labelledby="instalacao-heading">
@@ -473,7 +462,7 @@
 
                 <!-- EX09 — diagrama elétrico 127V/220V (manifesto-ativos-visuais.md):
                      arquivo compartilhado, mesmo usado em CX06 (caixa-4x2.html) e TT11
-                     (teto.html) — não é um SVG novo. Circuito já validado na planilha
+                     (teto-sobrepor.html) — não é um SVG novo. Circuito já validado na planilha
                      (tipo_ligacao idêntico nos 4 modelos). Ao integrar, inserir:
                 <figure class="diagram-figure">
                     <img src="../assets/images/diagramas/ligacao-3-fios-127-220.svg"
@@ -559,8 +548,12 @@
                         <span class="factor-desc">Para automatizar um interruptor já existente, sem trocar o ponto elétrico.</span>
                     </li>
                     <li>
-                        <span class="factor-name"><a href="teto.html">Sensor de movimento para instalação no teto</a></span>
-                        <span class="factor-desc">Para ambientes internos, por tipo de teto e forma de ocupação.</span>
+                        <span class="factor-name"><a href="teto-sobrepor.html">Sensor de movimento para teto de sobrepor</a></span>
+                        <span class="factor-desc">Para ambientes internos, por forma de ocupação.</span>
+                    </li>
+                    <li>
+                        <span class="factor-name"><a href="teto-embutir.html">Sensor de movimento para teto embutido</a></span>
+                        <span class="factor-desc">Para teto de gesso, drywall ou madeira.</span>
                     </li>
                     <li>
                         <span class="factor-name"><a href="grandes-ambientes.html">Sensores para corredores, escadas e grandes ambientes</a></span>
