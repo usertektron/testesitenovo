@@ -342,6 +342,18 @@
   max-width: 46rem;
 }
 
+/* o piso de 32rem da tabela padrão existe pras tabelas largas (fichas
+   técnicas, comparação de tecnologias) não espremerem colunas demais —
+   numa tabela compacta (poucas colunas, texto curto) esse piso só força
+   scroll lateral no celular sem necessidade. */
+.comparison-table-wrap--compacta .comparison-table {
+  min-width: 0;
+}
+
+.comparison-table-wrap--compacta .comparison-table tbody th {
+  white-space: normal;
+}
+
 .comparison-table {
   width: 100%;
   min-width: 32rem;
