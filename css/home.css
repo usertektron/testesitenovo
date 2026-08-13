@@ -390,12 +390,26 @@
   gap: var(--espaco-4);
   color: var(--cor-marca-vermelho);
   text-align: center;
+  white-space: nowrap;
+}
+
+/* as fotos de origem têm margem branca interna diferente entre si — sem
+   isso, o produto visível dentro da miniatura fica desalinhado do texto
+   abaixo, mesmo com a caixa da imagem alinhada corretamente. Recorta o
+   excesso via zoom, sem tocar no arquivo original (usado inteiro em
+   outras páginas). */
+.thumb-recorte {
+  display: block;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: var(--raio);
+  background: var(--cor-fundo);
 }
 
 .comparison-table thead th img {
-  border-radius: var(--raio);
-  background: var(--cor-fundo);
   object-fit: contain;
+  transform: scale(1.15);
 }
 
 .comparison-table tbody th {
