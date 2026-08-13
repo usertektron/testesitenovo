@@ -601,6 +601,67 @@
   background: var(--cor-fundo-tecnico);
 }
 
+/* Grade densa estilo Mercado Livre, só no /catalogo/ — as demais páginas que
+   usam .spec-card/.spec-card-photo (hub Infravermelho, aplicacoes/*.html)
+   mantêm o card grande original. Reaproveita as mesmas classes, sem duplicar
+   o HTML dos 19 cards: 4 por linha, foto em caixa com fundo técnico e sombra
+   em vez de borda. */
+.pagina-catalogo .spec-cards {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 40rem) {
+  .pagina-catalogo .spec-cards { grid-template-columns: repeat(4, 1fr); }
+}
+
+.pagina-catalogo .spec-card {
+  gap: var(--espaco-4);
+  padding: 0 0 var(--espaco-16);
+  border: none;
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgb(30 34 41 / 6%), 0 8px 24px rgb(30 34 41 / 8%);
+}
+
+.pagina-catalogo .spec-card-photo {
+  width: auto;
+  margin: 0;
+  padding: var(--espaco-16);
+  background: var(--cor-fundo-tecnico);
+}
+
+.pagina-catalogo .spec-card-photo img {
+  background: transparent;
+  border-radius: 0;
+}
+
+.pagina-catalogo .spec-card-name,
+.pagina-catalogo .spec-card-desc,
+.pagina-catalogo .spec-list,
+.pagina-catalogo .spec-card-ficha {
+  padding-inline: var(--espaco-16);
+}
+
+.pagina-catalogo .spec-card-name {
+  /* .content-section h3 (linha ~193) soma 32px de margin-top pensado pra
+     subtítulo de texto corrido; aqui o h3 é o título do card, então zera. */
+  margin-top: 0;
+  padding-top: var(--espaco-8);
+  font-size: 0.9375rem;
+}
+
+.pagina-catalogo .spec-card-desc {
+  font-size: 0.75rem;
+}
+
+.pagina-catalogo .spec-list {
+  font-size: 0.6875rem;
+}
+
+.pagina-catalogo .spec-card-ficha {
+  font-size: 0.75rem;
+}
+
 /* diagramas SVG (CX05/CX06): substituição física e ligação elétrica */
 .diagram-figure {
   margin-top: var(--espaco-24);
