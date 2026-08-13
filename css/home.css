@@ -697,7 +697,7 @@
 /* diagramas SVG (CX05/CX06): substituição física e ligação elétrica */
 .diagram-figure {
   margin-top: var(--espaco-24);
-  max-width: 100%;
+  max-width: 46rem;
 }
 
 .diagram-figure img {
