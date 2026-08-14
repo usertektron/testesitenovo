@@ -427,3 +427,70 @@ textarea {
   line-height: 1;
   cursor: pointer;
 }
+
+/* --------------------------------------------------------------------------
+   13. Banner de cookies
+   Canto inferior esquerdo, de propósito — o WhatsApp flutuante já ocupa o
+   inferior direito (§12), e um banner de largura total colidiria com ele.
+   Some da tela assim que a pessoa decide (aceitar/recusar), sem persistir
+   entre páginas até a escolha ser salva no localStorage.
+   -------------------------------------------------------------------------- */
+.cookie-banner {
+  position: fixed;
+  left: var(--espaco-16);
+  bottom: var(--espaco-16);
+  z-index: var(--z-dialogo);
+  max-width: 22rem;
+  padding: var(--espaco-16);
+  background: var(--cor-grafite);
+  color: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.cookie-banner-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: var(--espaco-16);
+}
+
+.cookie-banner-text a {
+  color: var(--cor-branco);
+  text-decoration: underline;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: var(--espaco-12);
+}
+
+.cookie-banner-btn {
+  border: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  min-height: 40px;
+  padding: var(--espaco-8) var(--espaco-16);
+}
+
+.cookie-banner .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--cor-borda-clara);
+  color: var(--cor-branco);
+}
+
+@media (hover: hover) {
+  .cookie-banner .btn-secondary:hover {
+    background: var(--cor-realce-escuro);
+    border-color: var(--cor-borda-clara);
+  }
+}
+
+@media (max-width: 400px) {
+  .cookie-banner {
+    left: var(--espaco-8);
+    right: var(--espaco-8);
+    bottom: var(--espaco-8);
+    max-width: none;
+  }
+}
