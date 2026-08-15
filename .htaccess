@@ -25,6 +25,22 @@ Redirect 301 /modelo8_automacao.html https://www.tektron.ind.br/aplicacoes/minut
 Redirect 301 /modelo9_compacta.html https://www.tektron.ind.br/aplicacoes/teto-sobrepor.html
 
 # --------------------------------------------------------------------------
+# Redirects 301 — PDFs antigos de ficha técnica ainda rastreados pelo
+# Google (Search Console, conferido em 2026-08-15). Código de modelo bate
+# direto com a ficha técnica atual, exceto MU450 → MU-500 (modelo
+# descontinuado, mapeamento oficial na aba "Descontinuados" da planilha de
+# especificações).
+# --------------------------------------------------------------------------
+Redirect 301 /files/pdf/TC5.pdf https://www.tektron.ind.br/assets/downloads/ficha-tecnica-tc-5.pdf
+Redirect 301 /files/pdf/MICROONDAS.pdf https://www.tektron.ind.br/assets/downloads/ficha-tecnica-tkr.pdf
+Redirect 301 /files/pdf/ME70.pdf https://www.tektron.ind.br/assets/downloads/ficha-tecnica-me-70.pdf
+Redirect 301 /files/pdf/MI700.pdf https://www.tektron.ind.br/assets/downloads/ficha-tecnica-mi-700.pdf
+Redirect 301 /files/pdf/BS70.pdf https://www.tektron.ind.br/assets/downloads/ficha-tecnica-bs-70.pdf
+Redirect 301 /files/pdf/FC10.pdf https://www.tektron.ind.br/assets/downloads/ficha-tecnica-fc-10.pdf
+Redirect 301 /files/pdf/FC15T.pdf https://www.tektron.ind.br/assets/downloads/ficha-tecnica-fc-15.pdf
+Redirect 301 /files/pdf/MU450.pdf https://www.tektron.ind.br/assets/downloads/ficha-tecnica-mu-500.pdf
+
+# --------------------------------------------------------------------------
 # Compressão (gzip / brotli)
 # --------------------------------------------------------------------------
 <IfModule mod_brotli.c>
